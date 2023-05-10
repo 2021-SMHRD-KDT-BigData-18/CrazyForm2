@@ -30,27 +30,13 @@
 							<nav id="nav">
 								<ul>
 									<li>
-										<a href="#">가사도우미</a>
-									</li>
-									<li>
-										<a href="#">이사청소</a>
-									</li>
-									<li>
-										<a href="#">사무실청소</a>
+										<a href="#">예약하기</a>
 									</li>
 									<li>
 										<a href="https://onnuribed.co.kr/">침구청소</a>
 									</li>
 									<li>
-										<a href="#">가전청소</a>
-										<ul>
-											<li>
-												<a href="http://thecleaning.co.kr/default/">에어컨</a>
-											</li>
-											<li>
-												<a href="https://www.coldcare.co.kr/service">냉장고</a>
-											</li>
-										</ul>
+										<a href="http://thecleaning.co.kr/default/">에어컨 청소</a>
 									</li>
 									<li>
 										<a href="https://wayopet.com/home">펫시팅</a>

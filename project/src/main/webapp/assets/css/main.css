@@ -1945,8 +1945,8 @@ input, select, textarea {
 	}
 
 		#logo h1 {
-			background: #ff4486;
-			color: #fff;
+			background: rgb(0, 128, 255);
+			color: rgb(255, 255, 255);
 			border-radius: 6px;
 			font-family: 'Oleo Script', serif;
 			font-weight: 400;
