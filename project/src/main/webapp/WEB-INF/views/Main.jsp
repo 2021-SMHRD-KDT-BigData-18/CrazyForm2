@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE HTML>
 <!--
 	Verti by HTML5 UP
@@ -13,6 +14,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
 <link rel="stylesheet" href="assets/css/main.css" />
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body class="is-preload homepage">
 
@@ -240,7 +242,7 @@
 	<script src="assets/js/main.js"></script>
 
 	<script>
-		(function() {
+		function() {
 			var w = window;
 			if (w.ChannelIO) {
 				return w.console.error("ChannelIO script included twice.");
@@ -273,17 +275,18 @@
 				w.addEventListener("DOMContentLoaded", l);
 				w.addEventListener("load", l);
 			}
-		})();
-
-		ChannelIO('boot', {
+		});
+// 채팅버튼에 연동할 고객 DB
+		ChannelIO('boot') {
 			"pluginKey" : "f0b79691-ec2e-4b93-9a1f-90c530f9d33e",
-			"memberId" : "#{id}", // fill user's member id
+			"memberId" : ${id}, // fill user's member id
 			"profile" : { // fill user's profile
-				"name" : "#{name}", // fill user's name
-				"mobileNumber" : "#{tel}", // fill user's mobile number
-				"address" : "#{address}", // custom property
-				"CUSTOM_VALUE_2" : "VALUE_2" // custom property
+				"name" : ${name}, // fill user's name
+				"mobileNumber" : ${tel}, // fill user's mobile number
+				"address" : ${address}, // custom property
 			}
+//				"pet" : "${펫유무}", // custom property
+//				"CleanNumber" : "${청소번호}"
 		});
 	</script>
 
