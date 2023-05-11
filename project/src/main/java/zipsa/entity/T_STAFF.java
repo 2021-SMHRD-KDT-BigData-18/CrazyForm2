@@ -1,0 +1,95 @@
+package zipsa.entity;
+
+public class T_STAFF {
+
+	public T_STAFF() {
+
+	}
+
+	// 집사 직원
+
+	public Double getSTAFF_SEQ() {
+		return STAFF_SEQ;
+	}
+
+	public void setSTAFF_SEQ(Double sTAFF_SEQ) {
+		STAFF_SEQ = sTAFF_SEQ;
+	}
+
+	public String getSTAFF_NAME() {
+		return STAFF_NAME;
+	}
+
+	public void setSTAFF_NAME(String sTAFF_NAME) {
+		STAFF_NAME = sTAFF_NAME;
+	}
+
+	public String getSTAFF_PHONE() {
+		return STAFF_PHONE;
+	}
+
+	public void setSTAFF_PHONE(String sTAFF_PHONE) {
+		STAFF_PHONE = sTAFF_PHONE;
+	}
+
+	public String getALLERGY_YN() {
+		return ALLERGY_YN;
+	}
+
+	public void setALLERGY_YN(String aLLERGY_YN) {
+		ALLERGY_YN = aLLERGY_YN;
+	}
+
+	// 직원 번호
+	private Double STAFF_SEQ;
+
+	// 직원 이름
+	private String STAFF_NAME;
+
+	// 직원 연락처
+	private String STAFF_PHONE;
+
+	// 직원 알러지유무
+	private String ALLERGY_YN;
+
+	public Double getStaffSeq() {
+		return STAFF_SEQ;
+	}
+
+	public void setStaffSeq(Double staffSeq) {
+		this.STAFF_SEQ = STAFF_SEQ;
+	}
+
+	public String getStaffName() {
+		return STAFF_NAME;
+	}
+
+	public void setStaffName(String staffName) {
+		this.STAFF_NAME = STAFF_NAME;
+	}
+
+	public String getStaffPhone() {
+		return STAFF_PHONE;
+	}
+
+	public void setStaffPhone(String staffPhone) {
+		this.STAFF_PHONE = STAFF_PHONE;
+	}
+
+	public String getAllergyYn() {
+		return ALLERGY_YN;
+	}
+
+	public void setAllergyYn(String allergyYn) {
+		this.ALLERGY_YN = ALLERGY_YN;
+	}
+
+	// T_STAFF 모델 복사
+	public void CopyData(T_STAFF param) {
+		this.STAFF_SEQ = param.getStaffSeq();
+		this.STAFF_NAME = param.getStaffName();
+		this.STAFF_PHONE = param.getStaffPhone();
+		this.ALLERGY_YN = param.getAllergyYn();
+	}
+
+}
