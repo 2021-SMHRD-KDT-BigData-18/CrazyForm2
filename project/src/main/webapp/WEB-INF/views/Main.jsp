@@ -241,53 +241,27 @@
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 
-	<script>
-		function() {
-			var w = window;
-			if (w.ChannelIO) {
-				return w.console.error("ChannelIO script included twice.");
-			}
-			var ch = function() {
-				ch.c(arguments);
-			};
-			ch.q = [];
-			ch.c = function(args) {
-				ch.q.push(args);
-			};
-			w.ChannelIO = ch;
-			function l() {
-				if (w.ChannelIOInitialized) {
-					return;
-				}
-				w.ChannelIOInitialized = true;
-				var s = document.createElement("script");
-				s.type = "text/javascript";
-				s.async = true;
-				s.src = "https://cdn.channel.io/plugin/ch-plugin-web.js";
-				var x = document.getElementsByTagName("script")[0];
-				if (x.parentNode) {
-					x.parentNode.insertBefore(s, x);
-				}
-			}
-			if (document.readyState === "complete") {
-				l();
-			} else {
-				w.addEventListener("DOMContentLoaded", l);
-				w.addEventListener("load", l);
-			}
-		});
-// 채팅버튼에 연동할 고객 DB
-		ChannelIO('boot') {
+         <script>
+              (function(){var w=window;if(w.ChannelIO){return w.console.error("ChannelIO script included twice.");}var ch=function(){ch.c(arguments);};ch.q=[];ch.c=function(args){ch.q.push(args);};w.ChannelIO=ch;function l(){if(w.ChannelIOInitialized){return;}w.ChannelIOInitialized=true;var s=document.createElement("script");s.type="text/javascript";s.async=true;s.src="https://cdn.channel.io/plugin/ch-plugin-web.js";var x=document.getElementsByTagName("script")[0];if(x.parentNode){x.parentNode.insertBefore(s,x);}}if(document.readyState==="complete"){l();}else{w.addEventListener("DOMContentLoaded",l);w.addEventListener("load",l);}})();
+
+                 ChannelIO('boot', {
+                "pluginKey": "f0b79691-ec2e-4b93-9a1f-90c530f9d33e"
+                    });
+         </script>
+
+	<script type="text/javascript">
+	// 채팅버튼에 연동할 고객 DB
+	ChannelIO('boot', {
 			"pluginKey" : "f0b79691-ec2e-4b93-9a1f-90c530f9d33e",
 			"memberId" : ${id}, // fill user's member id
 			"profile" : { // fill user's profile
 				"name" : ${name}, // fill user's name
 				"mobileNumber" : ${tel}, // fill user's mobile number
 				"address" : ${address}, // custom property
+//				"pet" : "\${펫유무}", // custom property
+//				"CleanNumber" : "\${청소번호}"
 			}
-//				"pet" : "${펫유무}", // custom property
-//				"CleanNumber" : "${청소번호}"
-		});
+	});
 	</script>
 
 </body>
