@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import zipsa.entity.ZipsaMember;
+import zipsa.entity.ZipsaReservation;
 
 public class ZipsaMemberDAO {
 	private SqlSessionFactory factory = SqlSessionManager.getSqlSessionFactory();
@@ -50,7 +51,7 @@ public class ZipsaMemberDAO {
 		return list;
 	}
 	// 관리자가 보는 회원예약현황
-	public List<ZipsaMember> selectAll() {
+	public List<ZipsaReservation> selectAll() {
 		SqlSession session = factory.openSession(true);
 		List<ZipsaReservation> list = session.selectList("selectAll");
 		session.close();
