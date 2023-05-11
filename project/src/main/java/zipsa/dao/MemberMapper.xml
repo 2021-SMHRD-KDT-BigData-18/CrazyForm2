@@ -7,34 +7,34 @@
 	<insert id="join" parameterType="zipsa.entity.T_MEMBER">
 		insert into T_MEMBER
 		(M_PW,M_NAME,M_PHONE,M_ADDR,M_TYPE )
-		values(#{m_ID},
-		#{m_PW},
-		#{m_NAME},
-		#{m_PHONE},
-		#{am_ADDR},
+		values(#{ID},
+		#{PW},
+		#{NAME},
+		#{PHONE},
+		#{ADDR},
 		,"M"
 		)
 	</insert>
 
 	<!-- 로그인 기능 -->
 	<select id="login" parameterType="zipsa.entity.T_MEMBER"
-		resultType="zipsa.entity.T_Member">
-		select * from T_MEMBER where id=#{id} and pw=#{pw}
+		resultType="zipsa.entity.T_MEMBER">
+		select * from T_MEMBER where M_id=#{id} and M_pw=#{pw}
 	</select>
 
 	<!-- 회원정보 수정기능 -->
 	<update id="update" parameterType="zipsa.entity.T_MEMBER">
 		update T_MEMBER SET
-		M_pw=#{M_pw}, M_name=#{M_name}, M_PHONE=#{M_PHONE}, M_ADDR=#{M_ADDR}
-		where M_id=#{M_id}	and M_pw=#{M_pw}
+		M_pw=#{pw}, M_name=#{name}, M_PHONE=#{PHONE}, M_ADDR=#{ADDR}
+		where M_id=#{id} and M_pw=#{pw}
 	}
 	</update>
 
 	<!-- 주소만 수정 -->
 	<update id="update" parameterType="zipsa.entity.T_MEMBER">
 		update T_MEMBER set
-		M_ADDR=#{M_ADDR}
-		where M_id=#{M_id} and M_pw=#{M_pw}
+		M_ADDR=#{ADDR}
+		where M_id=#{id} and M_pw=#{pw}
 	</update>
 
 	<!-- 관리자의 회원관리창 -->
@@ -49,26 +49,24 @@
 		select * from T_RESERVATION
 	</select>
 
-	<!-- 내예약현황 확인 -->
+	<!-- 내 예약현황 확인 -->
 	<select id="selectRv" parameterType="zipsa.entity.T_MEMBER"
-		resultType="zipsa.entity.T_Reservation">
-		SELECT REV_SEQ, M_ID, JOB_SEQ, REV_DT, PET_YN, STAFF_SEQ, REV_NOTE, REG_DT  FROM T_RESERVATION
-		WHERE M_id=#{M_id} and M_pw=#{M_pw}
+		resultType="zipsa.entity.T_RESERVATION">
+		SELECT * FROM T_RESERVATION
+		WHERE M_id=#{id} and M_pw=#{pw}
 	</select>
 
-	<!-- 회원탈퇴기능 -->
+	<!-- 회원 탈퇴기능 -->
 	<delete id="delete" parameterType="zipsa.entity.T_MEMBER">
 		delete from T_MEMBER
-		where M_id=#{M_id} and M_pw=#{M_pw}
+		where M_id=#{id} and M_pw=#{pw}
 	</delete>
 
 	<!-- 내정보(회원) 확인 -->
 	<select id="check" parameterType="zipsa.entity.T_MEMBER"
 		resultType="zipsa.entity.T_MEMBER">
 		SELECT M_PW,M_NAME,M_PHONE,M_ADDR FROM T_MEMBER
-		WHERE M_id=#{M_id} and M_pw=#{M_pw}
-		
-		
+		WHERE M_id=#{id} and M_pw=#{pw}
 	</select>
 
 

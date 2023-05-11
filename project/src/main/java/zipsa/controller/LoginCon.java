@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import zipsa.dao.ZipsaMemberDAO;
-import zipsa.entity.ZipsaMember;
+import zipsa.entity.T_MEMBER;
 
 public class LoginCon implements Controller {
 
@@ -21,13 +21,13 @@ public class LoginCon implements Controller {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		
-		ZipsaMember dto = new ZipsaMember();
+		T_MEMBER dto = new T_MEMBER();
 		
-		dto.setId(id);
-		dto.setPw(pw);
+		dto.setM_ID(id);
+		dto.setM_PW(pw);
 		
 		ZipsaMemberDAO dao = new ZipsaMemberDAO();
-		ZipsaMember user = dao.login(dto);
+		T_MEMBER user = dao.login(dto);
 		
 		String nextView = null;
 		
