@@ -3,12 +3,17 @@ package zipsa.entity;
 import java.util.Date;
 
 public class T_HOLIDAY {
+	// 집사직원 휴무일
+	public T_HOLIDAY() {	}
 
-	public T_HOLIDAY() {
 
+	public T_HOLIDAY(Double hOLI_SEQ, Double sTAFF_SEQ, Date hOLI_DT) {
+		super();
+		HOLI_SEQ = hOLI_SEQ;
+		STAFF_SEQ = sTAFF_SEQ;
+		HOLI_DT = hOLI_DT;
 	}
 
-	// 집사직원 휴무일
 
 	public Double getHOLI_SEQ() {
 		return HOLI_SEQ;
@@ -67,11 +72,5 @@ public class T_HOLIDAY {
 		this.HOLI_DT = HOLI_DT;
 	}
 
-	// T_HOLIDAY 모델 복사
-	public void CopyData(T_HOLIDAY param) {
-		this.HOLI_SEQ = param.getHoliSeq();
-		this.STAFF_SEQ = param.getStaffSeq();
-		this.HOLI_DT = param.getHoliDt();
-	}
 
 }

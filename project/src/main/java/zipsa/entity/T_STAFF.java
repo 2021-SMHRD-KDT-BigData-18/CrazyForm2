@@ -2,16 +2,23 @@ package zipsa.entity;
 
 public class T_STAFF {
 
-	public T_STAFF() {
-
-	}
-
+	public T_STAFF() {	}
 	// 집사 직원
 
+
+
+	public T_STAFF(Double sTAFF_SEQ, String sTAFF_NAME, String sTAFF_PHONE, String aLLERGY_YN) {
+		super();
+		STAFF_SEQ = sTAFF_SEQ;
+		STAFF_NAME = sTAFF_NAME;
+		STAFF_PHONE = sTAFF_PHONE;
+		ALLERGY_YN = aLLERGY_YN;
+	}
+	
 	public Double getSTAFF_SEQ() {
 		return STAFF_SEQ;
 	}
-
+	
 	public void setSTAFF_SEQ(Double sTAFF_SEQ) {
 		STAFF_SEQ = sTAFF_SEQ;
 	}
@@ -82,14 +89,6 @@ public class T_STAFF {
 
 	public void setAllergyYn(String allergyYn) {
 		this.ALLERGY_YN = ALLERGY_YN;
-	}
-
-	// T_STAFF 모델 복사
-	public void CopyData(T_STAFF param) {
-		this.STAFF_SEQ = param.getStaffSeq();
-		this.STAFF_NAME = param.getStaffName();
-		this.STAFF_PHONE = param.getStaffPhone();
-		this.ALLERGY_YN = param.getAllergyYn();
 	}
 
 }

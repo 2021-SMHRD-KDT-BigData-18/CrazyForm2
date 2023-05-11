@@ -1,12 +1,15 @@
 package zipsa.entity;
 
 public class T_JOB {
-
-	public T_JOB() {
-
-	}
-
 	// 집사 청소 분류
+
+	public T_JOB() {	}
+
+	public T_JOB(Double jOB_SEQ, String jOB_T) {
+		super();
+		JOB_SEQ = jOB_SEQ;
+		JOB_T = jOB_T;
+	}
 
 	public Double getJOB_SEQ() {
 		return JOB_SEQ;
@@ -44,12 +47,6 @@ public class T_JOB {
 
 	public void setJobT(String jobT) {
 		this.JOB_T = JOB_T;
-	}
-
-	// T_JOB 모델 복사
-	public void CopyData(T_JOB param) {
-		this.JOB_SEQ = param.getJobSeq();
-		this.JOB_T = param.getJobT();
 	}
 
 }

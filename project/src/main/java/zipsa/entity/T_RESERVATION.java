@@ -3,12 +3,22 @@ package zipsa.entity;
 import java.sql.Date;
 
 public class T_RESERVATION {
-
-	public T_RESERVATION() {
-
-	}
-
 	// 집사 예약 현황
+
+	public T_RESERVATION() {	}
+
+	public T_RESERVATION(Double rEV_SEQ, String m_ID, Double jOB_SEQ, Date rEV_DT, String pET_YN, Double sTAFF_SEQ,
+			String rEV_NOTE, Date rEG_DT) {
+		super();
+		REV_SEQ = rEV_SEQ;
+		M_ID = m_ID;
+		JOB_SEQ = jOB_SEQ;
+		REV_DT = rEV_DT;
+		PET_YN = pET_YN;
+		STAFF_SEQ = sTAFF_SEQ;
+		REV_NOTE = rEV_NOTE;
+		REG_DT = rEG_DT;
+	}
 
 	public Double getREV_SEQ() {
 		return REV_SEQ;
@@ -160,18 +170,6 @@ public class T_RESERVATION {
 
 	public void setRegDt(Date regDt) {
 		this.REG_DT = REG_DT;
-	}
-
-	// T_RESERVATION 모델 복사
-	public void CopyData(T_RESERVATION param) {
-		this.REV_SEQ = param.getRevSeq();
-		this.M_ID = param.getMId();
-		this.JOB_SEQ = param.getJobSeq();
-		this.REV_DT = param.getRevDt();
-		this.PET_YN = param.getPetYn();
-		this.STAFF_SEQ = param.getStaffSeq();
-		this.REV_NOTE = param.getRevNote();
-		this.REG_DT = param.getRegDt();
 	}
 
 }

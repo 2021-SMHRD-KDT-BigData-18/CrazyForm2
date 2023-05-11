@@ -3,12 +3,20 @@ package zipsa.entity;
 import java.util.Date;
 
 public class T_REVIEW {
-
-	public T_REVIEW() {
-
-	}
-
 	// 고객 리뷰
+
+	public T_REVIEW() {	}
+	public T_REVIEW(Double rEVIEW_SEQ, Double rEV_SEQ, String rEVIEW_CONTENT, String rEVIEW_IMG, Double rEVIEW_RATING,
+			Date rEVIEW_DT, String m_ID) {
+		super();
+		REVIEW_SEQ = rEVIEW_SEQ;
+		REV_SEQ = rEV_SEQ;
+		REVIEW_CONTENT = rEVIEW_CONTENT;
+		REVIEW_IMG = rEVIEW_IMG;
+		REVIEW_RATING = rEVIEW_RATING;
+		REVIEW_DT = rEVIEW_DT;
+		M_ID = m_ID;
+	}
 
 	public Double getREVIEW_SEQ() {
 		return REVIEW_SEQ;

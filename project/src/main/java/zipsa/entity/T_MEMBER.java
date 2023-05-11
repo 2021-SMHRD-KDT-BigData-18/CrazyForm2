@@ -3,12 +3,22 @@ package zipsa.entity;
 import java.util.Date;
 
 public class T_MEMBER {
-
-	public T_MEMBER() {
-
+	
+	// 고객 정보
+	public T_MEMBER() {	}
+	
+	public T_MEMBER(String m_ID, String m_PW, String m_NAME, String m_PHONE, String m_ADDR, Date m_JOINDATE,
+			String m_TYPE) {
+		super();
+		M_ID = m_ID;
+		M_PW = m_PW;
+		M_NAME = m_NAME;
+		M_PHONE = m_PHONE;
+		M_ADDR = m_ADDR;
+		M_JOINDATE = m_JOINDATE;
+		M_TYPE = m_TYPE;
 	}
 
-	// 고객 정보
 
 	public String getM_ID() {
 		return M_ID;
@@ -143,14 +153,6 @@ public class T_MEMBER {
 		this.M_TYPE = M_TYPE;
 	}
 
-	// T_MEMBER 모델 복사
-	public void CopyData(T_MEMBER param) {
-		this.M_ID = param.getMId();
-		this.M_PW = param.getMPw();
-		this.M_NAME = param.getMName();
-		this.M_PHONE = param.getMPhone();
-		this.M_ADDR = param.getMAddr();
-		this.M_JOINDATE = param.getMJoindate();
-		this.M_TYPE = param.getMType();
-	}
+
+
 }
