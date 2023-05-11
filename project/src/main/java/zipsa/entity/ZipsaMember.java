@@ -1,17 +1,25 @@
 package zipsa.entity;
 
 public class ZipsaMember {
-	
+
 	private String id;
 	private String pw;
 	private String name;
 	private String tel;
-	private String adress;
-	private String email;
-	
+	private String address;
+
 	// 기본 생성자
-	public ZipsaMember () {
-		
+	public ZipsaMember() {
+
+	}
+
+	public ZipsaMember(String id, String pw, String name, String tel, String address) {
+		super();
+		this.id = id;
+		this.pw = pw;
+		this.name = name;
+		this.tel = tel;
+		this.address = address;
 	}
 
 	// getter / setter
@@ -48,32 +56,11 @@ public class ZipsaMember {
 	}
 
 	public String getAdress() {
-		return adress;
+		return address;
 	}
 
 	public void setAdress(String adress) {
-		this.adress = adress;
+		this.address = adress;
 	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 }

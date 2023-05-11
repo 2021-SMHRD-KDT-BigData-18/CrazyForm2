@@ -1,12 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="zipsa.dao.MemberDAO">
-<!-- 짝꿍 DAO가 누구인지 -->	
-	
-	<insert id="">
-		insert into 
-	
+<mapper namespace="zipsa.dao.ZipsaMemberDAO">
+	<!-- 짝꿍 DAO가 누구인지 -->
+
+	<!-- 회원가입 -->
+	<insert id="join" parameterType="zipsa.entity.ZipsaMember">
+		insert into 집사회원
+		values(#{id},
+		#{pw},
+		#{name},
+		#{tel},
+		#{address})
 	</insert>
+
+	<!-- 로그인 기능 -->
+	<select id="login" parameterType="zipsa.entity.ZipsaMember"
+		resultType="zipsa.entity.ZipsaMember">
+		select * from 집사회원 where id=#{id} and pw=#{pw}
+	</select>
+
+	<!-- 회원정보 수정기능 -->
+	<update id="update" parameterType="zipsa.entity.ZipsaMember">
+		update 집사회원 set
+		pw=#{pw},name=#{name}, tel=#{tel}, address=#{address}
+		where id=#{id}
+		and pw=#{pw}
+	</update>
+
+	<!-- 주소만 수정 -->
+	<update id="update" parameterType="zipsa.entity.ZipsaMember">
+		update 집사회원 set
+		address=#{address}
+		where id=#{id} and pw=#{pw}
+	</update>
+
+	<!-- 관리자의 회원관리창 -->
+	<select id="selectMember"
+		parameterType="zipsa.entity.ZipsaMember"
+		resultType="zipsa.entity.ZipsaMember">
+		select * from 집사회원
+		where not id = 'admin'
+	</select>
+
+	<!-- 관리자가 보는 예약현황창 -->
+	<select id="selectAll"
+		resultType="zipsa.entity.ZipsaReservation">
+		select * from 집사예약현황
+	</select>
+
+	<!-- 내예약현황 확인 -->
+	<select id="selectRv" parameterType="zipsa.entity.ZipsaMember"
+		resultType="zipsa.entity.ZipsaReservation">
+		SELECT * FROM 집사예약현황
+		WHERE id=#{id} and pw=#{pw}
+	</select>
+
+	<!-- 회원탈퇴기능 -->
+	<delete id="delete" parameterType="zipsa.entity.ZipsaMember">
+		delete from 집사회원 
+		where id=#{id} and pw=#{pw}
+	</delete>
+
+	<!-- 내정보(회원) 확인 -->
+	<select id="check" parameterType="zipsa.entity.ZipsaMember"
+		resultType="zipsa.entity.ZipsaMember">
+		SELECT * FROM 집사회원
+		WHERE id=#{id} and pw=#{pw}
+	</select>
+
 
 
 
