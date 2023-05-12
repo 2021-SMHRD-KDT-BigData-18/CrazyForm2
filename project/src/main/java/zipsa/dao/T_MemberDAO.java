@@ -7,7 +7,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import zipsa.entity.T_MEMBER;
 
-public class ZipsaMemberDAO {
+public class T_MemberDAO {
 	private SqlSessionFactory factory = SqlSessionManager.getSqlSessionFactory();
 
 	// 회원가입
