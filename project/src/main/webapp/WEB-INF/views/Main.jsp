@@ -15,6 +15,9 @@
 	content="width=device-width, initial-scale=1, user-scalable=no" />
 <link rel="stylesheet" href="assets/css/main.css" />
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
+
 </head>
 <body class="is-preload homepage">
 
@@ -200,13 +203,13 @@
 
 						<!-- Links -->
 						<section class="widget links">
-							<h3>집사</h3>
+							<h3>Channel Plus</h3>
 							<ul class="style2">
-								<li><a href="#">.</a></li>
-								<li><a href="#">.</a></li>
-								<li><a href="#">.</a></li>
-								<li><a href="#">.</a></li>
-								<li><a href="#">.</a></li>
+								<!-- 카카오톡 채널 추가 버튼이 표시될 위치 -->
+								<div id="kakao-talk-channel-add-button"
+									data-channel-public-id="_gJmYxj" data-size="large"
+									data-support-multiple-densities="true">
+								</div>
 							</ul>
 						</section>
 
@@ -217,9 +220,11 @@
 						<section class="widget contact last">
 							<h3>Contact Us</h3>
 							<ul>
-								<li><a href="#" class="icon brands fa-instagram"><span
-										class="label">Instagram</span></a></li>
+								<li><a href="https://www.instagram.com/zipsa_manager/"
+									class="icon brands fa-instagram"><span class="label"
+										height="45" width="45">Instagram</span></a></li>
 							</ul>
+
 							<p>
 								<br /> 광주광역시 남구 송암로 60<br /> (062) 000-0000
 							</p>
@@ -279,7 +284,26 @@
 
 		ChannelIO('boot', {
 			"pluginKey" : "f0b79691-ec2e-4b93-9a1f-90c530f9d33e"
+		});
+	</script>
+
+	<script>
+		window.kakaoAsyncInit = function() {
+			Kakao.Channel.createAddChannelButton({
+				container : '#kakao-talk-channel-add-button',
+			});
 		};
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id))
+				return;
+			js = d.createElement(s);
+			js.id = id;
+			js.src = 'https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.channel.min.js';
+			js.integrity = 'sha384-MEvxc+j9wOPB2TZ85/N6G3bt3K1/CgHSGNSM+88GoytFuzP4C9szmANjTCNfgKep';
+			js.crossOrigin = 'anonymous';
+			fjs.parentNode.insertBefore(js, fjs);
+		})(document, 'script', 'kakao-js-sdk');
 	</script>
 
 
