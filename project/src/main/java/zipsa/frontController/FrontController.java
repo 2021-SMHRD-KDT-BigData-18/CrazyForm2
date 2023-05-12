@@ -2,7 +2,6 @@ package zipsa.frontController;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,38 +9,34 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import zipsa.controller.goCalendarCon;
-import zipsa.controller.Controller;
-import zipsa.controller.M_DeleteCon;
-import zipsa.controller.goRvCon;
-import zipsa.controller.goUpdateCon;
-import zipsa.controller.writeReviewCon;
-import zipsa.controller.M_JoinCon;
-import zipsa.controller.M_LoginCon;
 import zipsa.controller.A_SelectAllRCon;
 import zipsa.controller.A_SelectMemberCon;
+import zipsa.controller.Controller;
+import zipsa.controller.M_DeleteCon;
+import zipsa.controller.M_JoinCon;
+import zipsa.controller.M_LoginCon;
+import zipsa.controller.M_LogoutCon;
+import zipsa.controller.M_SelectMCon;
 import zipsa.controller.M_UpdateCon;
 import zipsa.controller.SelectRvCon;
 import zipsa.controller.checkCon;
+import zipsa.controller.goCalendarCon;
 import zipsa.controller.goMainCon;
 import zipsa.controller.goReviewMainCon;
-import zipsa.controller.M_LogoutCon;
-import zipsa.controller.M_SelectMCon;
+import zipsa.controller.goRvCon;
+import zipsa.controller.goUpdateCon;
 
-// 모든 요청을 받을 수 있도록 url-mapping *로 지정
-// @WebServlet("*.do") --> .do로 끝나는 모든 요청
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
-	
-	private HashMap<String, zipsa.controller.Controller> mappings;
-	
+
+	private HashMap<String, Controller> mappings;
+
 	@Override
 	public void init() throws ServletException {
 
 		mappings = new HashMap<String, Controller>();
-		
+
 		mappings.put("/Main.do", new goMainCon());
 		mappings.put("/join.do", new M_JoinCon());
 		mappings.put("/login.do", new M_LoginCon());
@@ -49,36 +44,37 @@ public class FrontController extends HttpServlet {
 		mappings.put("/logout.do", new M_LogoutCon());
 		mappings.put("/goUpdate.do", new goUpdateCon());
 		mappings.put("/update.do", new M_UpdateCon());
-		mappings.put("/goSelectAllMember.do", new A_SelectMemberCon()); 	 // 관리자 회원관리
-		mappings.put("/goSelectAllR.do", new A_SelectAllRCon());  	 		// 관리자 예약현황 확인
-		mappings.put("/goSelectRv.do", new SelectRvCon());   		 		// 회원이 보는 예약현황 확인
-		mappings.put("/goRv.do", new goRvCon());  							// 예약하기창
-		mappings.put("/goSelectMember", new M_SelectMCon());					// 회원의 내 정보보기??
-		mappings.put("/delete.do", new M_DeleteCon());  						// 회원탈퇴
-		
-		mappings.put("/reviewMain.do", new goReviewMainCon());				// 리뷰게시판가기
-//		mappings.put("/gowirteReview.do", new gowriteReviewCon());			// 리뷰작성하러가기
-//		mappings.put("/writeReivew.do", new writeBoardCon());				// 리뷰작성하기
-//		mappings.put("/viewBoard.do", new ViewBoardCon());					// 리뷰게시판
-//		mappings.put("/ajax.do", new AjaxCon());							
+		mappings.put("/goSelectAllMember.do", new A_SelectMemberCon()); // 관리자 회원관리
+		mappings.put("/goSelectAllR.do", new A_SelectAllRCon()); // 관리자 예약현황 확인
+		mappings.put("/goSelectRv.do", new SelectRvCon()); // 회원이 보는 예약현황 확인
+		mappings.put("/goRv.do", new goRvCon()); // 예약하기창
+		mappings.put("/goSelectMember", new M_SelectMCon()); // 회원의 내 정보보기??
+		mappings.put("/delete.do", new M_DeleteCon()); // 회원탈퇴
+
+		mappings.put("/reviewMain.do", new goReviewMainCon()); // 리뷰게시판가기
+//			mappings.put("/gowirteReview.do", new gowriteReviewCon());			// 리뷰작성하러가기
+//			mappings.put("/writeReivew.do", new writeBoardCon());				// 리뷰작성하기
+//			mappings.put("/viewBoard.do", new ViewBoardCon());					// 리뷰게시판
+//			mappings.put("/ajax.do", new AjaxCon());							
 		mappings.put("/check.do", new checkCon());
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		String uri = request.getRequestURI();
 		String cpath = request.getContextPath();
 		String command = uri.substring(cpath.length());
 
 		String nextView = null;
-		Controller con = null; 
+		Controller con = null;
 
 		con = mappings.get(command);
-		
-//		 3.페이지이동
+
+//			 3.페이지이동
 		if (con != null) {
-			nextView = con.execute(request, response); }
+			nextView = con.execute(request, response);
+		}
 
 		if (nextView != null) {
 			// redirect / forward 구분위해 규칙필요
@@ -89,7 +85,8 @@ public class FrontController extends HttpServlet {
 			} else {
 				RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/views/" + nextView + ".jsp");
 				rd.forward(request, response);
-			}	
+			}
 		}
+
 	}
 }

@@ -256,8 +256,8 @@
 			"memberId" : ${id}, // fill user's member id
 			"profile" : { // fill user's profile
 				"name" : ${name}, // fill user's name
-				"mobileNumber" : ${tel}, // fill user's mobile number
-				"address" : ${address}, // custom property
+				"mobileNumber" : ${phone}, // fill user's mobile number
+				"addr" : ${addr}, // custom property
 //				"pet" : "\${펫유무}", // custom property
 //				"CleanNumber" : "\${청소번호}"
 			}
