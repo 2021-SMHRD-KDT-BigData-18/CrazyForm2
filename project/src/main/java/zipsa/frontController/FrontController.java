@@ -12,9 +12,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import zipsa.controller.goCalendarCon;
 import zipsa.controller.Controller;
-import zipsa.controller.LoginCon;
+import zipsa.controller.M_DeleteCon;
+import zipsa.controller.goRvCon;
+import zipsa.controller.goUpdateCon;
+import zipsa.controller.writeReviewCon;
+import zipsa.controller.M_JoinCon;
+import zipsa.controller.M_LoginCon;
+import zipsa.controller.A_SelectAllRCon;
+import zipsa.controller.A_SelectMemberCon;
+import zipsa.controller.M_UpdateCon;
+import zipsa.controller.SelectRvCon;
+import zipsa.controller.checkCon;
 import zipsa.controller.goMainCon;
+import zipsa.controller.goReviewMainCon;
+import zipsa.controller.M_LogoutCon;
+import zipsa.controller.M_SelectMCon;
 
 // 모든 요청을 받을 수 있도록 url-mapping *로 지정
 // @WebServlet("*.do") --> .do로 끝나는 모든 요청
@@ -29,24 +43,25 @@ public class FrontController extends HttpServlet {
 		mappings = new HashMap<String, Controller>();
 		
 		mappings.put("/Main.do", new goMainCon());
-//		mappings.put("/Join.do", new JoinCon());
-		mappings.put("/login.do", new LoginCon());
-//		mappings.put("/logout.do", new LogoutCon());
-//		mappings.put("/goUpdate.do", new GoUpdateCon());
-//		mappings.put("/update.do", new UpdateCon());
-//		mappings.put("/goSelectMember.do", new SelectMemberCon()); // 관리자 회원관리
-//		mappings.put("/goSelectAll.do", new SelectAllCon());    // 관리자 예약현황 확인
-//		mappings.put("/goSelectRv.do", new SelectRvCon());    // 회원이 보는 예약현황 확인
-//		mappings.put("/goRv.do", new GoRvCon());  // 예약하기창
-//		mappings.put("/goCheckMember, new CheckCon());
-//		mappings.put("/delete.do", new DeleteCon());
+		mappings.put("/join.do", new M_JoinCon());
+		mappings.put("/login.do", new M_LoginCon());
+		mappings.put("/gocalendar.do", new goCalendarCon());
+		mappings.put("/logout.do", new M_LogoutCon());
+		mappings.put("/goUpdate.do", new goUpdateCon());
+		mappings.put("/update.do", new M_UpdateCon());
+		mappings.put("/goSelectAllMember.do", new A_SelectMemberCon()); 	 // 관리자 회원관리
+		mappings.put("/goSelectAllR.do", new A_SelectAllRCon());  	 		// 관리자 예약현황 확인
+		mappings.put("/goSelectRv.do", new SelectRvCon());   		 		// 회원이 보는 예약현황 확인
+		mappings.put("/goRv.do", new goRvCon());  							// 예약하기창
+		mappings.put("/goSelectMember", new M_SelectMCon());					// 회원의 내 정보보기??
+		mappings.put("/delete.do", new M_DeleteCon());  						// 회원탈퇴
 		
-//		mappings.put("/goReviewMain.do", new GoReviewBoardMainCon());
-//		mappings.put("/gowriterBoard.do", new GowriterBoardCon());
-//		mappings.put("/writeBoard.do", new writeBoardCon());
-//		mappings.put("/viewBoard.do", new ViewBoardCon());
-//		mappings.put("/ajax.do", new AjaxCon());
-//		mappings.put("/check.do", new CheckCon());
+		mappings.put("/reviewMain.do", new goReviewMainCon());				// 리뷰게시판가기
+//		mappings.put("/gowirteReview.do", new gowriteReviewCon());			// 리뷰작성하러가기
+//		mappings.put("/writeReivew.do", new writeBoardCon());				// 리뷰작성하기
+//		mappings.put("/viewBoard.do", new ViewBoardCon());					// 리뷰게시판
+//		mappings.put("/ajax.do", new AjaxCon());							
+		mappings.put("/check.do", new checkCon());
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)

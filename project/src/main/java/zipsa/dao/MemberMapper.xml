@@ -6,12 +6,11 @@
 	<!-- 회원가입 -->
 	<insert id="join" parameterType="zipsa.entity.T_MEMBER">
 		insert into T_MEMBER
-		(M_PW,M_NAME,M_PHONE,M_ADDR,M_TYPE )
-		values(#{ID},
+		(M_ID,M_PW,M_NAME,M_PHONE,M_TYPE )
+	values(#{ID},
 		#{PW},
 		#{NAME},
 		#{PHONE},
-		#{ADDR},
 		,"M"
 		)
 	</insert>
@@ -25,16 +24,9 @@
 	<!-- 회원정보 수정기능 -->
 	<update id="update" parameterType="zipsa.entity.T_MEMBER">
 		update T_MEMBER SET
-		M_pw=#{pw}, M_name=#{name}, M_PHONE=#{PHONE}, M_ADDR=#{ADDR}
-		where M_id=#{id} and M_pw=#{pw}
+		M_pw=#{pw}, M_PHONE=#{PHONE}
+		where M_id=#{id}
 	}
-	</update>
-
-	<!-- 주소만 수정 -->
-	<update id="update" parameterType="zipsa.entity.T_MEMBER">
-		update T_MEMBER set
-		M_ADDR=#{ADDR}
-		where M_id=#{id} and M_pw=#{pw}
 	</update>
 
 	<!-- 관리자의 회원관리창 -->
@@ -45,7 +37,7 @@
 	</select>
 
 	<!-- 관리자가 보는 예약현황창 -->
-	<select id="selectAll" resultType="zipsa.entity.T_RESERVATION">
+	<select id="selectAllR" resultType="zipsa.entity.T_RESERVATION">
 		select * from T_RESERVATION
 	</select>
 
@@ -59,16 +51,25 @@
 	<!-- 회원 탈퇴기능 -->
 	<delete id="delete" parameterType="zipsa.entity.T_MEMBER">
 		delete from T_MEMBER
-		where M_id=#{id} and M_pw=#{pw}
+		where M_id=#{id}
 	</delete>
 
-	<!-- 내정보(회원) 확인 -->
+	<!-- id중복확인, 회원의 내정보 확인 -->
 	<select id="check" parameterType="zipsa.entity.T_MEMBER"
 		resultType="zipsa.entity.T_MEMBER">
 		SELECT M_PW,M_NAME,M_PHONE,M_ADDR FROM T_MEMBER
-		WHERE M_id=#{id} and M_pw=#{pw}
+		WHERE M_id=#{id}
 	</select>
 
+	
+<!-- 예약하기 -->
+	<insert id="reserv" parameterType="zipsa.entity.T_RESERVATION">
+	insert into T_RESERVATION (
+	M_IDA,JOB_T,REV_DT,STAFF_SEQ,REV_NOTE,M_ADDR)
+	values(#{id}, #{job_t}, #{rev_dt},#{pET_YN},#{sTAFF_SEQ},#{rEV_NOTE},#{addr}
+		)
+	</insert>
+	
 
 
 
