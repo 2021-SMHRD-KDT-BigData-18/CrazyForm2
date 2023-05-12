@@ -22,10 +22,12 @@ import zipsa.controller.M_UpdateCon;
 import zipsa.controller.SelectRvCon;
 import zipsa.controller.checkCon;
 import zipsa.controller.goCalendarCon;
+import zipsa.controller.goLoginCon;
 import zipsa.controller.goMainCon;
 import zipsa.controller.goReviewMainCon;
 import zipsa.controller.goRvCon;
 import zipsa.controller.goUpdateCon;
+import zipsa.controller.gojoinCon;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -38,7 +40,8 @@ public class FrontController extends HttpServlet {
 		mappings = new HashMap<String, Controller>();
 
 		mappings.put("/Main.do", new goMainCon());
-		mappings.put("/join.do", new M_JoinCon());
+		mappings.put("/gologin.do", new goLoginCon());
+		mappings.put("/join.do", new gojoinCon());
 		mappings.put("/login.do", new M_LoginCon());
 		mappings.put("/gocalendar.do", new goCalendarCon());
 		mappings.put("/logout.do", new M_LogoutCon());

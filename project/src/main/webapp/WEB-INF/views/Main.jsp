@@ -27,7 +27,7 @@
 				<!-- Logo -->
 				<div id="logo">
 					<h1>
-						<a href="index.html">ZIPSA</a>
+						<a href="Main.do">ZIPSA</a>
 					</h1>
 				</div>
 
@@ -38,8 +38,8 @@
 						<li><a href="https://onnuribed.co.kr/">침구청소</a></li>
 						<li><a href="http://thecleaning.co.kr/default/">에어컨 청소</a></li>
 						<li><a href="https://wayopet.com/home">펫시팅</a></li>
-						<li><a href="#">회원가입</a></li>
-						<li><a href="#">로그인</a></li>
+						<li><a href="join.do">회원가입</a></li>
+						<li><a href="gologin.do">로그인</a></li>
 					</ul>
 				</nav>
 

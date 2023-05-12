@@ -6,12 +6,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class goLogin implements Controller {
-// login.jsp로 이동시키는 컨트롤러
+public class gojoinCon implements Controller {
+
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		return "Login";
+		return "Join";
 	}
 
 }

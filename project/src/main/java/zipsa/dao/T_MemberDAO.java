@@ -9,6 +9,7 @@ import zipsa.entity.T_MEMBER;
 import zipsa.entity.T_RESERVATION;
 
 public class T_MemberDAO {
+
 	private SqlSessionFactory factory = SqlSessionManager.getSqlSessionFactory();
 
 	// 회원가입 ) id,pw,name, phone, addr // joindate, type은 sysdate, m으로 고정값
@@ -52,7 +53,7 @@ public class T_MemberDAO {
 		return list;
 	}
 
-	// 내 예약현황 확인 -> jsp에서 보여줄 땐 
+	// 내 예약현황 확인 -> jsp에서 보여줄 땐
 	public List<T_RESERVATION> selectRv(String id) {
 		SqlSession session = factory.openSession(true);
 		List<T_RESERVATION> list = session.selectList("selectRv", id);
@@ -67,7 +68,7 @@ public class T_MemberDAO {
 		session.close();
 		return row;
 	}
-	
+
 	// 회원의 내정보 확인
 	public T_MEMBER selectM(String id) {
 		SqlSession session = factory.openSession(true);
@@ -75,14 +76,12 @@ public class T_MemberDAO {
 		session.close();
 		return dto;
 	}
-	
 
-	// 예약하기 
+	// 예약하기
 	public int Reserv(T_RESERVATION dto) {
 		SqlSession session = factory.openSession(true);
 		int row = session.update("reserv", dto);
 		session.close();
 		return row;
-
-	
-}}
+	}
+}
