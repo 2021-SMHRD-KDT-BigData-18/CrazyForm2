@@ -7,6 +7,7 @@
 <title>회원가입</title>
     <link rel="stylesheet" href="assets/css/join.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="shortcut icon" href="#">
 </head>
 <body>
 	<!-- <form action="#" method="POST">
@@ -108,7 +109,7 @@
 		var join = $('#join');
 		join.on('click', ()=>{
 			// 만약에 회원가입에 성공했다면~~
-			if 
+			
 			alert('회원가입에 성공하셨습니다! 메인화면에서 로그인을 해주세요.');
 			// 성공하지 못 했다면~~
 			// alert('회원가입에 실패하셨습니다. 다시 한 번 시도해주세요.')
