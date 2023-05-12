@@ -35,7 +35,7 @@
 		</div>
 
 		<div class="login-button">
-			<div button type="login" class="btn btn-primary">
+			<div><button type="login" class="btn btn-primary" action="login.do" >
 				로그인
 				</button>
 			</div>

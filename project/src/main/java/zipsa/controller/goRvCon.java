@@ -13,7 +13,7 @@ public class goRvCon implements Controller {
 			throws ServletException, IOException {
 		// 예약하기 페이지로 이동하는 컨트롤러
 		
-		return "rv";
+		return "reservation";
 	}
 
 }

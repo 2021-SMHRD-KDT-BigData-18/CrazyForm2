@@ -38,9 +38,9 @@ public class M_JoinCon implements Controller {
 
 		String nextView = null;
 		if (row > 0) {
-			nextView = "redirect:/goSuccess.do"; // 아직 미정
+			nextView = "JoinSuccess";
 		} else {
-			nextView = "redirect:/goMain.do"; // 아직 미정
+			nextView = "redirect:/Main.do";
 		}
 		return nextView;
 
