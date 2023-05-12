@@ -7,12 +7,14 @@
 	<meta charset="utf-8" />
 	
     <title>달력</title>
-
-</head>
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <!-- <script src="assets/js/calendar.js"></script>-->
     <link rel="stylesheet" href="assets/css/calendar.css" />
+    <link rel="shortcut icon" href="#">
+
+</head>
 <body>
+<div id="form">
     <table class="Calendar">
         <thead>
             <tr>
@@ -36,7 +38,29 @@
         <tbody>
         </tbody>
     </table>
-
+    
+    <div id="div">
+        <div class="one">
+            <p>시간은 언제가 좋으신가요?</p>
+        </div>
+        
+        <div class="two">
+            <p><input type="radio" name="time"> 오전 10시 ~ 오후 1시</p>
+            <p><input type="radio" name="time"> 오후 1시 ~ 오후 4시</p>
+            <p><input type="radio" name="time"> 오후 4시 ~ 오후 7시</p>
+            <p><input type="radio" name="time"> 오후 5시 ~ 오후 8시</p>
+        </div>
+        <br>
+        <div class="one">
+        	<p>혹시 반려동물이 있으신가요?</p>
+        </div>
+        
+        <div class="two">
+            <p><input type="radio" name="animal"> 네, 있어요</p>
+            <p><input type="radio" name="animal"> 아니오</p>
+        </div>
+    </div>
+ </div>   
     
     <script>
         window.onload = function () { buildCalendar(); }    // 웹 페이지가 로드되면 buildCalendar 실행
@@ -72,10 +96,10 @@
 
 
                 if (nowDay.getDay() == 0) {                 // 일요일인 경우 글자색 빨강으로
-                    nowColumn.style.color = "#DC143C";
+                    //nowColumn.style.color = "#DC143C";
                 }
                 if (nowDay.getDay() == 6) {                 // 토요일인 경우 글자색 파랑으로 하고
-                    nowColumn.style.color = "#0000CD";
+                    //nowColumn.style.color = "#0000CD";
                     nowRow = tbody_Calendar.insertRow();    // 새로운 행 추가
                 }
 
@@ -121,17 +145,19 @@
             }
             return value;
         }
+        
+        
+    </script>
+    
+    <script type="text/javascript">
+    	$(document).on('click', '.choiceDay', function(){
+    		$('#div').show();
+    	});
+    	
+    	
     </script>
    
-    <script type="text/javascript">
-    	
-    	$('.choiceDay').click(function(){
-        	alert('예약하시겠습니까?');
-    	});
-    
-    
-    </script>
-    
+   
     
 </body>
 </html>

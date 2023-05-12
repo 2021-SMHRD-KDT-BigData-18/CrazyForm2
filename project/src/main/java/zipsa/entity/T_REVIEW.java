@@ -14,9 +14,6 @@ public class T_REVIEW {
 	// 리뷰 내용
 	private String REVIEW_CONTENT;
 
-	// 리뷰 사진
-	private String REVIEW_IMG;
-
 	// 리뷰 별점
 	private Double REVIEW_RATING;
 
@@ -33,7 +30,6 @@ public class T_REVIEW {
 		REVIEW_SEQ = rEVIEW_SEQ;
 		REV_SEQ = rEV_SEQ;
 		REVIEW_CONTENT = rEVIEW_CONTENT;
-		REVIEW_IMG = rEVIEW_IMG;
 		REVIEW_RATING = rEVIEW_RATING;
 		REVIEW_DT = rEVIEW_DT;
 		M_ID = m_ID;

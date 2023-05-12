@@ -75,7 +75,7 @@
         </div>
 
         <!-- 가입하기 버튼 -->
-        <input type="submit" value="가입하기">
+        <input id="join" type="submit" value="가입하기">
 
         <!-- 푸터 -->
         <div class="member-footer">
@@ -104,7 +104,18 @@
 				}).open();
 			});
 		}
+		
+		var join = $('#join');
+		join.on('click', ()=>{
+			// 만약에 회원가입에 성공했다면~~
+			alert('회원가입에 성공하셨습니다! 메인화면에서 로그인을 해주세요.');
+			// 성공하지 못 했다면~~
+			// alert('회원가입에 실패하셨습니다. 다시 한 번 시도해주세요.')
+		});
+		
 	</script>
+	
+
 
 </body>
 </html>
