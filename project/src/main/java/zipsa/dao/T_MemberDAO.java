@@ -6,11 +6,12 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import zipsa.entity.T_MEMBER;
+import zipsa.entity.T_RESERVATION;
 
 public class T_MemberDAO {
 	private SqlSessionFactory factory = SqlSessionManager.getSqlSessionFactory();
 
-	// 회원가입
+	// 회원가입 ) id,pw,name, phone, addr // joindate, type은 sysdate, m으로 고정값
 	public int join(T_MEMBER dto) {
 		SqlSession session = factory.openSession(true);
 		int row = session.insert("join", dto);
@@ -19,29 +20,22 @@ public class T_MemberDAO {
 
 	}
 
-	// 로그인
+	// 로그인 ) id,pw입력
 	public T_MEMBER login(T_MEMBER dto) {
 		SqlSession session = factory.openSession(true);
 		T_MEMBER user = session.selectOne("login", dto);
 		session.close();
 		return user;
 	}
-	
-	// 회원정보 수정
+
+	// 회원정보 수정 ) pw, adr, phone 만 수정가능
 	public int update(T_MEMBER dto) {
 		SqlSession session = factory.openSession(true);
 		int row = session.update("update", dto);
 		session.close();
 		return row;
 	}
-	// 주소 수정   → 예약하기 페이지에서 주소 수정시에 JSP에서 id 와 address update시켜줘야함
-	public int updateAddr(T_MEMBER dto) {
-		SqlSession session = factory.openSession(true);
-		int row = session.update("update", dto);
-		session.close();
-		return row;
-		}
-	
+
 	// 관리자의 회원관리창
 	public List<T_MEMBER> selectMember() {
 		SqlSession session = factory.openSession(true);
@@ -49,37 +43,46 @@ public class T_MemberDAO {
 		session.close();
 		return list;
 	}
+
 	// 관리자가 보는 회원예약현황
-	public List<T_MEMBER> selectAll() {
+	public List<T_RESERVATION> selectAllR() {
 		SqlSession session = factory.openSession(true);
-		List<T_MEMBER> list = session.selectList("selectAll");
+		List<T_RESERVATION> list = session.selectList("selectAll");
 		session.close();
 		return list;
 	}
-	
-	// 내 예약현황 확인
-	public List<T_MEMBER> selectRv(T_MEMBER dto) {
+
+	// 내 예약현황 확인 -> jsp에서 보여줄 땐 
+	public List<T_RESERVATION> selectRv(String id) {
 		SqlSession session = factory.openSession(true);
-		List<T_MEMBER> reserv = session.selectList("selectRv", dto);
+		List<T_RESERVATION> list = session.selectList("selectRv", id);
 		session.close();
-		return reserv;
+		return list;
 	}
-	
-	// 회원 탈퇴  → deleteCon에서 id와 pw dto로 묶어줘야함
-	public int delete(T_MEMBER dto) {
+
+	// 회원 탈퇴 → deleteCon에서 id와 pw dto로 묶어줘야함
+	public int delete(String id) {
 		SqlSession session = factory.openSession(true);
-		int row = session.delete("delete", dto);
+		int row = session.delete("delete", id);
 		session.close();
 		return row;
 	}
 	
-	// 회원정보 확인
-	public T_MEMBER check(String id) {
+	// 회원의 내정보 확인
+	public T_MEMBER selectM(String id) {
 		SqlSession session = factory.openSession(true);
 		T_MEMBER dto = session.selectOne("check", id);
 		session.close();
 		return dto;
 	}
+	
+
+	// 예약하기 
+	public int Reserv(T_RESERVATION dto) {
+		SqlSession session = factory.openSession(true);
+		int row = session.update("reserv", dto);
+		session.close();
+		return row;
 
 	
-}
+}}
