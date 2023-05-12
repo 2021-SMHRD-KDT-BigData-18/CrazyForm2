@@ -22,10 +22,8 @@ import zipsa.controller.M_SelectMCon;
 import zipsa.controller.M_UpdateCon;
 import zipsa.controller.SelectRvCon;
 import zipsa.controller.checkCon;
-import zipsa.controller.goCalendarCon;
 import zipsa.controller.goLoginCon;
 import zipsa.controller.goMainCon;
-import zipsa.controller.goReservationCon;
 import zipsa.controller.goReviewMainCon;
 import zipsa.controller.goRvCon;
 import zipsa.controller.goUpdateCon;
@@ -47,7 +45,6 @@ public class FrontController extends HttpServlet {
 		mappings.put("/join.do", new gojoinCon());		  // 회원가입 페이지 이동
 		mappings.put("/Rv.do",new M_RvCon()); 			  // 예약하기
 		mappings.put("/login.do", new M_LoginCon());	  // 로그인
-		mappings.put("/gocalendar.do", new goCalendarCon());
 		mappings.put("/logout.do", new M_LogoutCon());
 		mappings.put("/goUpdate.do", new goUpdateCon());
 		mappings.put("/update.do", new M_UpdateCon());

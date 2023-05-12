@@ -23,18 +23,6 @@ public class T_REVIEW {
 	// 리뷰 작성자
 	private String M_ID;
 	
-	public T_REVIEW() {	}
-
-	public T_REVIEW(int rEVIEW_SEQ, int rEV_SEQ, String rEVIEW_CONTENT, String rEVIEW_IMG, Double rEVIEW_RATING,
-			Date rEVIEW_DT, String m_ID) {
-		REVIEW_SEQ = rEVIEW_SEQ;
-		REV_SEQ = rEV_SEQ;
-		REVIEW_CONTENT = rEVIEW_CONTENT;
-		REVIEW_RATING = rEVIEW_RATING;
-		REVIEW_DT = rEVIEW_DT;
-		M_ID = m_ID;
-	}
-
 	public int getREVIEW_SEQ() {
 		return REVIEW_SEQ;
 	}
@@ -57,14 +45,6 @@ public class T_REVIEW {
 
 	public void setREVIEW_CONTENT(String rEVIEW_CONTENT) {
 		REVIEW_CONTENT = rEVIEW_CONTENT;
-	}
-
-	public String getREVIEW_IMG() {
-		return REVIEW_IMG;
-	}
-
-	public void setREVIEW_IMG(String rEVIEW_IMG) {
-		REVIEW_IMG = rEVIEW_IMG;
 	}
 
 	public Double getREVIEW_RATING() {
@@ -90,6 +70,19 @@ public class T_REVIEW {
 	public void setM_ID(String m_ID) {
 		M_ID = m_ID;
 	}
-	
+
+	public T_REVIEW(int rEVIEW_SEQ, int rEV_SEQ, String rEVIEW_CONTENT, Double rEVIEW_RATING, Date rEVIEW_DT,
+			String m_ID) {
+		super();
+		REVIEW_SEQ = rEVIEW_SEQ;
+		REV_SEQ = rEV_SEQ;
+		REVIEW_CONTENT = rEVIEW_CONTENT;
+		REVIEW_RATING = rEVIEW_RATING;
+		REVIEW_DT = rEVIEW_DT;
+		M_ID = m_ID;
+	}
+
+	public T_REVIEW() {	}
+
 	
 }
