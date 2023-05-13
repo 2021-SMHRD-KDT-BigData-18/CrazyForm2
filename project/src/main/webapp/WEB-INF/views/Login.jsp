@@ -13,7 +13,7 @@
 <body>
 
 	<h1 id="title" style="text-align: center;">
-		Zibsa
+		Zipsa
 		</p>
 
 		<div id="text">
