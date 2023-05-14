@@ -1,6 +1,7 @@
 @charset "UTF-8";
         body {
             text-align: center;
+            background-color: rgb(229, 229, 229);
         }
         .logo {
             font-size: 7em;
