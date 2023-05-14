@@ -1,3 +1,4 @@
+<%@page import="zipsa.entity.T_MEMBER"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -11,27 +12,25 @@
 </head>
 
 <body>
-
 	<h1 id="title" style="text-align: center;">
-		Zipsa
+		Zibsa
 		</p>
 
 		<div id="text">
+			<!-- <form action="Main.do" method="POST"> -->
 			<input type="text" id="ID" maxlength="11" placeholder="아이디">
-			<img id="img" src="images/KakaoTalk_20230512_110240769.jpg"
-				alt="person">
+			<img id="img" src="images/1.1.jpg" alt="person">
 		</div>
 
 		<div id="text">
 			<input type="password" id="PW" maxlength="11" placeholder="비밀번호">
-			<img id="img" src="images/zibsalogo.png" alt="lock">
+			<img id="img" src="images/2.2.jpg" alt="lock">
 			<!-- <a id="link" href="">Forgot Password?</a> -->
 		</div>
 
 		<div>
-			<button onclick="check()">로그인</button>
+			<button id="btn" onclick="check()">로그인</button>
 		</div>
-		
 </body>
 
 </html>
