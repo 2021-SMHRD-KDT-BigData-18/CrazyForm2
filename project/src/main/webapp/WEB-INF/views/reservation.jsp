@@ -18,7 +18,7 @@
 			<form action="/Rv.do" method="post">
 			<div>
 				<div class="clean">
-					<p>청소카테고리 선택</p>
+					<p class="cate">카테고리 선택</p>
 
 					<p>
 						가사도우미 <input class="jobT" type="radio" name="jobT" value="가사도우미"
