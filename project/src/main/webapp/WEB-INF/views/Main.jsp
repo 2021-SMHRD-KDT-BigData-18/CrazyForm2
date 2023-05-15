@@ -41,8 +41,8 @@
 						<li><a href="https://onnuribed.co.kr/">침구청소</a></li>
 						<li><a href="http://thecleaning.co.kr/default/">에어컨 청소</a></li>
 						<li><a href="https://wayopet.com/home">펫시팅</a></li>
-						<li><a href="join.do">회원가입</a></li>
-						<li><a href="gologin.do">로그인</a></li>
+						<li><a href="">예약내역</a></li>
+						<li><a href="">리뷰보기</a></li>
 					</ul>
 				</nav>
 
@@ -55,6 +55,10 @@
 				<div class="row">
 					<img height="500" width="500"
 						src="https://i.pinimg.com/564x/1f/69/c2/1f69c2f21ad625ba642c4979614e5959.jpg">
+						<div class="loginbox">
+						<div><a href="gologin.do">로그인</a></div>
+						<div><a href="join.do">회원가입</a></div>
+						</div>
 					<div class="col-7 col-12-medium">
 						<h3>
 							당신의 일상이 행복하도록 <br> 집사가 함께 할게요
@@ -102,10 +106,9 @@
 								src="images/pic02.jpg" alt="" /></a>
 							<div class="inner">
 								<header>
-									<h2>.</h2>
+									<h2>에어컨청소</h2>
 									<p>.</p>
 								</header>
-								<p>.</p>
 							</div>
 						</section>
 
@@ -118,10 +121,9 @@
 								src="images/pic03.jpg" alt="" /></a>
 							<div class="inner">
 								<header>
-									<h2>.</h2>
+									<h2>침구청소</h2>
 									<p>.</p>
 								</header>
-								<p>.</p>
 							</div>
 						</section>
 
@@ -170,21 +172,10 @@
 						<!-- Content -->
 						<div id="content">
 							<section class="last">
-								<h2>.</h2>
+								<h3>청소 꿀팁</h3>
 								<p>
-									This is <strong>Verti</strong>, a free and fully responsive
-									HTML5 site template by <a href="#">HTML5 UP</a>. Verti is
-									released under the <a href="#">Creative Commons Attribution
-										license</a>, so feel free to use it for any personal or commercial
-									project you might have going on (just don't forget to credit us
-									for the design!)
+									내용
 								</p>
-								<p>Phasellus quam turpis, feugiat sit amet ornare in,
-									hendrerit in lectus. Praesent semper bibendum ipsum, et
-									tristique augue fringilla eu. Vivamus id risus vel dolor auctor
-									euismod quis eget mi. Etiam eu ante risus. Aliquam erat
-									volutpat. Aliquam luctus mattis lectus sit amet phasellus quam
-									turpis.</p>
 								<a href="#" class="button icon solid fa-arrow-circle-right">Continue
 									Reading</a>
 							</section>
@@ -208,8 +199,7 @@
 								<!-- 카카오톡 채널 추가 버튼이 표시될 위치 -->
 								<div id="kakao-talk-channel-add-button"
 									data-channel-public-id="_gJmYxj" data-size="large"
-									data-support-multiple-densities="true">
-								</div>
+									data-support-multiple-densities="true"></div>
 							</ul>
 						</section>
 
