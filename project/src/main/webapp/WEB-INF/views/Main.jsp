@@ -55,10 +55,14 @@
 				<div class="row">
 					<img height="500" width="500"
 						src="https://i.pinimg.com/564x/1f/69/c2/1f69c2f21ad625ba642c4979614e5959.jpg">
-						<div class="loginbox">
-						<div><a href="gologin.do">로그인</a></div>
-						<div><a href="join.do">회원가입</a></div>
+					<div class="loginbox">
+						<div>
+							<a href="gologin.do">로그인</a>
 						</div>
+						<div>
+							<a href="join.do">회원가입</a>
+						</div>
+					</div>
 					<div class="col-7 col-12-medium">
 						<h3>
 							당신의 일상이 행복하도록 <br> 집사가 함께 할게요
@@ -173,9 +177,7 @@
 						<div id="content">
 							<section class="last">
 								<h3>청소 꿀팁</h3>
-								<p>
-									내용
-								</p>
+								<p>내용</p>
 								<a href="#" class="button icon solid fa-arrow-circle-right">Continue
 									Reading</a>
 							</section>
