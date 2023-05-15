@@ -1,0 +1,112 @@
+@charset "UTF-8";
+        @import url("https://fonts.googleapis.com/css?family=Oleo+Script:400|Open+Sans:300,300italic,600,600italic,800");
+
+        body {
+            background-color: rgb(229, 229, 229);
+            font-size: 13pt;
+        }
+        #header-wrapper {
+            display: flex;
+        }
+        
+        #header {
+            margin: 0 auto;
+            align-items: center;
+            justify-content: center;
+            
+        }
+
+        #logo h1 {
+            font-size: 2.75em;
+            padding: 0.2em 0.275em;
+        }
+
+        #logo {
+            line-height: 3em;
+            display: inline-block;
+        }
+        
+        #logo h1 {
+            background: rgb(0, 128, 255);
+            border-radius: 6px;
+            font-family: 'Oleo Script', serif;
+            font-weight: 400;
+            font-size: 3.25em;
+            letter-spacing: 0.05em;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        h1>a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            
+        }
+
+        #logo {
+            font-weight: 800;
+            letter-spacing: 0.025em;
+            font-size: 0.9em;
+            vertical-align: middle;
+            margin: 0 0 0 1.25em;
+        }
+
+        #nav {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        #nav ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        #nav ul li {
+            float: left;
+            line-height: 4.5em;
+            padding-left: 1.5em;
+        }
+
+        #nav ul li a,
+        #nav ul li {
+            -moz-transition: background-color .25s ease-in-out;
+            -webkit-transition: background-color .25s ease-in-out;
+            -ms-transition: background-color .25s ease-in-out;
+            transition: background-color .25s ease-in-out;
+            font-weight: 800;
+            letter-spacing: 0.025em;
+            color: #696969;
+            text-decoration: none;
+            border-radius: 6px;
+            padding: 0.5em 1em 0.5em 1em;
+        }
+
+        #nav ul li>ul {
+            display: none;
+        }
+
+        #nav ul li:hover a,
+        #nav ul li:hover span {
+            background: #fff;
+        }
+
+        #nav ul li.active a,
+        #nav ul li.active span {
+            background: #fff;
+        }
+
+        #nav ul li.current a {
+            background: #444;
+            color: #fff;
+        }
+
+        .container {
+            margin: 0 auto;
+            max-width: 100%;
+            width: 1000px;
+            overflow: hidden;
+        }
+
+        #page-wrapper {
+            display: flex;
+        }
