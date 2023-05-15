@@ -42,7 +42,7 @@
 						<li><a href="http://thecleaning.co.kr/default/">에어컨 청소</a></li>
 						<li><a href="https://wayopet.com/home">펫시팅</a></li>
 						<li><a href="">예약내역</a></li>
-						<li><a href="">리뷰보기</a></li>
+						<li><a href="reviewMain.do">리뷰보기</a></li>
 					</ul>
 				</nav>
 
