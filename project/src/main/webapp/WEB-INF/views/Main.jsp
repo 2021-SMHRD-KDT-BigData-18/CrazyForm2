@@ -14,9 +14,9 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
 <link rel="stylesheet" href="assets/css/main.css" />
+<link rel="stylesheet" href="assets/css/loginbox.css" />
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-
 
 </head>
 <body class="is-preload homepage">
@@ -64,33 +64,36 @@
 					<img height="500" width="500"
 						src="https://i.pinimg.com/564x/1f/69/c2/1f69c2f21ad625ba642c4979614e5959.jpg">
 					
-					<div class="loginbox">
-						<div>
+						<div class="loginBox">
 <!--  ★★user.getid 값이 null이 아닐땐 로그아웃창만 뜨도록 보완필요 -->
+						<span class="msg">집사를 더 안전하고 편리하게 이용하세요.</span>
 						<c:if test="${user eq null}">
-							<a href="gologin.do">로그인</a>
-						</div>
+							<a class="loginBtn" href="gologin.do">로그인</a>
 						<div>
-							<a href="gojoin.do">회원가입</a>
+							<a class="joinBtn" href="gojoin.do">회원가입</a>
 						</div></c:if> 
+						</div>
 					</div>
-					<div class="loginbox">
+					<div class="logoutBox">
 						<c:if test="${user ne null}">
 							<a href="logout.do">로그아웃</a></c:if> 
 					</div>
 					
-					<div class="col-7 col-12-medium">
-						<h3>
-							당신의 일상이 행복하도록 <br> 집사가 함께 할게요
-						</h3>
+					<div class="colBox">
+						<div class="col-7 col-12-medium">
+							<h3>
+								당신의 일상이 행복하도록 <br> 집사가 함께 할게요
+							</h3>
+						</div>
+						<div class="col-5 col-12-medium">
+							<ul>
+								<li><a href="goReservation.do"
+									class="button large icon solid fa-arrow-circle-right">집사
+										예약하기</a></li>
+							</ul>
+						</div>
 					</div>
-					<div class="col-5 col-12-medium">
-						<ul>
-							<li><a href="goReservation.do"
-								class="button large icon solid fa-arrow-circle-right">집사
-									예약하기</a></li>
-						</ul>
-					</div>
+					
 				</div>
 			</div>
 		</div>

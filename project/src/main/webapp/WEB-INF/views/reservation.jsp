@@ -64,6 +64,16 @@
 			</div>
 
 			<div class="selectBox2">
+				<div>반려동물이 있으신가요?</div>
+				<div class="meet">
+					<select name="meet" class="select1">
+						<option value="Y">네, 있어요</option>
+						<option value="N">아니요</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="selectBox2">
 				<div>이전 직원 만나기</div>
 				<div class="meet">
 					<select name="meet" class="select1">
