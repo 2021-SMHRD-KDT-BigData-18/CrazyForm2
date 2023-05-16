@@ -2,11 +2,9 @@ package zipsa.entity;
 
 public class T_RESERVATION {
 	// 집사 예약 현황
-	public T_RESERVATION() {
-	}
+	public T_RESERVATION() {	}
 
-	public T_RESERVATION(int rEV_SEQ, String m_ID, String jOB_T, String rEV_DT, String pET_YN, int sTAFF_SEQ,
-			String rEV_NOTE, String m_ADDR, String rEG_DT) {
+	public T_RESERVATION(int rEV_SEQ, String m_ID, String jOB_T, String rEV_DT, String pET_YN, int sTAFF_SEQ, String rEV_NOTE, String m_ADDR) {
 		REV_SEQ = rEV_SEQ;
 		M_ID = m_ID;
 		JOB_T = jOB_T;
@@ -15,12 +13,11 @@ public class T_RESERVATION {
 		STAFF_SEQ = sTAFF_SEQ;
 		REV_NOTE = rEV_NOTE;
 		M_ADDR = m_ADDR;
-		REG_DT = rEG_DT;
 	}
 
 	// 직원이름이 연동된 예약현황 확인하기
 	public T_RESERVATION(int rEV_SEQ, String m_ID, String jOB_T, String rEV_DT, String pET_YN, int sTAFF_SEQ,
-			String rEV_NOTE, String m_ADDR, String rEG_DT, String sTAFF_NAME) {
+			String rEV_NOTE, String m_ADDR, String sTAFF_NAME) {
 		super();
 		REV_SEQ = rEV_SEQ;
 		M_ID = m_ID;
@@ -30,7 +27,6 @@ public class T_RESERVATION {
 		STAFF_SEQ = sTAFF_SEQ;
 		REV_NOTE = rEV_NOTE;
 		M_ADDR = m_ADDR;
-		REG_DT = rEG_DT;
 		STAFF_NAME = sTAFF_NAME;
 	}
 	// ㄴ
@@ -49,8 +45,6 @@ public class T_RESERVATION {
 	private String REV_NOTE;
 	// 회원 주소
 	private String M_ADDR;
-	// 등록 일자
-	private String REG_DT;
 	// 직원 이름
 	private String STAFF_NAME;
 	// 예약 번호
@@ -118,14 +112,6 @@ public class T_RESERVATION {
 
 	public void setM_ADDR(String m_ADDR) {
 		M_ADDR = m_ADDR;
-	}
-
-	public String getREG_DT() {
-		return REG_DT;
-	}
-
-	public void setREG_DT(String rEG_DT) {
-		REG_DT = rEG_DT;
 	}
 
 	public String getSTAFF_NAME() {

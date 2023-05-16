@@ -48,7 +48,7 @@ public class T_MemberDAO {
 	// 관리자가 보는 회원예약현황
 	public List<T_RESERVATION> selectAllR() {
 		SqlSession session = factory.openSession(true);
-		List<T_RESERVATION> list = session.selectList("selectAll");
+		List<T_RESERVATION> list = session.selectList("selectAllR");
 		session.close();
 		return list;
 	}
