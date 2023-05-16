@@ -76,7 +76,7 @@
         </div>
 
         <!-- 가입하기 버튼 -->
-        <input id="join" type="submit" value="가입하기">
+        <input id="join" type="submit" value="가입하기" src="join.do">
 
         <!-- 푸터 -->
         <div class="member-footer">

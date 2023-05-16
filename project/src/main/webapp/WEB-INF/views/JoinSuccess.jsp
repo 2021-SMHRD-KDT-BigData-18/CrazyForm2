@@ -18,7 +18,7 @@
 			<p>~~님, 회원가입을 축하합니다.</p>
 		</div>
 		<div class="start">
-			<button onclick='location.href="Main.do"'>시작하기</button>
+			<button onclick='location' href="Main.do">시작하기</button>
 		</div>
 	</div>
 

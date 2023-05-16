@@ -24,23 +24,7 @@
 *예약현황 보기 버튼 누르면 예약현황 출력 Rlist에 담겨있음 하나씩 출력해서 보여주도록
  -->
  
- 
- 
- 
- 
-<!--  회원들이 보는 나의 예약현황 페이지 		
-		REV_SEQ = rEV_SEQ;
-		M_ID = m_ID;
-		JOB_T = jOB_T;
-		REV_DT = rEV_DT;
-		PET_YN = pET_YN;
-		STAFF_SEQ = sTAFF_SEQ;
-		STAFF_NAME = sTAFF_NAME;
-		REV_NOTE = rEV_NOTE;
-		M_ADDR = m_ADDR;-->
-<%
-    List<T_RESERVATION> list = (List<T_RESERVATION>) request.getAttribute("list");
-%>
+<%    List<T_RESERVATION> list = (List<T_RESERVATION>) request.getAttribute("list"); %>
 <table>
     <tr>
         <th>예약번호</th>

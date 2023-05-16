@@ -37,12 +37,12 @@
 				<!-- Nav -->
 				<nav id="nav">
 					<ul>
-						<li><a href="goReservation.do">예약하기</a></li>
+						<li><a href="goRv.do">예약하기</a></li>
 						<li><a href="https://onnuribed.co.kr/">침구청소</a></li>
 						<li><a href="http://thecleaning.co.kr/default/">에어컨 청소</a></li>
 						<li><a href="https://wayopet.com/home">펫시팅</a></li>
-						<li><a href="">예약내역</a></li>
-						<li><a href="reviewMain.do">리뷰보기</a></li>
+						<li><a href="goMinfo.do">예약내역</a></li>
+						<li><a href="goviewBoard.do">리뷰보기</a></li>
 					</ul>
 				</nav>
 
@@ -57,12 +57,15 @@
 						src="https://i.pinimg.com/564x/1f/69/c2/1f69c2f21ad625ba642c4979614e5959.jpg">
 					<div class="loginbox">
 						<div>
+<!--  ★★user.getid 값이 null이 아닐땐 로그아웃창만 뜨도록 보완필요 -->
+
 							<a href="gologin.do">로그인</a>
 						</div>
 						<div>
-							<a href="join.do">회원가입</a>
+							<a href="gojoin.do">회원가입</a>
 						</div>
 					</div>
+					
 					<div class="col-7 col-12-medium">
 						<h3>
 							당신의 일상이 행복하도록 <br> 집사가 함께 할게요

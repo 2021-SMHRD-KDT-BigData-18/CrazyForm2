@@ -29,7 +29,7 @@
 		</div>
 
 		<div>
-			<button id="btn" onclick="check()">로그인</button>
+			<button id="btn" onclick="check()" src="login.do">로그인</button>
 		</div>
 </body>
 
