@@ -1,0 +1,229 @@
+@charset "UTF-8";
+
+/* 화면 위에 뜨는 공통 카테고리 css  */
+@import
+	url("https://fonts.googleapis.com/css?family=Oleo+Script:400|Open+Sans:300,300italic,600,600italic,800")
+	;
+
+body {
+	background-color: rgb(229, 229, 229);
+	font-size: 13pt;
+}
+
+#header-wrapper {
+	display: flex;
+}
+
+#header {
+	margin: 0 auto;
+	align-items: center;
+	justify-content: center;
+}
+
+#logo h1 {
+	font-size: 2.75em;
+	padding: 0.2em 0.275em;
+}
+
+#logo {
+	font-size: xx-large;
+	margin-top: 20px;
+	text-align: center;
+	width: 80%;
+	height: 15.25em;
+	border: none;
+	resize: none;
+	line-height: 3em;
+	display: inline-block;
+}
+
+#logo h1 {
+	position: relative;
+	top: 20px;
+	left: 50px;
+	right: -50px;
+	color: royalblue;
+	margin-top: 25px;
+	/* margin-top: 100px;
+            width: 25%;
+            position: absolute; */
+	background: rgb(0, 128, 255);
+	border-radius: 6px;
+	font-family: 'Oleo Script', serif;
+	font-weight: 400;
+	font-size: 3.25em;
+	letter-spacing: 0.05em;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+h1>a {
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+}
+
+#logo {
+	font-weight: 800;
+	letter-spacing: 0.025em;
+	font-size: 0.9em;
+	vertical-align: middle;
+	margin: 0 0 0 1.25em;
+}
+
+#nav {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+#nav ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+#nav ul li {
+	float: left;
+	line-height: 4.5em;
+	padding-left: 1.5em;
+}
+
+#nav ul li a, #nav ul li {
+	-moz-transition: background-color .25s ease-in-out;
+	-webkit-transition: background-color .25s ease-in-out;
+	-ms-transition: background-color .25s ease-in-out;
+	transition: background-color .25s ease-in-out;
+	font-weight: 800;
+	letter-spacing: 0.025em;
+	color: #696969;
+	text-decoration: none;
+	border-radius: 6px;
+	padding: 0.5em 1em 0.5em 1em;
+}
+
+#nav ul li>ul {
+	display: none;
+}
+
+#nav ul li:hover a, #nav ul li:hover span {
+	background: #fff;
+}
+
+#nav ul li.active a, #nav ul li.active span {
+	background: #fff;
+}
+
+#nav ul li.current a {
+	background: #444;
+	color: #fff;
+}
+
+.container {
+	margin: 0 auto;
+	max-width: 100%;
+	width: 1000px;
+	overflow: hidden;
+}
+
+#page-wrapper {
+	display: flex;
+}
+
+/* 별점 */
+.star-rating {
+	display: flex;
+	flex-direction: row-reverse;
+	font-size: 2.25rem;
+	line-height: 2.5rem;
+	justify-content: space-around;
+	padding: 0 0.2em;
+	text-align: center;
+	width: 5em;
+}
+
+.star-rating input {
+	display: none;
+}
+
+.star-rating label {
+	-webkit-text-fill-color: transparent;
+	/* Will override color (regardless of order) */
+	-webkit-text-stroke-width: 2.3px;
+	-webkit-text-stroke-color: #2b2a29;
+	cursor: pointer;
+}
+
+.star-rating :checked ~label {
+	-webkit-text-fill-color: gold;
+}
+
+.star-rating label:hover, .star-rating label:hover ~label {
+	-webkit-text-fill-color: #fff58c;
+}
+
+.container2 {
+	position: absolute;
+}
+
+/* 세부내용 */
+h1, h5 {
+	width: 400px;
+	position: absolute;
+	left: 50%;
+	margin-left: -200px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.info {
+	position: relative;
+	top: 100px;
+	left: 30px;
+	margin-top: 20px;
+	text-align: center;
+	margin-bottom: 120px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.review {
+	text-align: center;
+}
+
+.reviews {
+	margin-top: 100px;
+}
+
+#bookReview {
+	font-size: xx-large;
+	margin-top: 20px;
+	text-align: center;
+	width: 80%;
+	height: 15.25em;
+	border: none;
+	resize: none;
+}
+
+.star-rating space-x-4 mx-auto {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	position: fixed;
+	text-align: center;
+}
+
+.star-rating {
+	margin-left: 5%;
+}
+
+#title {
+	position: absolute;
+	top: 280px;
+	left: 650px;
+	margin-top: 20px;
+	text-align: center;
+	margin-bottom: 120px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}

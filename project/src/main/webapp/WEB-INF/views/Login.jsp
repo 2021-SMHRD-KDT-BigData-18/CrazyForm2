@@ -14,7 +14,7 @@
 <body>
 <a href="Main.do">
 	<h1 id="title" style="text-align: center; cursor:pointer;"  >
-		Zibsa
+		ZIPSA
 		</h1>
 </a>
 <form action="login.do" method="post">
