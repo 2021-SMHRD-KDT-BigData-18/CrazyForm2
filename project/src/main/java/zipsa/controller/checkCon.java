@@ -25,7 +25,7 @@ public class checkCon implements Controller {
 		PrintWriter out = response.getWriter();
 
 		T_MemberDAO dao = new T_MemberDAO();
-		T_MEMBER dto = dao.selectM(id);
+		T_MEMBER dto = dao.check(id);
 
 		// 사용 가능한 id = true , 불가능 = false 응답
 		String res = "";

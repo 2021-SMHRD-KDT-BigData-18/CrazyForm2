@@ -70,7 +70,18 @@
 		)
 	</insert>
 	
-
+<!--  직원 랜덤 배정  날짜사이 - 있을경우 자를 글자 10 없을경우 8-->
+<select id ="RandomStaff" resultType = "zipsa.entity.T_RESERVATION" >
+SELECT D.STAFF_SEQ FROM ( 
+        SELECT *
+        FROM T_HOLIDAY A
+        where A.HOLI_DT !=SUBSTR(#{rev_DT},1,8) ) C,
+       (SELECT *
+        FROM T_RESERVATION B
+        where B.REV_DT != {rev_DT}	) D
+        WHERE ROWNUM <= 1
+        order by DBMS_RANDOM.RANDOM;
+</select>
 
 
 

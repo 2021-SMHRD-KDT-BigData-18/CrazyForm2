@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import zipsa.controller.Controller;
 
-public class gowriteReviewCon implements Controller {
+public class goWriteReviewCon implements Controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)

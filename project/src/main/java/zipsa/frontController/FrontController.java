@@ -23,10 +23,12 @@ import zipsa.controller.M_UpdateCon;
 import zipsa.controller.M_RvInfoCon;
 import zipsa.controller.checkCon;
 import zipsa.controller.goLoginCon;
+import zipsa.controller.goMInfoCon;
 import zipsa.controller.goMainCon;
 import zipsa.controller.goReviewMainCon;
 import zipsa.controller.goRvCon;
 import zipsa.controller.goUpdateCon;
+import zipsa.controller.goWriteReviewCon;
 import zipsa.controller.gojoinCon;
 import zipsa.controller.gowriteReviewCon;
 import zipsa.controller.writeReviewCon;
@@ -41,21 +43,20 @@ public class FrontController extends HttpServlet {
 
 		mappings = new HashMap<String, Controller>();
 
-		mappings.put("/Main.do", new goMainCon());
-		mappings.put("/goRv.do", new goRvCon()); 		  // 예약하기 페이지 이동
-		mappings.put("/Rv.do", new RvCon()); 		      // 예약내용 저장시키고 메인으로 이동하는 페이지
+		mappings.put("/Main.do", new goMainCon());		  // 메인페이지 이동
 		mappings.put("/gojoin.do", new gojoinCon());	  // 회원가입 페이지 이동
 		mappings.put("/join.do", new M_JoinCon());		  // 회원가입 저장시키고 성공화면으로 이동하는 페이지
 		mappings.put("/check.do", new checkCon());		  // 아이디 중복체크 ajax
 		mappings.put("/gologin.do", new goLoginCon());	  // 로그인화면 이동
 		mappings.put("/login.do", new M_LoginCon());	  // 로그인 후 메인으로 이동시키는 페이지
 		mappings.put("/logout.do", new M_LogoutCon());	  // 로그아웃하는 페이지
+		mappings.put("/goRv.do", new goRvCon()); 		  // 예약하기 페이지 이동
+		mappings.put("/Rv.do", new RvCon()); 		      // 예약내용 저장시키고 메인으로 이동하는 페이지
 		mappings.put("/goUpdate.do", new goUpdateCon());  // 회원정보 수정하는 페이지
-		mappings.put("/goM_Rvinfo.do", new M_infoCon());  // 회원이 보는 예약내역으로 가는 페이지(예약현황, 회원정보 포함)
-		mappings.put("/update.do", new M_UpdateCon());    // 수정 후 예약내역으로 다시 가는 페이지
+		mappings.put("/goM_Rvinfo.do", new goMInfoCon());  // 회원이 보는 예약내역으로 가는 페이지(예약현황, 회원정보 포함)
+		mappings.put("/update.do", new M_UpdateCon());    // 비밀번호, 회원정보 수정 후 예약내역으로 다시 가는 페이지
 		mappings.put("/goSelectRv.do", new M_RvInfoCon()); // 회원이 보는 예약현황 가는 페이지
-		mappings.put("/goSelectMember", new M_infoCon());  // 회원의 내 정보보기??
-		mappings.put("/gowirteReview.do", new gowriteReviewCon());			// 리뷰작성하러가기
+		mappings.put("/gowirteReview.do", new goWriteReviewCon());			// 리뷰작성하러가기
 		mappings.put("/writeReivew.do", new writeReviewCon());				// 리뷰작성내용 sql등록후 리뷰메인으로 넘기는 페이지
 		mappings.put("/viewBoard.do", new goReviewMainCon());				// 리뷰보는 게시판
 //			mappings.put("/ajax.do", new AjaxCon());				
