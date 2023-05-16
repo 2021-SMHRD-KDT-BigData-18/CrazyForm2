@@ -9,19 +9,18 @@ import javax.servlet.http.HttpServletResponse;
 
 import zipsa.dao.T_MemberDAO;
 import zipsa.entity.T_MEMBER;
-import zipsa.entity.T_RESERVATION;
 
-public class A_SelectAllRCon implements Controller {
-// 관리자가 보는 모든 예약현황
+
+public class A_MinfoCon implements Controller {
 
 	@Override
+	//관리자가 보는 회원현황
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
 		T_MemberDAO dao = new T_MemberDAO();
-		List<T_RESERVATION> list = dao.selectAllR();
+		List<T_MEMBER> list = dao.selectMember();
 		request.setAttribute("list", list);
-		return "selectAllRv";    
+		return "select";
 	}
 
 }

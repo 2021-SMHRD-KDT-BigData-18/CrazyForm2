@@ -10,17 +10,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import zipsa.controller.A_SelectAllRCon;
-import zipsa.controller.A_SelectMemberCon;
+import zipsa.controller.A_RvinfoCon;
+import zipsa.controller.A_MinfoCon;
 import zipsa.controller.Controller;
 import zipsa.controller.M_DeleteCon;
 import zipsa.controller.M_JoinCon;
 import zipsa.controller.M_LoginCon;
 import zipsa.controller.M_LogoutCon;
-import zipsa.controller.M_RvCon;
+import zipsa.controller.RvCon;
 import zipsa.controller.M_SelectMCon;
 import zipsa.controller.M_UpdateCon;
-import zipsa.controller.SelectRvCon;
+import zipsa.controller.M_RvInfoCon;
 import zipsa.controller.checkCon;
 import zipsa.controller.goLoginCon;
 import zipsa.controller.goMainCon;
@@ -43,14 +43,14 @@ public class FrontController extends HttpServlet {
 		mappings.put("/gologin.do", new goLoginCon());
 		mappings.put("/goReservation.do", new goRvCon()); // 예약하기 페이지 이동
 		mappings.put("/join.do", new gojoinCon());		  // 회원가입 페이지 이동
-		mappings.put("/Rv.do",new M_RvCon()); 			  // 예약하기
+		mappings.put("/Rv.do",new RvCon()); 			  // 예약하기
 		mappings.put("/login.do", new M_LoginCon());	  // 로그인
 		mappings.put("/logout.do", new M_LogoutCon());
 		mappings.put("/goUpdate.do", new goUpdateCon());
 		mappings.put("/update.do", new M_UpdateCon());
-		mappings.put("/goSelectAllMember.do", new A_SelectMemberCon()); // 관리자 회원관리
-		mappings.put("/goSelectAllR.do", new A_SelectAllRCon()); // 관리자 예약현황 확인
-		mappings.put("/goSelectRv.do", new SelectRvCon()); // 회원이 보는 예약현황 확인
+		mappings.put("/goSelectAllMember.do", new A_MinfoCon()); // 관리자 회원관리
+		mappings.put("/goSelectAllR.do", new A_RvinfoCon()); // 관리자 예약현황 확인
+		mappings.put("/goSelectRv.do", new M_RvInfoCon()); // 회원이 보는 예약현황 확인
 		mappings.put("/goRv.do", new goRvCon()); // 예약하기창
 		mappings.put("/goSelectMember", new M_SelectMCon()); // 회원의 내 정보보기??
 		mappings.put("/delete.do", new M_DeleteCon()); // 회원탈퇴

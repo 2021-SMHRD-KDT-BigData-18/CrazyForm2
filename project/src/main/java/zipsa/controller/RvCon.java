@@ -14,7 +14,7 @@ import zipsa.entity.T_MEMBER;
 import zipsa.entity.T_RESERVATION;
 
 
-public class M_RvCon implements Controller {
+public class RvCon implements Controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
