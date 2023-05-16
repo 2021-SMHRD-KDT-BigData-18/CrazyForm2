@@ -29,9 +29,13 @@ public class goMInfoCon implements Controller {
 		T_MEMBER dto  = dao.check(id);
 		request.setAttribute("Mdto",dto);		
 		
-	// 예약현황
+	// Rlist에 예약현황 챙겨가기
 			List<T_RESERVATION> list = dao.selectRv(id);
-			request.setAttribute("list", list);
-			return "selectAllR";
-			return "selectM";    //selectM.jsp 보여줌
+			request.setAttribute("Rlist", list);
+			return "M_info"; 
+			
+
+}
+	
+	
 }

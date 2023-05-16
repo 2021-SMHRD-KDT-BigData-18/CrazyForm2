@@ -24,7 +24,7 @@
 	<!-- 회원정보 수정기능 -->
 	<update id="update" parameterType="zipsa.entity.T_MEMBER">
 		update T_MEMBER SET
-		M_pw=#{pw}, M_PHONE=#{PHONE}
+		M_pw=#{pw}
 		where M_id=#{id}
 	}
 	</update>
@@ -45,7 +45,7 @@
 	<select id="selectRv" parameterType="zipsa.entity.T_MEMBER"
 		resultType="zipsa.entity.T_RESERVATION">
 		SELECT * FROM T_RESERVATION
-		WHERE M_id=#{id} and M_pw=#{pw}
+		WHERE M_id=#{id}
 	</select>
 
 	<!-- 회원 탈퇴기능 -->
@@ -79,7 +79,7 @@ SELECT D.STAFF_SEQ FROM (
        (SELECT *
         FROM T_RESERVATION B
         where B.REV_DT != {rev_DT}	) D
-        WHERE ROWNUM <= 1
+        WHERE ROWNUM = 1
         order by DBMS_RANDOM.RANDOM;
 </select>
 

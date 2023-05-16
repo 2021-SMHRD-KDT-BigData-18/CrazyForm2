@@ -23,7 +23,6 @@ public class M_UpdateCon implements Controller {
 
 		String id = user.getM_ID();
 		String pw = request.getParameter("pw");
-		String phone = request.getParameter("phone");
 		
 		T_MEMBER dto = new T_MEMBER();
 		dto.setM_ID(id);
@@ -31,12 +30,12 @@ public class M_UpdateCon implements Controller {
 
 		T_MemberDAO dao = new T_MemberDAO();
 		int row = dao.update(dto);
-		// 회원정보 수정완료 시 메인 실패 시 페이지 재출력
+		// 회원정보 수정완료 시 재 출력 실패 시 예약내역 재출력
 		if (row > 0) {
 			session.setAttribute("user", dto);
-			return "redirect:/goM_info.do";
+			return "redirect:/goMain.do";
 		} else {
-			return "redirect:/update.do";
+			return "redirect:/goMinfo.do";
 			}
 	}
 

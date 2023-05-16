@@ -53,9 +53,9 @@ public class FrontController extends HttpServlet {
 		mappings.put("/goRv.do", new goRvCon()); 		  // 예약하기 페이지 이동
 		mappings.put("/Rv.do", new RvCon()); 		      // 예약내용 저장시키고 메인으로 이동하는 페이지
 		mappings.put("/goUpdate.do", new goUpdateCon());  // 회원정보 수정하는 페이지
-		mappings.put("/goM_Rvinfo.do", new goMInfoCon());  // 회원이 보는 예약내역으로 가는 페이지(예약현황, 회원정보 포함)
+		mappings.put("/goMinfo.do", new goMInfoCon());  // 회원이 보는 예약내역으로 가는 페이지(예약현황, 회원정보 포함)
 		mappings.put("/update.do", new M_UpdateCon());    // 비밀번호, 회원정보 수정 후 예약내역으로 다시 가는 페이지
-		mappings.put("/goSelectRv.do", new M_RvInfoCon()); // 회원이 보는 예약현황 가는 페이지
+		
 		mappings.put("/gowirteReview.do", new goWriteReviewCon());			// 리뷰작성하러가기
 		mappings.put("/writeReivew.do", new writeReviewCon());				// 리뷰작성내용 sql등록후 리뷰메인으로 넘기는 페이지
 		mappings.put("/viewBoard.do", new goReviewMainCon());				// 리뷰보는 게시판

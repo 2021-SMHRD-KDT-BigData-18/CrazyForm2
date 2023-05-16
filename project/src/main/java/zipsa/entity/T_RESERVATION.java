@@ -25,9 +25,9 @@ public class T_RESERVATION {
 		REV_DT = rEV_DT;
 		PET_YN = pET_YN;
 		STAFF_SEQ = sTAFF_SEQ;
+		STAFF_NAME = sTAFF_NAME;
 		REV_NOTE = rEV_NOTE;
 		M_ADDR = m_ADDR;
-		STAFF_NAME = sTAFF_NAME;
 	}
 	// ㄴ
 
