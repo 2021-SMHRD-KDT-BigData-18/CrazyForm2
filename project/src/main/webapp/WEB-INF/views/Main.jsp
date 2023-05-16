@@ -37,12 +37,20 @@
 				<!-- Nav -->
 				<nav id="nav">
 					<ul>
-						<li><a href="goRv.do">예약하기</a></li>
+						<li><% // if user값 null 이면 goLogin.do로 연결 %>
+						<a href="goRv.do">예약하기</a>
+						</li>
 						<li><a href="https://onnuribed.co.kr/">침구청소</a></li>
 						<li><a href="http://thecleaning.co.kr/default/">에어컨 청소</a></li>
 						<li><a href="https://wayopet.com/home">펫시팅</a></li>
-						<li><a href="goMinfo.do">예약내역</a></li>
-						<li><a href="goviewBoard.do">리뷰보기</a></li>
+						<li>
+						<!--<c:if test="\${user ne null}"> 나중에 수정-->
+						<a href="goMinfo.do">예약내역</a>
+						<!-- </c:if>
+						<c:if test="\${user eq null}"> 
+						<a href="login.do">예약내역</a></c:if>						-->
+						</li>
+						<li><a href="goreviewMain.do">리뷰보기</a></li>
 					</ul>
 				</nav>
 
@@ -55,15 +63,20 @@
 				<div class="row">
 					<img height="500" width="500"
 						src="https://i.pinimg.com/564x/1f/69/c2/1f69c2f21ad625ba642c4979614e5959.jpg">
+					
 					<div class="loginbox">
 						<div>
 <!--  ★★user.getid 값이 null이 아닐땐 로그아웃창만 뜨도록 보완필요 -->
-
+						<c:if test="${user eq null}">
 							<a href="gologin.do">로그인</a>
 						</div>
 						<div>
 							<a href="gojoin.do">회원가입</a>
-						</div>
+						</div></c:if> 
+					</div>
+					<div class="loginbox">
+						<c:if test="${user ne null}">
+							<a href="logout.do">로그아웃</a></c:if> 
 					</div>
 					
 					<div class="col-7 col-12-medium">

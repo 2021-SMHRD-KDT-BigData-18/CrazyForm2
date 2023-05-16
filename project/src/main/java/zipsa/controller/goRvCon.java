@@ -12,7 +12,7 @@ public class goRvCon implements Controller {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// 예약하기 페이지로 이동하는 컨트롤러
-		
+
 		return "reservation";
 	}
 

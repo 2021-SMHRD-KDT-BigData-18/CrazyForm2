@@ -25,14 +25,12 @@
 	<div class="member">
 
 		<!-- 필드 -->
-		<form action="#" method="POST">
 			<div class="field">
-				<b>아이디</b> <span class="placehold-text"><input type="text"></span>
-				<p id="result" name="id"></p>
+				<b>아이디</b> <span class="placehold-text"><input type="text" name="id"></span>
+				<p id="result"></p>
 				<!-- 아이디 중복체크 결과를 출력하기 -->
-				<a href="check.do">
-					<button name="check">아이디중복확인</button>
-				</a>
+				<button id="check">아이디중복확인</button>
+		<form action="join.do" method="POST">
 
 			</div>
 			<div class="field">
@@ -102,9 +100,11 @@
 		
 	// 전화번호 자동하이픈 넣기
 		var phoneNum = $('input[name=phone]');
+		var str = "";
+		var tmp = '';
 		var autoHypenPhone = function(str){
-      str = str.replace(/[^0-9]/g, '');
-      var tmp = '';
+     	 str = str.replace(/[^0-9]/g, '');
+    	  var tmp = '';
       if( str.length < 4){
           return str;
       }else if(str.length < 7){
@@ -129,8 +129,8 @@
       }
 }
 		phoneNum.onkeyup = function(){
- 		 console.log(this.value);
-  		this.value = autoHypenPhone( this.value ) ;  
+ 		 console.log(this.val());
+  		this.val() = autoHypenPhone( this.val() ) ;  
 }
 
 	</script>

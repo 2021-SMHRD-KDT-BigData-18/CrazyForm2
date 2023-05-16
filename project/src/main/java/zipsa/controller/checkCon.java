@@ -34,6 +34,8 @@ public class checkCon implements Controller {
 			res = "true";
 		} else {res = "false";} //id 실패
 		out.print(res);
+		
+		
 		return null;
 	}
 
