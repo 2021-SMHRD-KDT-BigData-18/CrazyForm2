@@ -27,6 +27,7 @@ public class M_JoinCon implements Controller {
 		String phone = request.getParameter("phone");
 
 		T_MEMBER dto = new T_MEMBER();
+		
 		dto.setM_ID(id);
 		dto.setM_PW(pw);
 		dto.setM_NAME(name);
@@ -36,12 +37,15 @@ public class M_JoinCon implements Controller {
 		int row = dao.join(dto);
 
 		String nextView = null;
+		
 		if (row > 0) {
 			nextView = "JoinSuccess";
 		} else {
 			nextView = "redirect:/Main.do";
 		}
 		return nextView;
+		
+
 
 	}
 
