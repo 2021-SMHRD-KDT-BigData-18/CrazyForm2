@@ -18,14 +18,13 @@ public class M_JoinCon implements Controller {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-	
+		
 		request.setCharacterEncoding("UTF-8");
 
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		String name = request.getParameter("name");
 		String phone = request.getParameter("phone");
-		String addr = request.getParameter("addr");
 
 		T_MEMBER dto = new T_MEMBER();
 		dto.setM_ID(id);

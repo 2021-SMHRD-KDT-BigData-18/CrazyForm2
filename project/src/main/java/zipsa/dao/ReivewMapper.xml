@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="zipsa.dao.T_ReivewDAO"></mapper>
-
-		REVIEW_SEQ = rEVIEW_SEQ;
-		REV_SEQ = rEV_SEQ;
-		REVIEW_CONTENT = rEVIEW_CONTENT;
-		REVIEW_IMG = rEVIEW_IMG;
-		REVIEW_RATING = rEVIEW_RATING;
-		REVIEW_DT = rEVIEW_DT;
-		M_ID = m_ID;
 		
-	<!--  리뷰작성하는 sql 아직미정 -->
+	<!--  리뷰작성하는 sql 아직미정 
 	<insert id="write" parameterType="zipsa.entity.T_REVIEW">
 		insert into T_REVIEW(
 		
@@ -28,7 +20,6 @@
 	<select id="reviewselect" resultType="zipsa.entity.T_REVIEW"">
 	SELECT * FROM T_REVIEW 
 	</select>
-<!--  -->
 	
 <!--  예약번호 받아오기 -->
 	<select id="reservNum" parameterType="zipsa.entity.T_MEMBER"

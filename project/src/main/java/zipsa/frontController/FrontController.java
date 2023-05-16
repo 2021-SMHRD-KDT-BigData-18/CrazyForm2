@@ -18,9 +18,7 @@ import zipsa.controller.M_JoinCon;
 import zipsa.controller.M_LoginCon;
 import zipsa.controller.M_LogoutCon;
 import zipsa.controller.RvCon;
-import zipsa.controller.M_infoCon;
 import zipsa.controller.M_UpdateCon;
-import zipsa.controller.M_RvInfoCon;
 import zipsa.controller.checkCon;
 import zipsa.controller.goLoginCon;
 import zipsa.controller.goMInfoCon;
@@ -30,7 +28,6 @@ import zipsa.controller.goRvCon;
 import zipsa.controller.goUpdateCon;
 import zipsa.controller.goWriteReviewCon;
 import zipsa.controller.gojoinCon;
-import zipsa.controller.gowriteReviewCon;
 import zipsa.controller.writeReviewCon;
 
 @WebServlet("*.do")
@@ -56,9 +53,9 @@ public class FrontController extends HttpServlet {
 		mappings.put("/goMinfo.do", new goMInfoCon());  // 회원이 보는 예약내역으로 가는 페이지(예약현황, 회원정보 포함)
 		mappings.put("/update.do", new M_UpdateCon());    // 비밀번호, 회원정보 수정 후 예약내역으로 다시 가는 페이지
 		
-		mappings.put("/gowirteReview.do", new goWriteReviewCon());			// 리뷰작성하러가기
-		mappings.put("/writeReivew.do", new writeReviewCon());				// 리뷰작성내용 sql등록후 리뷰메인으로 넘기는 페이지
-		mappings.put("/goviewBoard.do", new goReviewMainCon());				// 리뷰보는 게시판
+//		mappings.put("/gowirteReview.do", new goWriteReviewCon());			// 리뷰작성하러가기
+//		mappings.put("/writeReivew.do", new writeReviewCon());				// 리뷰작성내용 sql등록후 리뷰메인으로 넘기는 페이지
+//		mappings.put("/goviewBoard.do", new goReviewMainCon());				// 리뷰보는 게시판
 //			mappings.put("/ajax.do", new AjaxCon());				
 		
 		mappings.put("/goM_info.do", new A_MinfoCon()); 		 // 관리자 회원관리페이지 이동
