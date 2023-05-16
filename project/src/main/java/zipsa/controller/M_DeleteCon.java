@@ -22,9 +22,5 @@ public class M_DeleteCon implements Controller {
 		} else {
 			return "redirect:/goMain.do";	  // 실패 시 메인페이지로???
 		}
-		
-		
-		
 	}
-
 }
