@@ -25,12 +25,13 @@
 	<div class="member">
 
 		<!-- 필드 -->
+		<form action="join.do" method="POST">
 			<div class="field">
-				<b>아이디</b> <span class="placehold-text"><input type="text" name="id"></span>
+				<b>아이디</b> <span class="placehold-text"><input id="idcheck"
+					type="text" name="id"></span>
 				<p id="result"></p>
 				<!-- 아이디 중복체크 결과를 출력하기 -->
 				<button id="check">아이디중복확인</button>
-		<form action="join.do" method="POST">
 
 			</div>
 			<div class="field">
@@ -48,7 +49,7 @@
 					<option value="">대한민국 +82</option>
 				</select>
 				<div>
-					<input type="tel" placeholder="전화번호 입력" name="phone">
+					<input id="phoneNum" type="tel" placeholder="전화번호 입력" name="phone">
 				</div>
 			</div>
 
@@ -69,28 +70,42 @@
 
 	<script>
 	// id 중복확인 → 아이디 중복체크 후 alert창 띄우기
-	$('#check').on('click', request);
-	let id = $('input[name=id]');
-	let result = "";
-	function request() { //함수 호이스팅:선언문이 먼저 실행됨
+	$(document).ready(function () {
+		var input = $('#idcheck');
+		input.on('input', idCheck);
+	});
+	
+	function idCheck () {
+		var value = $(this).val();
+		console.log(value);
 		$.ajax({
-			url : 'check.do', 			// 요청할 서버경로
-			type : 'post', 				// get/post
-			data : { 					// 서버에 보낼 데이터
-				// data : "data1=value1&data2=value2..."
-				// key : value (key값이 parameter의 name 들어감)
-				"id" : id.val()
+			url : 'check.do',
+			type : 'post',
+			data : {
+				"id" : value
 			},
-			dataType : "json",			// 응답받는 데이터 형식 결정
-			success : function(res) {
-				alert("사용가능한 id입니다. 계속진행해주세요")
+			// dataType : 'json',
+			success : function (res) {
+				console.log(res);
+				
+				// 만약 사용 가능하다면
+				// p태그 안에 사용 가능한 이메일입니다
+				var p = $('#result');
+				if (res == "true"){
+					p.html("사용 가능한 아이디입니다.").css("color", "green");
+				} else {
+					p.html("중복된 아이디입니다.").css("color", "red");
+				}
+				
 			},
-			error : function(e) {
-				// 요청 실패 할 시 콜백함수
-				alert("이미 존재하는 id입니다. 다시 확인해주세요")
-			}
+			error : function (e) {
+				alert("요청 실패");
+			},
+			
 		});
 	}
+	
+
 	// 회원가입 후 alert창 띄우기
 		var join = $('#join');
 		join.on('click', ()=>{
@@ -98,39 +113,42 @@
 		});
 		
 	// 전화번호 자동하이픈 넣기
-		var phoneNum = $('input[name=phone]');
-		var str = "";
-		var tmp = '';
-		var autoHypenPhone = function(str){
-     	 str = str.replace(/[^0-9]/g, '');
-    	  var tmp = '';
-      if( str.length < 4){
-          return str;
-      }else if(str.length < 7){
-          tmp += str.substr(0, 3);
-          tmp += '-';
-          tmp += str.substr(3);
-          return tmp;
-      }else if(str.length < 11){
-          tmp += str.substr(0, 3);
-          tmp += '-';
-          tmp += str.substr(3, 3);
-          tmp += '-';
-          tmp += str.substr(6);
-          return tmp;
-      }else{              
-          tmp += str.substr(0, 3);
-          tmp += '-';
-          tmp += str.substr(3, 4);
-          tmp += '-';
-          tmp += str.substr(7);
-          return tmp;
-      }
-}
-		phoneNum.onkeyup = function(){
- 		 console.log(this.val());
-  		this.val() = autoHypenPhone( this.val() ) ;  
-}
+			var autoHypenPhone = function (str) {
+            str = str.replace(/[^0-9]/g, '');
+            var tmp = '';
+            if (str.length < 4) {
+                return str;
+            } else if (str.length < 7) {
+                tmp += str.substr(0, 3);
+                tmp += '-';
+                tmp += str.substr(3);
+                return tmp;
+            } else if (str.length < 11) {
+                tmp += str.substr(0, 3);
+                tmp += '-';
+                tmp += str.substr(3, 3);
+                tmp += '-';
+                tmp += str.substr(6);
+                return tmp;
+            } else {
+                tmp += str.substr(0, 3);
+                tmp += '-';
+                tmp += str.substr(3, 4);
+                tmp += '-';
+                tmp += str.substr(7);
+                return tmp;
+            }
+
+            return str;
+        }
+
+
+        var phoneNum = document.getElementById('phoneNum');
+
+        phoneNum.onkeyup = function () {
+            console.log(this.value);
+            this.value = autoHypenPhone(this.value);
+        }
 
 	</script>
 
