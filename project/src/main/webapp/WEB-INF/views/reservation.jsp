@@ -22,6 +22,12 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.js"></script>
 
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" media="screen"
+	href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css">
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
 
 </head>
 <body>
@@ -48,7 +54,7 @@
 			</header>
 		</div>
 	</div>
-	
+
 	<div>
 		<p class="res">예약하기</p>
 	</div>
@@ -85,42 +91,16 @@
 					</select>
 				</div>
 			</div>
-
-			<div class="container-fluid px-0 px-sm-4 mx-auto">
-				<div class="row justify-content-center mx-0">
-					<div class="col-lg-10">
-						<div class="card border-0">
-							<div class="card-header bg-dark">
-								<div
-									class="mx-0 mb-0 row justify-content-sm-center justify-content-start px-1">
-									<input type="text" id="dp1" class="datepicker"
-										placeholder="날짜 선택" name="date" readonly><span
-										class="fa fa-calendar"></span>
-								</div>
-							</div>
-							<div class="card-body p-3 p-sm-5">
-								<div class="row text-center mx-0">
-									<div class="col-md-2 col-4 my-1 px-2">
-										<div class="cell py-1">10:00AM</div>
-									</div>
-									<div class="col-md-2 col-4 my-1 px-2">
-										<div class="cell py-1">12:00PM</div>
-									</div>
-									<div class="col-md-2 col-4 my-1 px-2">
-										<div class="cell py-1">14:00PM</div>
-									</div>
-									<div class="col-md-2 col-4 my-1 px-2">
-										<div class="cell py-1">16:00PM</div>
-									</div>
-									<div class="col-md-2 col-4 my-1 px-2">
-										<div class="cell py-1">18:00PM</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+			
+			
+			<div class="selectBox2">
+				<div>청소 날짜</div>
+				<div class="meet">
+					<input type='text' class='datetimepicker' name='date' placeholder="날짜를 선택하세요">
+					<button class="dateclick">날짜가져오기</button>
 				</div>
 			</div>
+
 
 		</div>
 
@@ -131,20 +111,29 @@
 	</form>
 
 	<script>
-		$(document).ready(function() {
 
-			$('.datepicker').datepicker({
-				format : 'dd-mm-yyyy',
-				autoclose : true,
-				startDate : '0d'
-			});
+		$.datetimepicker.setLocale('ko');
 
-			$('.cell').click(function() {
-				$('.cell').removeClass('select');
-				$(this).addClass('select');
+		$(function() {
+			$(".datetimepicker").datetimepicker({
+				format : "Y-m-d H:i",
+				datepicker : true,
+				allowTimes : [ '10:00', '12:00', '14:00', '16:00', '18:00' ]
 			});
+		});
+
+		$(function() {
+			$(".datetimepicker").datetimepicker({
+				minDate : 0
+			});
+		});
+		
+		$('.dateclick').on('click', function() {
+			var d = $('input').datetimepicker('getValue');
+			console.log(d);
 
 		});
+
 	</script>
 
 </body>
