@@ -12,7 +12,7 @@ public class T_MemberDAO {
 
 	private SqlSessionFactory factory = SqlSessionManager.getSqlSessionFactory();
 
-	// 회원가입 ) id,pw,name, phone, addr // joindate, type은 sysdate, m으로 고정값
+	// 회원가입 ) id,pw,name, phone joindate, type은 sysdate, m 으로 고정값
 	public int join(T_MEMBER dto) {
 		SqlSession session = factory.openSession(true);
 		int row = session.insert("join", dto);

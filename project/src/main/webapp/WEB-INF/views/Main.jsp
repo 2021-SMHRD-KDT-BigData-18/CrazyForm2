@@ -65,7 +65,6 @@
 						src="https://i.pinimg.com/564x/1f/69/c2/1f69c2f21ad625ba642c4979614e5959.jpg">
 					
 						<div class="loginBox">
-<!--  ★★user.getid 값이 null이 아닐땐 로그아웃창만 뜨도록 보완필요 -->
 						<span class="msg">집사를 더 안전하고 편리하게 이용하세요.</span>
 						<c:if test="${user eq null}">
 							<a class="loginBtn" href="gologin.do">로그인</a>

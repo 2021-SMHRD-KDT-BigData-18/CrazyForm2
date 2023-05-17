@@ -67,7 +67,6 @@
 	</div>
 
 
-
 	<script>
 	// id 중복확인 → 아이디 중복체크 후 alert창 띄우기
 	$('#check').on('click', request);

@@ -34,9 +34,9 @@ public class M_LoginCon implements Controller {
 		if (user != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("user", user);
-			nextView = "redirect:/Main.do";
+			nextView = "redirect:/Main.do"; // 성공했을 때 Main
 		} else {
-			nextView = "redirect:/login.do";
+			nextView = "redirect:/login.do"; // 실패시 login
 		}
 		return nextView;
 	}
