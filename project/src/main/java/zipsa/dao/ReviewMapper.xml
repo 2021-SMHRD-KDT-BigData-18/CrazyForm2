@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zipsa.dao.T_ReivewDAO">
+
+<!-- 리뷰보기 -->
+<select id="reviewselect" resultType="zipsa.entity.T_REVIEW">
+SELECT * FROM T_REVIEW 
+</select>
+
+<!--  리뷰작성하는 sql 아직미정 
+	<insert id="write" parameterType="zipsa.entity.T_REVIEW">
+		insert into T_REVIEW(
+	     	
+		)values(
+        um_board.nextval,
+		#{title},
+		#{writer},
+		#{filename},
+		#{content},
+		sysdate
+		)
+</insert>     
+-->
+</mapper>
