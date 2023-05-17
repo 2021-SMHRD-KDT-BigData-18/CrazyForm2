@@ -16,10 +16,12 @@
 		<div class="logo">ZIPSA</div>
 		<div>
 			<h1>환영합니다!</h1>
-			<p>${user.M_name}님, 회원가입을 축하합니다.</p>
+			<p>회원가입을 축하합니다.</p>
 		</div>
 		<div class="start">
-			<button onclick='location' href="Main.do">시작하기</button>
+		<a href="Main.do"> 
+			<button onclick='location'>시작하기</button>
+		</a>
 		</div>
 	</div>
 

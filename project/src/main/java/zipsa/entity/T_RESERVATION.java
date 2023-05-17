@@ -1,42 +1,17 @@
 package zipsa.entity;
 
+import java.util.Date;
+
 public class T_RESERVATION {
 	// 집사 예약 현황
 	public T_RESERVATION() {	}
-
-	public T_RESERVATION(int rEV_SEQ, String m_ID, String jOB_T, String rEV_DT, String pET_YN, int sTAFF_SEQ, String rEV_NOTE, String m_ADDR) {
-		REV_SEQ = rEV_SEQ;
-		M_ID = m_ID;
-		JOB_T = jOB_T;
-		REV_DT = rEV_DT;
-		PET_YN = pET_YN;
-		STAFF_SEQ = sTAFF_SEQ;
-		REV_NOTE = rEV_NOTE;
-		M_ADDR = m_ADDR;
-	}
-
-	// 직원이름이 연동된 예약현황 확인하기
-	public T_RESERVATION(int rEV_SEQ, String m_ID, String jOB_T, String rEV_DT, String pET_YN, int sTAFF_SEQ,
-			String rEV_NOTE, String m_ADDR, String sTAFF_NAME) {
-		super();
-		REV_SEQ = rEV_SEQ;
-		M_ID = m_ID;
-		JOB_T = jOB_T;
-		REV_DT = rEV_DT;
-		PET_YN = pET_YN;
-		STAFF_SEQ = sTAFF_SEQ;
-		STAFF_NAME = sTAFF_NAME;
-		REV_NOTE = rEV_NOTE;
-		M_ADDR = m_ADDR;
-	}
-	// ㄴ
 
 	// 회원 아이디
 	private String M_ID;
 	// 청소 내용
 	private String JOB_T;
 	// 예약 일자
-	private String REV_DT;
+	private Date REV_DT;
 	// 펫유무
 	private String PET_YN;
 	// 직원번호
@@ -49,12 +24,31 @@ public class T_RESERVATION {
 	private String STAFF_NAME;
 	// 예약 번호
 	private int REV_SEQ;
-
-	public int getREV_SEQ() {
-		return REV_SEQ;
+	public T_RESERVATION(String m_ID, String jOB_T, Date rEV_DT, String pET_YN, int sTAFF_SEQ, String rEV_NOTE,
+			String m_ADDR, int rEV_SEQ) {
+		super();
+		M_ID = m_ID;
+		JOB_T = jOB_T;
+		REV_DT = rEV_DT;
+		PET_YN = pET_YN;
+		STAFF_SEQ = sTAFF_SEQ;
+		REV_NOTE = rEV_NOTE;
+		M_ADDR = m_ADDR;
+		REV_SEQ = rEV_SEQ;
 	}
-
-	public void setREV_SEQ(int rEV_SEQ) {
+	
+	//직원이름 연동된 뷰에서 보는 화면
+	public T_RESERVATION(String m_ID, String jOB_T, Date rEV_DT, String pET_YN, int sTAFF_SEQ, String rEV_NOTE,
+			String m_ADDR, String sTAFF_NAME, int rEV_SEQ) {
+		super();
+		M_ID = m_ID;
+		JOB_T = jOB_T;
+		REV_DT = rEV_DT;
+		PET_YN = pET_YN;
+		STAFF_SEQ = sTAFF_SEQ;
+		REV_NOTE = rEV_NOTE;
+		M_ADDR = m_ADDR;
+		STAFF_NAME = sTAFF_NAME;
 		REV_SEQ = rEV_SEQ;
 	}
 
@@ -74,11 +68,11 @@ public class T_RESERVATION {
 		JOB_T = jOB_T;
 	}
 
-	public String getREV_DT() {
+	public Date getREV_DT() {
 		return REV_DT;
 	}
 
-	public void setREV_DT(String rEV_DT) {
+	public void setREV_DT(Date rEV_DT) {
 		REV_DT = rEV_DT;
 	}
 
@@ -122,4 +116,14 @@ public class T_RESERVATION {
 		STAFF_NAME = sTAFF_NAME;
 	}
 
+	public int getREV_SEQ() {
+		return REV_SEQ;
+	}
+
+	public void setREV_SEQ(int rEV_SEQ) {
+		REV_SEQ = rEV_SEQ;
+	}
+	
+	
+	
 }

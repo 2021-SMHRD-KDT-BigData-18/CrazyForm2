@@ -41,7 +41,7 @@ public class RvCon implements Controller {
 		T_RESERVATION dto = new T_RESERVATION();
 		dto.setM_ID(M_ID);
 		dto.setJOB_T(jobT);
-		dto.setREV_DT(revDT);
+//		dto.setREV_DT(revDT);
 		dto.setPET_YN(pet_yn);
 		dto.setSTAFF_SEQ(staff);
 		dto.setREV_NOTE(rev_note);
