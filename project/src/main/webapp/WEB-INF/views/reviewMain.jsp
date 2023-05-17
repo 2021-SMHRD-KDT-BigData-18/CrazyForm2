@@ -36,14 +36,14 @@
   <div class="review-container">
     <h1>리뷰 보기</h1>
     
-   <c:forEach var="review" items="${reviewList}">
+   <c:forEach var="${reviewList}" items=dto>
   <div class="review-box-wrapper">
     <div class="review-box"> 
-      <div class="review-number">리뷰번호: ${review.REVIEW_NUMBER}</div>
-      <div class="review-rating">별점: ${review.REVIEW_RATING}
+      <div class="review-number">리뷰번호: ${dto.REVIEW_SEQ}</div>
+      <div class="review-rating">별점: ${dto.REVIEW_RATING}
         <div class="rating">
-          <c:forEach begin="1" end="${review.REVIEW_RATING}" var="rating">
-            <span class="star" data-rating="${rating}"><i class="fas fa-star"></i></span>
+          <c:forEach begin="1" end="${dto.REVIEW_RATING}" var="rating">
+            <span class="star" data-rating="${dto.rating}"><i class="fas fa-star"></i></span>
           </c:forEach>
         </div>
       </div>

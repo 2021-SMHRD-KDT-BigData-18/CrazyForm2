@@ -7,18 +7,10 @@
 SELECT * FROM T_REVIEW 
 </select>
 
-<!--  리뷰작성하는 sql 아직미정 
-	<insert id="write" parameterType="zipsa.entity.T_REVIEW">
-		insert into T_REVIEW(
-	     	
-		)values(
-        um_board.nextval,
-		#{title},
-		#{writer},
-		#{filename},
-		#{content},
-		sysdate
-		)
-</insert>     
--->
+ <!-- 리뷰작성 
+  <insert id="write" parameterType="zipsa.entity.T_REVIEW">
+    INSERT INTO T_REVIEW (title, writer, filename, content, created_date)
+    VALUES (#{title}, #{writer}, #{filename}, #{content}, sysdate)
+  </insert> -->
+
 </mapper>

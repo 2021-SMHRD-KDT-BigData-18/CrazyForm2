@@ -5,7 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-import zipsa.entity.T_RESERVATION;
+
 import zipsa.entity.T_REVIEW;
 
 
@@ -33,10 +33,7 @@ public class T_ReviewDAO {
 //		session.close();
 //		return dto; }
 	
-	// 예약번호 받아오기
-//	public int Revnum(T_RESERVATION dto) {
-		
-//	}
+
 	
 	
 }
