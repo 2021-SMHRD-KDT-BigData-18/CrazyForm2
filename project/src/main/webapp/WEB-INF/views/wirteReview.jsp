@@ -10,21 +10,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>리뷰 작성</title>
 <link rel="stylesheet" href="assets/css/writeReview.css">
+
 </head>
-<body>
+
 <body>
 	<div id="page-wrapper">
 		<!-- Header -->
 		<div id="header-wrapper">
 			<header id="header" class="container1">
 				<!-- Logo -->
-				<p id="title" style="font-size: 200%; text-align: center;">별점</p>
+				<div>
+					<p id="title1" style="font-size: 200%; text-align: center;">서비스는
+						어떠셨나요?</p>
+				</div>
 				<div id="logo">
 					<h1>
 						<a href="Main.do">ZIPSA</a>
 					</h1>
 				</div>
-
 				<!-- Nav-->
 				<nav id="nav">
 					<ul>
@@ -54,7 +57,7 @@
 					for="1-star" class="star">★</label>
 			</div>
 			<textarea class="form-control" id="bookReview" cols="80" rows="80"
-				placeholder="서비스 이용 리뷰를 남겨주세요❤️"></textarea>
+				placeholder="이용 리뷰를 남겨주세요❤️"></textarea>
 		</div>
 		<div class="review">
 			<button action="reviewMain.do" id="btn-event" onclick="makeReview()"
@@ -80,7 +83,7 @@
         alert('리뷰 등록완료🙏');
     })
 </script>
-
 </body>
 
 </html>
+
