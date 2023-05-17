@@ -22,8 +22,8 @@ public class M_LoginCon implements Controller {
 		String M_pw = request.getParameter("pw");
 		
 		T_MEMBER dto = new T_MEMBER();
-		dto.setM_id(M_id);
-		dto.setM_pw(M_pw);
+		dto.setM_ID(M_id);
+		dto.setM_PW(M_pw);
 		
 		T_MemberDAO dao = new T_MemberDAO();
 		

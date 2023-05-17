@@ -28,10 +28,10 @@ public class M_JoinCon implements Controller {
 
 		T_MEMBER dto = new T_MEMBER();
 		
-		dto.setM_id(M_id);
-		dto.setM_pw(M_pw);
-		dto.setM_name(M_name);
-		dto.setM_phone(M_phone);
+		dto.setM_ID(M_id);
+		dto.setM_PW(M_pw);
+		dto.setM_NAME(M_name);
+		dto.setM_PHONE(M_phone);
 
 		T_MemberDAO dao = new T_MemberDAO();
 		int row = dao.join(dto);

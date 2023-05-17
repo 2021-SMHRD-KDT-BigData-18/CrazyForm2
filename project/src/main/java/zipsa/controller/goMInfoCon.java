@@ -23,7 +23,7 @@ public class goMInfoCon implements Controller {
 	// Mdto에 회원 정보 챙겨가기
 		HttpSession session = request.getSession();
 		T_MEMBER user = (T_MEMBER) session.getAttribute("user");
-		String M_id = user.getM_id();
+		String M_id = user.getM_ID();
 		
 		T_MemberDAO dao = new T_MemberDAO();
 		T_MEMBER dto  = dao.check(M_id);

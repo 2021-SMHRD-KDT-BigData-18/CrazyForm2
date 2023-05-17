@@ -25,7 +25,7 @@ public class RvCon implements Controller {
 		HttpSession session = request.getSession();
 		T_MEMBER user = (T_MEMBER) session.getAttribute("user");
 		
-		String M_id = user.getM_id();
+		String M_id = user.getM_ID();
 		String jobT = request.getParameter("jobT");   					// 청소내용
 		String revDT = request.getParameter("revDT");
 //		Date revDT = transFormat.parse(request.getParameter("revDT"));  // 예약날짜

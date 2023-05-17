@@ -19,7 +19,7 @@ public class goReviewMainCon implements Controller {
 		T_ReviewDAO dao = new T_ReviewDAO();
 		List<T_REVIEW> list = dao.select();
 		
-		request.setAttribute("list", list);
+		request.setAttribute("reviewlist", list);
 		
 		return "reviewMain";
 
