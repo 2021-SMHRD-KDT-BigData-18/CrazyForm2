@@ -88,7 +88,7 @@
 						</div>
 						<div class="col-5 col-12-medium">
 							<ul>
-								<li><a href="goReservation.do"
+								<li><a href="goRv.do"
 									class="button large icon solid fa-arrow-circle-right">집사
 										예약하기</a></li>
 							</ul>
