@@ -110,10 +110,7 @@
         #page-wrapper {
             display: flex;
         }
-                
-  
-  
-         .review-container {
+                 .review-container {
    	     max-width: 800px;
           margin: 0 auto;
            padding: 20px;
