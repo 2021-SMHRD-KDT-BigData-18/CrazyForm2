@@ -48,9 +48,12 @@
 			</header>
 		</div>
 	</div>
-
+	
+	<div>
+		<p class="res">예약하기</p>
+	</div>
 	<form action="/Rv.do" method="post">
-		<div>
+		<div id="Container">
 
 			<div class="selectBox1">
 				<div class="cate">카테고리 선택</div>
