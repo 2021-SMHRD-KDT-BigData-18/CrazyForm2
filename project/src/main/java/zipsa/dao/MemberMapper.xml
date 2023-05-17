@@ -59,7 +59,7 @@
 	<insert id="reserv" parameterType="zipsa.entity.T_RESERVATION">
 	insert into T_RESERVATION (
 	M_IDA,JOB_T,REV_DT,STAFF_SEQ,REV_NOTE,M_ADDR)
-	values(#{M_ID}, #{job_t}, #{rev_dt},#{pET_YN},#{sTAFF_SEQ},#{rEV_NOTE},#{M_addr}
+	values(#{M_ID}, #{JOB_T}, #{REV_DT},#{PET_YN},#{STAFF_SEQ},#{REV_NOTE},#{M_ADDR}
 		)
 	</insert>
 	
