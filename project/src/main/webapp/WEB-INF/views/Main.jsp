@@ -43,13 +43,7 @@
 						<li><a href="https://onnuribed.co.kr/">침구청소</a></li>
 						<li><a href="http://thecleaning.co.kr/default/">에어컨 청소</a></li>
 						<li><a href="https://wayopet.com/home">펫시팅</a></li>
-						<li>
-						<!--<c:if test="\${user ne null}"> 나중에 수정-->
-						<a href="goMinfo.do">예약내역</a>
-						<!-- </c:if>
-						<c:if test="\${user eq null}"> 
-						<a href="login.do">예약내역</a></c:if>						-->
-						</li>
+						<li><a href="goMinfo.do">예약내역</a>	</li>
 						<li><a href="goreviewMain.do">리뷰보기</a></li>
 					</ul>
 				</nav>
@@ -87,7 +81,7 @@
 						</div>
 						<div class="col-5 col-12-medium">
 							<ul>
-								<li><a href="goReservation.do"
+								<li><a href="goRv.do"
 									class="button large icon solid fa-arrow-circle-right">집사
 										예약하기</a></li>
 							</ul>

@@ -13,7 +13,7 @@ public class SqlSessionManager {
 	static {
 
 		try {
-			String resource = "kr/zipsa/dao/mybatis-config.xml";
+			String resource = "zipsa/dao/mybatis-config.xml";
 			InputStream inputStream = Resources.getResourceAsStream(resource);
 			sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 

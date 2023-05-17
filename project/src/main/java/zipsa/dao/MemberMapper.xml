@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="zipsa.dao.ZipsaMemberDAO">
+<mapper namespace="zipsa.dao.T_MemberDAO">
 	<!-- 짝꿍 DAO가 누구인지 -->
 
 	<!-- 회원가입 -->
@@ -16,8 +16,7 @@
 	</insert>
 
 	<!-- 로그인 기능 -->
-	<select id="login" parameterType="zipsa.entity.T_MEMBER"
-		resultType="zipsa.entity.T_MEMBER">
+	<select id="login" parameterType="zipsa.entity.T_MEMBER" resultType="zipsa.entity.T_MEMBER">
 		select * from T_MEMBER where M_id=#{id} and M_pw=#{pw}
 	</select>
 
@@ -30,8 +29,7 @@
 	</update>
 
 	<!-- 관리자의 회원관리창 -->
-	<select id="selectMember" parameterType="zipsa.entity.T_MEMBER"
-		resultType="zipsa.entity.T_MEMBER">
+	<select id="selectMember" parameterType="zipsa.entity.T_MEMBER" resultType="zipsa.entity.T_MEMBER">
 		select * from T_MEMBER
 		where not M_id = 'admin'
 	</select>

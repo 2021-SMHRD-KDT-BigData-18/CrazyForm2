@@ -22,11 +22,11 @@ public class M_LoginCon implements Controller {
 		String pw = request.getParameter("pw");
 		
 		T_MEMBER dto = new T_MEMBER();
-		
 		dto.setM_ID(id);
 		dto.setM_PW(pw);
 		
 		T_MemberDAO dao = new T_MemberDAO();
+		
 		T_MEMBER user = dao.login(dto);
 		
 		String nextView = null;

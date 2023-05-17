@@ -2,24 +2,17 @@
 <!DOCTYPE configuration
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
+  
 <configuration>
-
 	<!-- db.properties에 있는 정보 -->
 	<properties resource="db.properties"></properties>
-	<!-- 
-		<property name="driver" value"..">
-		을 만든 거와 같다
-	 -->
+	<!-- 		<property name="driver" value"..">		을 만든 거와 같다	 -->
 
   <environments default="development">
     <environment id="development">
       <transactionManager type="JDBC"/>
-      <!-- 
-      		(전)JDBC -> 매번 실행할 때마다 Connection 생성
-      		
-      		(후)Connection Pool -> Connection을 미리 여러개 만들어서 필요할 때 빌려주기
-      		Connection Pool을 만들기 위해 4가지 정보를 입력 하라는 말 ↓
-       -->
+      <!-- Connection Pool -> Connection을 미리 여러개 만들어서 필요할 때 빌려주기
+      		Connection Pool을 만들기 위해 4가지 정보를 입력 하라는 말 ↓       -->
       <dataSource type="POOLED">
         <property name="driver" value="${driver}"/>
         <property name="url" value="${url}"/>
@@ -32,6 +25,7 @@
   <!-- 우리 sql문이 어디에 있는가? -->
   <mappers>
     <mapper resource="zipsa/dao/MemberMapper.xml"/>
+    <mapper resource="zipsa/dao/ReviewMapper.xml"/>
   </mappers>
   
   
