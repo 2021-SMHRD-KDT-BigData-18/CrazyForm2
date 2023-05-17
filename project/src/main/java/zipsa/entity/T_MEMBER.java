@@ -1,10 +1,10 @@
 package zipsa.entity;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class T_MEMBER {
 	// 회원 정보테이블
-	
+
 	// 회원 아이디
 	private String M_id;
 	// 회원 비밀번호
@@ -17,21 +17,9 @@ public class T_MEMBER {
 	private Date M_joindate;
 	// 회원 유형
 	private String M_type;
-	
-	public T_MEMBER() {}
 
-
-	public T_MEMBER(String m_id, String m_pw, String m_name, String m_phone, Date m_joindate, String m_type) {
-		super();
-		M_id = m_id;
-		M_pw = m_pw;
-		M_name = m_name;
-		M_phone = m_phone;
-		M_joindate = m_joindate;
-		M_type = m_type;
+	public T_MEMBER() {
 	}
-
-
 
 	public String getM_id() {
 		return M_id;
@@ -81,6 +69,15 @@ public class T_MEMBER {
 		M_type = m_type;
 	}
 
-}
+	public T_MEMBER(String m_id, String m_pw, String m_name, String m_phone, Date m_joindate, String m_type) {
+		super();
+		M_id = m_id;
+		M_pw = m_pw;
+		M_name = m_name;
+		M_phone = m_phone;
+		M_joindate = m_joindate;
+		M_type = m_type;
+	}
 
-	
+
+}
