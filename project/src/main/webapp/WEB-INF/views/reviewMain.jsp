@@ -3,6 +3,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="assets/css/reviewMain.css" />
 <meta charset="UTF-8">
 <title>리뷰 보기</title>
 </head>
@@ -34,8 +35,9 @@
     </div>
 
   <div class="review-container">
+    <div>
     <h1>리뷰 보기</h1>
-    
+    </div>
    <c:forEach var="${reviewList}" items=dto>
   <div class="review-box-wrapper">
     <div class="review-box"> 
