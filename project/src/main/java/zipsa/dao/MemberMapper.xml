@@ -7,7 +7,7 @@
 
 	<!-- 회원가입 -->
 	<insert id="join" parameterType="zipsa.entity.T_MEMBER">
-	INSERT INTO T_MEMBER VALUES (#{M_ID},#{M_pw},#{M_name},#{M_Phone},sysdate,'M')
+	INSERT INTO T_MEMBER VALUES (#{M_id},#{M_pw},#{M_name},#{M_phone},sysdate,'M')
 	</insert>
 
 	<!-- 로그인 기능 -->
