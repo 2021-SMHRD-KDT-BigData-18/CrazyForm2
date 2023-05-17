@@ -5,60 +5,34 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <meta charset="UTF-8">
 <title>리뷰 보기</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .review-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .review-box {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .review-number {
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .review-content {
-    margin-top: 10px;
-  }
-  
-  .review-rating {
-    margin-top: 10px;
-    color: #777;
-  }
-  
-  .review-date {
-    margin-top: 10px;
-    color: #777;
-  }
-  
-  .review-writer {
-    margin-top: 10px;
-    color: #777;
-  }
-  
-  h1 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-</style>
 </head>
 <body>
+ <div id="page-wrapper">
+        <!-- Header -->
+        <div id="header-wrapper">
+            <header id="header" class="container">
+                <!-- Logo -->
+                <div id="logo">
+                    <h1>
+                        <a href="Main.do">ZIPSA</a>
+                    </h1>
+                </div>
+
+                <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li><a href="goReservation.do">예약하기</a></li>
+                        <li><a href="https://onnuribed.co.kr/">침구청소</a></li>
+                        <li><a href="http://thecleaning.co.kr/default/">에어컨 청소</a></li>
+                        <li><a href="https://wayopet.com/home">펫시팅</a></li>
+                        <li><a href="">예약내역</a></li>
+                        <li><a href="goreviewMain.do">리뷰보기</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+    </div>
+
   <div class="review-container">
     <h1>리뷰 보기</h1>
     
@@ -80,5 +54,15 @@
   </div>
 </c:forEach>
     </div>
+    <script>
+    // 별점을 보여주는 기능
+    const stars = document.querySelectorAll('.star');
+    stars.forEach((star) => {
+      const rating = parseFloat(star.getAttribute('data-rating'));
+      if (rating > 0) {
+        star.classList.add('active');
+      }
+    });
+    </script>
 </body>
 </html>
