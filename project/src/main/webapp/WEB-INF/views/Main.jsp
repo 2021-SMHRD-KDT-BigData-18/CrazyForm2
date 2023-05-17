@@ -43,7 +43,13 @@
 						<li><a href="https://onnuribed.co.kr/">침구청소</a></li>
 						<li><a href="http://thecleaning.co.kr/default/">에어컨 청소</a></li>
 						<li><a href="https://wayopet.com/home">펫시팅</a></li>
-						<li><a href="goMinfo.do">예약내역</a>	</li>
+						<li>
+						<!--<c:if test="\${user ne null}"> 나중에 수정-->
+						<a href="goMinfo.do">예약내역</a>
+						<!-- </c:if>
+						<c:if test="\${user eq null}"> 
+						<a href="login.do">예약내역</a></c:if>						-->
+						</li>
 						<li><a href="goreviewMain.do">리뷰보기</a></li>
 					</ul>
 				</nav>
@@ -65,12 +71,14 @@
 							<a class="loginBtn" href="gologin.do">로그인</a>
 						<div>
 							<a class="joinBtn" href="gojoin.do">회원가입</a>
-						</div></c:if> 
+						</div></c:if>
+						<div>
+							<c:if test="${user ne null}">
+								<a href="logout.do">로그아웃</a>
+							</c:if>
 						</div>
+
 					</div>
-					<div class="logoutBox">
-						<c:if test="${user ne null}">
-							<a href="logout.do">로그아웃</a></c:if> 
 					</div>
 					
 					<div class="colBox">
@@ -81,7 +89,7 @@
 						</div>
 						<div class="col-5 col-12-medium">
 							<ul>
-								<li><a href="goRv.do"
+								<li><a href="goReservation.do"
 									class="button large icon solid fa-arrow-circle-right">집사
 										예약하기</a></li>
 							</ul>
@@ -107,9 +115,9 @@
 							<div class="inner">
 								<header>
 									<h2>펫시팅</h2>
+									<br>
+									<p>반려생활 파트너 와요</p>
 									<p>펫시터가 집으로 와요!</p>
-									<p>훈련사의 체계적 교육</p>
-									<p>그루머의 미용서비스</p>
 								</header>
 							</div>
 						</section>
@@ -120,11 +128,13 @@
 						<!-- Box -->
 						<section class="box feature">
 							<a href="#" class="image featured"><img
-								src="images/pic02.jpg" alt="" /></a>
+								src="images/KakaoTalk_20230515_092559032.png" width="528" height="300" alt="" /></a>
 							<div class="inner">
 								<header>
 									<h2>에어컨청소</h2>
-									<p>.</p>
+									<br>
+									<p>에어컨 전문업체로</p>
+									<p>연결됩니다.</p>
 								</header>
 							</div>
 						</section>
@@ -135,11 +145,13 @@
 						<!-- Box -->
 						<section class="box feature">
 							<a href="#" class="image featured"><img
-								src="images/pic03.jpg" alt="" /></a>
+								src="images/bedcleaning.PNG" width="528" height="300" alt="" /></a>
 							<div class="inner">
 								<header>
 									<h2>침구청소</h2>
-									<p>.</p>
+									<br>
+									<p>침구청소 전문업체로</p>
+									<p>연결됩니다.</p>
 								</header>
 							</div>
 						</section>
@@ -190,9 +202,7 @@
 						<div id="content">
 							<section class="last">
 								<h3>청소 꿀팁</h3>
-								<p>내용</p>
-								<a href="#" class="button icon solid fa-arrow-circle-right">Continue
-									Reading</a>
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/jgxKU50YFrQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 							</section>
 						</div>
 
