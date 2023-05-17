@@ -46,24 +46,24 @@ public class T_MemberDAO {
 	}
 	
 	// 회원의 내정보 확인
-	public T_MEMBER check(String id) {
+	public T_MEMBER check(String M_ID) {
 		SqlSession session = factory.openSession(true);
-		T_MEMBER dto = session.selectOne("check", id);
+		T_MEMBER dto = session.selectOne("check", M_ID);
 		session.close();
 		return dto;
 	}
 	// 내 예약현황 확인 -> jsp에서 보여줄 땐
-	public List<T_RESERVATION> selectRv(String id) {
+	public List<T_RESERVATION> selectRv(String M_ID) {
 		SqlSession session = factory.openSession(true);
-		List<T_RESERVATION> list = session.selectList("selectRv", id);
+		List<T_RESERVATION> list = session.selectList("selectRv", M_ID);
 		session.close();
 		return list;
 	}
 
 	// 회원 탈퇴 → deleteCon에서 id와 pw dto로 묶어줘야함
-	public int delete(String id) {
+	public int delete(String M_ID) {
 		SqlSession session = factory.openSession(true);
-		int row = session.delete("delete", id);
+		int row = session.delete("delete", M_ID);
 		session.close();
 		return row;
 	}
