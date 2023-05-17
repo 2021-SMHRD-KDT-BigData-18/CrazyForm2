@@ -1,9 +1,6 @@
 package zipsa.controller;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -28,13 +25,13 @@ public class RvCon implements Controller {
 		HttpSession session = request.getSession();
 		T_MEMBER user = (T_MEMBER) session.getAttribute("user");
 		
-		String id = user.getM_ID();
+		String M_id = user.getM_id();
 		String jobT = request.getParameter("jobT");   					// 청소내용
 		String revDT = request.getParameter("revDT");
 //		Date revDT = transFormat.parse(request.getParameter("revDT"));  // 예약날짜
-		String pet = request.getParameter("pet");      					// 펫유무
-		String note = request.getParameter("note");						// 요청사항
-		String addr = request.getParameter("address");					// 주소등록
+		String pet_yn = request.getParameter("pet");      					// 펫유무
+		String rev_note = request.getParameter("note");						// 요청사항
+		String M_addr = request.getParameter("address");					// 주소등록
 		
 		// 예약일자만 구해서 쉬는날과 예약일이 맞지않은 직원은 배제시키기위함
 		T_MemberDAO dao = new T_MemberDAO();
@@ -42,13 +39,13 @@ public class RvCon implements Controller {
 		
 		//dto에 정보 맵핑 후 등록
 		T_RESERVATION dto = new T_RESERVATION();
-		dto.setM_ID(id);
+		dto.setM_ID(M_id);
 		dto.setJOB_T(jobT);
 		dto.setREV_DT(revDT);
-		dto.setPET_YN(pet);
+		dto.setPET_YN(pet_yn);
 		dto.setSTAFF_SEQ(staff);
-		dto.setREV_NOTE(note);
-		dto.setM_ADDR(addr);
+		dto.setREV_NOTE(rev_note);
+		dto.setM_ADDR(M_addr);
 
 		int row = dao.Reserv(dto);
 

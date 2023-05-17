@@ -18,12 +18,12 @@ public class M_LoginCon implements Controller {
 
 		request.setCharacterEncoding("UTF-8");
 
-		String id = request.getParameter("id");
-		String pw = request.getParameter("pw");
+		String M_id = request.getParameter("id");
+		String M_pw = request.getParameter("pw");
 		
 		T_MEMBER dto = new T_MEMBER();
-		dto.setM_ID(id);
-		dto.setM_PW(pw);
+		dto.setM_id(M_id);
+		dto.setM_pw(M_pw);
 		
 		T_MemberDAO dao = new T_MemberDAO();
 		

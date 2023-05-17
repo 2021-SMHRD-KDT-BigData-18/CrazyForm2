@@ -1,30 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="zipsa.dao.T_MemberDAO">
 	<!-- 짝꿍 DAO가 누구인지 -->
 
 	<!-- 회원가입 -->
 	<insert id="join" parameterType="zipsa.entity.T_MEMBER">
-		insert into T_MEMBER
-		(M_ID,M_PW,M_NAME,M_PHONE,M_TYPE )
-	values(#{ID},
-		#{PW},
-		#{NAME},
-		#{PHONE},
-		,"M"
-		)
+	INSERT INTO T_MEMBER VALUES (#{M_ID},#{M_pw},#{M_name},#{M_Phone},sysdate,'M')
 	</insert>
 
 	<!-- 로그인 기능 -->
 	<select id="login" parameterType="zipsa.entity.T_MEMBER" resultType="zipsa.entity.T_MEMBER">
-		select * from T_MEMBER where M_id=#{id} and M_pw=#{pw}
+		select * from T_MEMBER where M_id=#{M_id} and M_pw=#{M_pw}
 	</select>
 
 	<!-- 회원정보 수정기능 -->
 	<update id="update" parameterType="zipsa.entity.T_MEMBER">
 		update T_MEMBER SET
-		M_pw=#{pw}
-		where M_id=#{id}
+		M_pw=#{M_pw}
+		where M_id=#{M_id}
 	}
 	</update>
 
@@ -43,20 +38,20 @@
 	<select id="selectRv" parameterType="zipsa.entity.T_MEMBER"
 		resultType="zipsa.entity.T_RESERVATION">
 		SELECT * FROM T_RESERVATION
-		WHERE M_id=#{id}
+		WHERE M_id=#{M_id}
 	</select>
 
 	<!-- 회원 탈퇴기능 -->
 	<delete id="delete" parameterType="zipsa.entity.T_MEMBER">
 		delete from T_MEMBER
-		where M_id=#{id}
+		where M_id=#{M_id}
 	</delete>
 
 	<!-- id중복확인, 회원의 내정보 확인 -->
 	<select id="check" parameterType="zipsa.entity.T_MEMBER"
 		resultType="zipsa.entity.T_MEMBER">
 		SELECT M_PW,M_NAME,M_PHONE,M_ADDR FROM T_MEMBER
-		WHERE M_id=#{id}
+		WHERE M_id=#{M_id}
 	</select>
 
 	
@@ -64,7 +59,7 @@
 	<insert id="reserv" parameterType="zipsa.entity.T_RESERVATION">
 	insert into T_RESERVATION (
 	M_IDA,JOB_T,REV_DT,STAFF_SEQ,REV_NOTE,M_ADDR)
-	values(#{id}, #{job_t}, #{rev_dt},#{pET_YN},#{sTAFF_SEQ},#{rEV_NOTE},#{addr}
+	values(#{M_id}, #{job_t}, #{rev_dt},#{pET_YN},#{sTAFF_SEQ},#{rEV_NOTE},#{M_addr}
 		)
 	</insert>
 	

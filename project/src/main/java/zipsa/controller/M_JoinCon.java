@@ -21,17 +21,17 @@ public class M_JoinCon implements Controller {
 		
 		request.setCharacterEncoding("UTF-8");
 
-		String id = request.getParameter("id");
-		String pw = request.getParameter("pw");
-		String name = request.getParameter("name");
-		String phone = request.getParameter("phone");
+		String M_id = request.getParameter("id");
+		String M_pw = request.getParameter("pw");
+		String M_name = request.getParameter("name");
+		String M_phone = request.getParameter("phone");
 
 		T_MEMBER dto = new T_MEMBER();
 		
-		dto.setM_ID(id);
-		dto.setM_PW(pw);
-		dto.setM_NAME(name);
-		dto.setM_PHONE(phone);
+		dto.setM_id(M_id);
+		dto.setM_pw(M_pw);
+		dto.setM_name(M_name);
+		dto.setM_phone(M_phone);
 
 		T_MemberDAO dao = new T_MemberDAO();
 		int row = dao.join(dto);
@@ -39,7 +39,7 @@ public class M_JoinCon implements Controller {
 		String nextView = null;
 		
 		if (row > 0) {
-			nextView = "JoinSuccess";
+			nextView = "redirect:/goJoinSuccess.do";
 		} else {
 			nextView = "redirect:/Main.do";
 		}

@@ -23,14 +23,14 @@ public class goMInfoCon implements Controller {
 	// Mdto에 회원 정보 챙겨가기
 		HttpSession session = request.getSession();
 		T_MEMBER user = (T_MEMBER) session.getAttribute("user");
-		String id = user.getM_ID();
+		String M_id = user.getM_id();
 		
 		T_MemberDAO dao = new T_MemberDAO();
-		T_MEMBER dto  = dao.check(id);
+		T_MEMBER dto  = dao.check(M_id);
 		request.setAttribute("Mdto",dto);		
 		
 	// Rlist에 예약현황 챙겨가기
-			List<T_RESERVATION> list = dao.selectRv(id);
+			List<T_RESERVATION> list = dao.selectRv(M_id);
 			request.setAttribute("Rlist", list);
 			return "M_info"; 
 			

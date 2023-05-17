@@ -20,6 +20,7 @@ import zipsa.controller.M_LogoutCon;
 import zipsa.controller.RvCon;
 import zipsa.controller.M_UpdateCon;
 import zipsa.controller.checkCon;
+import zipsa.controller.goJoinSuccessCon;
 import zipsa.controller.goLoginCon;
 import zipsa.controller.goMInfoCon;
 import zipsa.controller.goMainCon;
@@ -28,7 +29,6 @@ import zipsa.controller.goRvCon;
 import zipsa.controller.goUpdateCon;
 import zipsa.controller.goWriteReviewCon;
 import zipsa.controller.gojoinCon;
-import zipsa.controller.writeReviewCon;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -42,7 +42,8 @@ public class FrontController extends HttpServlet {
 
 		mappings.put("/Main.do", new goMainCon());		  // 메인페이지 이동
 		mappings.put("/gojoin.do", new gojoinCon());	  // 회원가입 페이지 이동
-		mappings.put("/join.do", new M_JoinCon());		  // 회원가입 저장시키고 성공화면으로 이동하는 페이지
+		mappings.put("/join.do", new M_JoinCon());		  // 회원가입 저장시키고 이동하는 페이지
+		mappings.put("/goJoinSuccess.do", new goJoinSuccessCon());		  // 회원가입 저장시키고 이동하는 페이지
 		mappings.put("/check.do", new checkCon());		  // 아이디 중복체크 ajax
 		mappings.put("/gologin.do", new goLoginCon());	  // 로그인화면 이동
 		mappings.put("/login.do", new M_LoginCon());	  // 로그인 후 메인으로 이동시키는 페이지
