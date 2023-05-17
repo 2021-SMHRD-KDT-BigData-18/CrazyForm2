@@ -25,7 +25,7 @@ public class RvCon implements Controller {
 		HttpSession session = request.getSession();
 		T_MEMBER user = (T_MEMBER) session.getAttribute("user");
 		
-		String M_id = user.getM_ID();
+		String M_ID = user.getM_ID();
 		String jobT = request.getParameter("jobT");   					// 청소내용
 		String revDT = request.getParameter("revDT");
 //		Date revDT = transFormat.parse(request.getParameter("revDT"));  // 예약날짜
@@ -39,7 +39,7 @@ public class RvCon implements Controller {
 		
 		//dto에 정보 맵핑 후 등록
 		T_RESERVATION dto = new T_RESERVATION();
-		dto.setM_ID(M_id);
+		dto.setM_ID(M_ID);
 		dto.setJOB_T(jobT);
 		dto.setREV_DT(revDT);
 		dto.setPET_YN(pet_yn);

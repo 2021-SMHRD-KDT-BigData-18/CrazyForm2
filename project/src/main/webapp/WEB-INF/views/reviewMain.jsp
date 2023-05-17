@@ -52,7 +52,7 @@
       </div>
       <div class="review-content">후기: ${dto.REVIEW_CONTENT}</div>
       <div class="review-date">작성일: ${dto.REVIEW_DT}</div>
- <!--     <div class="review-writer">작성자: ${dto.M_ID}</div> --> 
+    
     </div>
   </div>
 </c:forEach>

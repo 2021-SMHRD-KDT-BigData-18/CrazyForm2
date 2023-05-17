@@ -21,17 +21,17 @@ public class M_JoinCon implements Controller {
 		
 		request.setCharacterEncoding("UTF-8");
 
-		String M_id = request.getParameter("id");
-		String M_pw = request.getParameter("pw");
-		String M_name = request.getParameter("name");
-		String M_phone = request.getParameter("phone");
+		String M_ID = request.getParameter("id");
+		String M_PW = request.getParameter("pw");
+		String M_NAME = request.getParameter("name");
+		String M_PHONE = request.getParameter("phone");
 
 		T_MEMBER dto = new T_MEMBER();
 		
-		dto.setM_ID(M_id);
-		dto.setM_PW(M_pw);
-		dto.setM_NAME(M_name);
-		dto.setM_PHONE(M_phone);
+		dto.setM_ID(M_ID);
+		dto.setM_PW(M_PW);
+		dto.setM_NAME(M_NAME);
+		dto.setM_PHONE(M_PHONE);
 
 		T_MemberDAO dao = new T_MemberDAO();
 		int row = dao.join(dto);

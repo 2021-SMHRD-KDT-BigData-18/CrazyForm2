@@ -21,12 +21,12 @@ public class M_UpdateCon implements Controller {
 		HttpSession session = request.getSession();
 		T_MEMBER user = (T_MEMBER) session.getAttribute("user");
 
-		String id = user.getM_ID();
-		String pw = request.getParameter("pw");
+		String M_ID = user.getM_ID();
+		String M_PW = request.getParameter("pw");
 		
 		T_MEMBER dto = new T_MEMBER();
-		dto.setM_ID(id);
-		dto.setM_PHONE(pw);
+		dto.setM_ID(M_ID);
+		dto.setM_PHONE(M_PW);
 
 		T_MemberDAO dao = new T_MemberDAO();
 		int row = dao.update(dto);

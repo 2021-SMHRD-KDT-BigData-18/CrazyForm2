@@ -7,26 +7,26 @@
 
 	<!-- 회원가입 -->
 	<insert id="join" parameterType="zipsa.entity.T_MEMBER">
-	INSERT INTO T_MEMBER VALUES (#{M_id},#{M_pw},#{M_name},#{M_phone},sysdate,'M')
+	INSERT INTO T_MEMBER VALUES (#{M_ID},#{M_PW},#{M_NAME},#{M_PHONE},sysdate,'M')
 	</insert>
 
 	<!-- 로그인 기능 -->
 	<select id="login" parameterType="zipsa.entity.T_MEMBER" resultType="zipsa.entity.T_MEMBER">
-		select * from T_MEMBER where M_id=#{M_id} and M_pw=#{M_pw}
+		select * from T_MEMBER where M_ID=#{M_ID} and M_PW=#{M_PW}
 	</select>
 
 	<!-- 회원정보 수정기능 -->
 	<update id="update" parameterType="zipsa.entity.T_MEMBER">
 		update T_MEMBER SET
-		M_pw=#{M_pw}
-		where M_id=#{M_id}
+		M_PW=#{M_PW}
+		where M_ID=#{M_ID}
 	}
 	</update>
 
 	<!-- 관리자의 회원관리창 -->
 	<select id="selectMember" parameterType="zipsa.entity.T_MEMBER" resultType="zipsa.entity.T_MEMBER">
 		select * from T_MEMBER
-		where not M_id = 'admin'
+		where not M_ID = 'admin'
 	</select>
 
 	<!-- 관리자가 보는 예약현황창 -->
@@ -38,20 +38,20 @@
 	<select id="selectRv" parameterType="zipsa.entity.T_MEMBER"
 		resultType="zipsa.entity.T_RESERVATION">
 		SELECT * FROM T_RESERVATION
-		WHERE M_id=#{M_id}
+		WHERE M_ID=#{M_ID}
 	</select>
 
 	<!-- 회원 탈퇴기능 -->
 	<delete id="delete" parameterType="zipsa.entity.T_MEMBER">
 		delete from T_MEMBER
-		where M_id=#{M_id}
+		where M_ID=#{M_ID}
 	</delete>
 
 	<!-- id중복확인, 회원의 내정보 확인 -->
 	<select id="check" parameterType="zipsa.entity.T_MEMBER"
 		resultType="zipsa.entity.T_MEMBER">
 		SELECT M_PW,M_NAME,M_PHONE,M_ADDR FROM T_MEMBER
-		WHERE M_id=#{M_id}
+		WHERE M_ID=#{M_ID}
 	</select>
 
 	
@@ -59,7 +59,7 @@
 	<insert id="reserv" parameterType="zipsa.entity.T_RESERVATION">
 	insert into T_RESERVATION (
 	M_IDA,JOB_T,REV_DT,STAFF_SEQ,REV_NOTE,M_ADDR)
-	values(#{M_id}, #{job_t}, #{rev_dt},#{pET_YN},#{sTAFF_SEQ},#{rEV_NOTE},#{M_addr}
+	values(#{M_ID}, #{job_t}, #{rev_dt},#{pET_YN},#{sTAFF_SEQ},#{rEV_NOTE},#{M_addr}
 		)
 	</insert>
 	

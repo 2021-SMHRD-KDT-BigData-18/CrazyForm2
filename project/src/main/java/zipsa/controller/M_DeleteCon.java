@@ -14,9 +14,9 @@ public class M_DeleteCon implements Controller {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String M_id= request.getParameter("id");
+		String M_ID= request.getParameter("id");
 		T_MemberDAO dao = new T_MemberDAO();
-		int row = dao.delete(M_id);
+		int row = dao.delete(M_ID);
 		if (row > 0) {
 			return "redirect:/goMain.do";     // 성공 시 메인페이지로
 		} else {
