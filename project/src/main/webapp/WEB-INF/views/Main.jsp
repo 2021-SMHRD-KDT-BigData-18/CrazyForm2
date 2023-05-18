@@ -37,19 +37,24 @@
 				<!-- Nav -->
 				<nav id="nav">
 					<ul>
-						<li><% // if user값 null 이면 goLogin.do로 연결 %>
-						<a href="goRv.do">예약하기</a>
+						<li>
+							<%
+							// if user값 null 이면 goLogin.do로 연결
+							%> <a href="goRv.do">예약하기</a>
 						</li>
 						<li><a href="https://onnuribed.co.kr/">침구청소</a></li>
 						<li><a href="http://thecleaning.co.kr/default/">에어컨 청소</a></li>
 						<li><a href="https://wayopet.com/home">펫시팅</a></li>
-						<li>
-						<!--<c:if test="\${user ne null}"> 나중에 수정-->
-						<a href="goMinfo.do">예약내역</a>
-						<!-- </c:if>
-						<c:if test="\${user eq null}"> 
-						<a href="login.do">예약내역</a></c:if>						-->
-						</li>
+
+						<li><c:choose>
+							<c:when test="${user eq null}">
+								<a href="gologin.do">예약내역</a>
+							</c:when>
+							<c:otherwise>
+								<a href="goMinfo.do">예약내역</a>
+							</c:otherwise>
+						</c:choose></li>
+
 						<li><a href="goreviewMain.do">리뷰보기</a></li>
 					</ul>
 				</nav>
@@ -63,14 +68,15 @@
 				<div class="row">
 					<img height="500" width="500"
 						src="https://i.pinimg.com/564x/1f/69/c2/1f69c2f21ad625ba642c4979614e5959.jpg">
-					
-						<div class="loginBox">
+
+					<div class="loginBox">
 						<span class="msg">집사를 더 안전하고 편리하게 이용하세요.</span>
 						<c:if test="${user eq null}">
 							<a class="loginBtn" href="gologin.do">로그인</a>
-						<div>
-							<a class="joinBtn" href="gojoin.do">회원가입</a>
-						</div></c:if>
+							<div>
+								<a class="joinBtn" href="gojoin.do">회원가입</a>
+							</div>
+						</c:if>
 						<div>
 							<c:if test="${user ne null}">
 								<a href="logout.do">로그아웃</a>
@@ -78,176 +84,168 @@
 						</div>
 
 					</div>
+				</div>
+
+				<div class="colBox">
+					<div class="col-7 col-12-medium">
+						<h3>
+							당신의 일상이 행복하도록 <br> 집사가 함께 할게요
+						</h3>
 					</div>
-					
-					<div class="colBox">
-						<div class="col-7 col-12-medium">
-							<h3>
-								당신의 일상이 행복하도록 <br> 집사가 함께 할게요
-							</h3>
-						</div>
-						<div class="col-5 col-12-medium">
-							<ul>
-								<li><a href="goRv.do"
-									class="button large icon solid fa-arrow-circle-right">집사
-										예약하기</a></li>
-							</ul>
-						</div>
+					<div class="col-5 col-12-medium">
+						<ul>
+							<li><a href="goRv.do"
+								class="button large icon solid fa-arrow-circle-right">집사
+									예약하기</a></li>
+						</ul>
 					</div>
-					
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Features -->
+	<div id="features-wrapper">
+		<div class="container">
+			<div class="row">
+				<div class="col-4 col-12-medium">
+
+					<!-- Box -->
+					<section class="box feature">
+						<a href="https://wayopet.com/home" class="image featured"><img
+							width="528" height="300"
+							src="https://i.pinimg.com/564x/74/ac/21/74ac2195da23a88006b0968dcff25ac0.jpg"
+							alt="" /></a>
+						<div class="inner">
+							<header>
+								<h2>펫시팅</h2>
+								<br>
+								<p>반려생활 파트너 와요</p>
+								<p>펫시터가 집으로 와요!</p>
+							</header>
+						</div>
+					</section>
+
+				</div>
+				<div class="col-4 col-12-medium">
+
+					<!-- Box -->
+					<section class="box feature">
+						<a href="http://thecleaning.co.kr/default/" class="image featured"><img
+							src="images/KakaoTalk_20230515_092559032.png" width="528"
+							height="300" alt="" /></a>
+						<div class="inner">
+							<header>
+								<h2>에어컨청소</h2>
+								<br>
+								<p>에어컨 전문업체로</p>
+								<p>연결됩니다.</p>
+							</header>
+						</div>
+					</section>
+
+				</div>
+				<div class="col-4 col-12-medium">
+
+					<!-- Box -->
+					<section class="box feature">
+						<a href="https://onnuribed.co.kr/" class="image featured"><img
+							src="images/bedcleaning.PNG" width="528" height="300" alt="" /></a>
+						<div class="inner">
+							<header>
+								<h2>침구청소</h2>
+								<br>
+								<p>침구청소 전문업체로</p>
+								<p>연결됩니다.</p>
+							</header>
+						</div>
+					</section>
+
 				</div>
 			</div>
 		</div>
+	</div>
 
-		<!-- Features -->
-		<div id="features-wrapper">
-			<div class="container">
-				<div class="row">
-					<div class="col-4 col-12-medium">
+	<!-- Main -->
+	<div id="main-wrapper">
+		<div class="container">
+			<div class="row gtr-200">
+				<div class="col-4 col-12-medium">
 
-						<!-- Box -->
-						<section class="box feature">
-							<a href="https://wayopet.com/home" class="image featured"><img
-								width="528" height="300"
-								src="https://i.pinimg.com/564x/74/ac/21/74ac2195da23a88006b0968dcff25ac0.jpg"
-								alt="" /></a>
-							<div class="inner">
-								<header>
-									<h2>펫시팅</h2>
-									<br>
-									<p>반려생활 파트너 와요</p>
-									<p>펫시터가 집으로 와요!</p>
-								</header>
-							</div>
-						</section>
-
-					</div>
-					<div class="col-4 col-12-medium">
-
-						<!-- Box -->
-						<section class="box feature">
-							<a href="#" class="image featured"><img
-								src="images/KakaoTalk_20230515_092559032.png" width="528" height="300" alt="" /></a>
-							<div class="inner">
-								<header>
-									<h2>에어컨청소</h2>
-									<br>
-									<p>에어컨 전문업체로</p>
-									<p>연결됩니다.</p>
-								</header>
-							</div>
-						</section>
-
-					</div>
-					<div class="col-4 col-12-medium">
-
-						<!-- Box -->
-						<section class="box feature">
-							<a href="#" class="image featured"><img
-								src="images/bedcleaning.PNG" width="528" height="300" alt="" /></a>
-							<div class="inner">
-								<header>
-									<h2>침구청소</h2>
-									<br>
-									<p>침구청소 전문업체로</p>
-									<p>연결됩니다.</p>
-								</header>
-							</div>
-						</section>
-
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- Main -->
-		<div id="main-wrapper">
-			<div class="container">
-				<div class="row gtr-200">
-					<div class="col-4 col-12-medium">
-
-						<!-- Sidebar -->
-						<div id="sidebar">
-							<section class="widget thumbnails">
-								<h3>.</h3>
-								<div class="grid">
-									<div class="row gtr-50">
-										<div class="col-6">
-											<a href="#" class="image fit"><img src="images/pic04.jpg"
-												alt="" /></a>
-										</div>
-										<div class="col-6">
-											<a href="#" class="image fit"><img src="images/pic05.jpg"
-												alt="" /></a>
-										</div>
-										<div class="col-6">
-											<a href="#" class="image fit"><img src="images/pic06.jpg"
-												alt="" /></a>
-										</div>
-										<div class="col-6">
-											<a href="#" class="image fit"><img src="images/pic07.jpg"
-												alt="" /></a>
-										</div>
+					<!-- Sidebar -->
+					<div id="sidebar">
+						<section class="widget thumbnails">
+							<h3>청소 꿀팁</h3>
+							<div class="grid">
+								<div class="row gtr-50">
+									<div class="col-6">
+										<img width="400" height="315" src="images/bathroom.jpg"
+											alt="" />
 									</div>
+									
 								</div>
-								<a href="#" class="button icon fa-file-alt">More</a>
-							</section>
-						</div>
-
+							</div>
+						</section>
 					</div>
-					<div class="col-8 col-12-medium imp-medium">
 
-						<!-- Content -->
-						<div id="content">
-							<section class="last">
-								<h3>청소 꿀팁</h3>
-								<iframe width="560" height="315" src="https://www.youtube.com/embed/jgxKU50YFrQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-							</section>
-						</div>
+				</div>
+				<div class="col-8 col-12-medium imp-medium">
 
+					<!-- Content -->
+					<div id="content">
+						<section class="last">
+							<iframe width="560" height="315"
+								src="https://www.youtube.com/embed/jgxKU50YFrQ"
+								title="YouTube video player" frameborder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+								allowfullscreen></iframe>
+						</section>
 					</div>
+
 				</div>
 			</div>
 		</div>
+	</div>
 
-		<!-- Footer -->
-		<div id="footer-wrapper">
-			<footer id="footer" class="container">
-				<div class="row">
-					<div class="col-3 col-6-medium col-12-small">
+	<!-- Footer -->
+	<div id="footer-wrapper">
+		<footer id="footer" class="container">
+			<div class="row">
+				<div class="col-3 col-6-medium col-12-small">
 
-						<!-- Links -->
-						<section class="widget links">
-							<h3>Channel Plus</h3>
-							<ul class="style2">
-								<!-- 카카오톡 채널 추가 버튼이 표시될 위치 -->
-								<div id="kakao-talk-channel-add-button"
-									data-channel-public-id="_gJmYxj" data-size="large"
-									data-support-multiple-densities="true"></div>
-							</ul>
-						</section>
+					<!-- Links -->
+					<section class="widget links">
+						<h3>Channel Plus</h3>
+						<ul class="style2">
+							<!-- 카카오톡 채널 추가 버튼이 표시될 위치 -->
+							<div id="kakao-talk-channel-add-button"
+								data-channel-public-id="_gJmYxj" data-size="large"
+								data-support-multiple-densities="true"></div>
+						</ul>
+					</section>
 
-					</div>
-					<div class="col-3 col-6-medium col-12-small">
-
-						<!-- Contact -->
-						<section class="widget contact last">
-							<h3>Contact Us</h3>
-							<ul>
-								<li><a href="https://www.instagram.com/zipsa_manager/"
-									class="icon brands fa-instagram"><span class="label"
-										height="45" width="45">Instagram</span></a></li>
-							</ul>
-
-							<p>
-								<br /> 광주광역시 남구 송암로 60<br /> (062) 000-0000
-							</p>
-						</section>
-
-					</div>
 				</div>
-			</footer>
-		</div>
+				<div class="col-3 col-6-medium col-12-small">
+
+					<!-- Contact -->
+					<section class="widget contact last">
+						<h3>Contact Us</h3>
+						<ul>
+							<li><a href="https://www.instagram.com/zipsa_manager/"
+								class="icon brands fa-instagram"><span class="label"
+									height="45" width="45">Instagram</span></a></li>
+						</ul>
+
+						<p>
+							<br /> 광주광역시 남구 송암로 60<br /> (062) 000-0000
+						</p>
+					</section>
+
+				</div>
+			</div>
+		</footer>
+	</div>
 
 	</div>
 
