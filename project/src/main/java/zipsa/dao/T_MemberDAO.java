@@ -1,10 +1,12 @@
 package zipsa.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
+import zipsa.entity.T_HOLIDAY;
 import zipsa.entity.T_MEMBER;
 import zipsa.entity.T_RESERVATION;
 
@@ -29,9 +31,9 @@ public class T_MemberDAO {
 	}
 	
 	// 예약할때 직원 중복되지 않도록 랜덤배정 후 스태프 번호 받아서 입력
-	public int RandomStaff() {
+	public int RandomStaff(Date REV_DT) {
 		SqlSession session = factory.openSession(true);
-		T_RESERVATION dto = session.selectOne("reserv");
+		T_RESERVATION dto = session.selectOne("reserv",REV_DT);
 		int staff=dto.getSTAFF_SEQ();
 		session.close();
 		return staff;	
@@ -89,7 +91,21 @@ public class T_MemberDAO {
 		List<T_RESERVATION> list = session.selectList("selectAllR");
 		session.close();
 		return list;
+	}	
+	
+	// 예약시 선택한 직원번호 예약일
+	public List<T_RESERVATION> staffRDay(int STAFF_SEQ) {
+		SqlSession session = factory.openSession(true);
+		List<T_RESERVATION> list = session.selectList("StaffRDay",STAFF_SEQ);
+		session.close();
+		return list;
 	}
-
+	// 예약시 선택한 직원번호 휴무일
+	public List<T_HOLIDAY> staffHDay(int STAFF_SEQ) {
+		SqlSession session = factory.openSession(true);
+		List<T_HOLIDAY> list = session.selectList("staffHDay",STAFF_SEQ);
+		session.close();
+		return list;
+	}
 
 }

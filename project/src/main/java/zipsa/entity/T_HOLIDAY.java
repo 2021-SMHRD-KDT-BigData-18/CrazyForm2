@@ -4,73 +4,45 @@ import java.util.Date;
 
 public class T_HOLIDAY {
 	// 집사직원 휴무일
+	
 	public T_HOLIDAY() {	}
-
-
-	public T_HOLIDAY(Double hOLI_SEQ, Double sTAFF_SEQ, Date hOLI_DT) {
+	
+	
+	// 휴무 순번
+	private int HOLI_SEQ;
+	
+	// 직원 번호
+	private int STAFF_SEQ;
+	// 휴무 날짜
+	private Date HOLI_DT;
+	
+	
+	public int getHOLI_SEQ() {
+		return HOLI_SEQ;
+	}
+	public void setHOLI_SEQ(int hOLI_SEQ) {
+		HOLI_SEQ = hOLI_SEQ;
+	}
+	public int getSTAFF_SEQ() {
+		return STAFF_SEQ;
+	}
+	public void setSTAFF_SEQ(int sTAFF_SEQ) {
+		STAFF_SEQ = sTAFF_SEQ;
+	}
+	public Date getHOLI_DT() {
+		return HOLI_DT;
+	}
+	public void setHOLI_DT(Date hOLI_DT) {
+		HOLI_DT = hOLI_DT;
+	}
+	public T_HOLIDAY(int hOLI_SEQ, int sTAFF_SEQ, Date hOLI_DT) {
 		super();
 		HOLI_SEQ = hOLI_SEQ;
 		STAFF_SEQ = sTAFF_SEQ;
 		HOLI_DT = hOLI_DT;
 	}
-
-
-	public Double getHOLI_SEQ() {
-		return HOLI_SEQ;
-	}
-
-	public void setHOLI_SEQ(Double hOLI_SEQ) {
-		HOLI_SEQ = hOLI_SEQ;
-	}
-
-	public Double getSTAFF_SEQ() {
-		return STAFF_SEQ;
-	}
-
-	public void setSTAFF_SEQ(Double sTAFF_SEQ) {
-		STAFF_SEQ = sTAFF_SEQ;
-	}
-
-	public Date getHOLI_DT() {
-		return HOLI_DT;
-	}
-
-	public void setHOLI_DT(Date hOLI_DT) {
-		HOLI_DT = hOLI_DT;
-	}
-
-	// 휴무 순번
-	private Double HOLI_SEQ;
-
-	// 직원 번호
-	private Double STAFF_SEQ;
-
-	// 휴무 날짜
-	private Date HOLI_DT;
-
-	public Double getHoliSeq() {
-		return HOLI_SEQ;
-	}
-
-	public void setHoliSeq(Double holiSeq) {
-		this.HOLI_SEQ = HOLI_SEQ;
-	}
-
-	public Double getStaffSeq() {
-		return STAFF_SEQ;
-	}
-
-	public void setStaffSeq(Double staffSeq) {
-		this.STAFF_SEQ = STAFF_SEQ;
-	}
-
-	public Date getHoliDt() {
-		return HOLI_DT;
-	}
-
-	public void setHoliDt(Date holiDt) {
-		this.HOLI_DT = HOLI_DT;
-	}
-
-
+	
+	
+	
+	
 }

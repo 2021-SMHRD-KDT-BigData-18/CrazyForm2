@@ -15,16 +15,28 @@
 		select * from T_MEMBER where M_ID=#{M_ID} and M_PW=#{M_PW}
 	</select>
 
-	<!-- 회원정보 수정기능 -->
+	<!-- 비밀번호 수정기능 -->
 	<update id="update" parameterType="zipsa.entity.T_MEMBER">
 		update T_MEMBER SET
 		M_PW=#{M_PW}
 		where M_ID=#{M_ID}
-	}
 	</update>
 
+	<!-- 내 예약현황 확인 -->
+	<select id="selectRv" parameterType="zipsa.entity.T_MEMBER"
+		resultType="zipsa.entity.T_RESERVATION">
+		SELECT * FROM V_RV_STAFF
+		WHERE M_ID=#{M_ID}
+	</select>
+
+	<!-- 회원 탈퇴기능 -->
+	<delete id="delete" parameterType="zipsa.entity.T_MEMBER">
+		delete from T_MEMBER
+		where M_ID=#{M_ID}
+	</delete>
+
 	<!-- 관리자의 회원관리창 -->
-	<select id="selectMember" parameterType="zipsa.entity.T_MEMBER" resultType="zipsa.entity.T_MEMBER">
+	<select id="selectMember" resultType="zipsa.entity.T_MEMBER">
 		select * from T_MEMBER
 		where not M_ID = 'admin'
 	</select>
@@ -34,18 +46,6 @@
 		select * from T_RESERVATION
 	</select>
 
-	<!-- 내 예약현황 확인 -->
-	<select id="selectRv" parameterType="zipsa.entity.T_MEMBER"
-		resultType="zipsa.entity.T_RESERVATION">
-		SELECT * FROM T_RESERVATION
-		WHERE M_ID=#{M_ID}
-	</select>
-
-	<!-- 회원 탈퇴기능 -->
-	<delete id="delete" parameterType="zipsa.entity.T_MEMBER">
-		delete from T_MEMBER
-		where M_ID=#{M_ID}
-	</delete>
 
 	<!-- id중복확인, 회원의 내정보 확인 -->
 	<select id="check" parameterType="zipsa.entity.T_MEMBER"
@@ -57,10 +57,10 @@
 	
 <!-- 예약하기 -->
 	<insert id="reserv" parameterType="zipsa.entity.T_RESERVATION">
-	insert into T_RESERVATION (
-	M_IDA,JOB_T,REV_DT,STAFF_SEQ,REV_NOTE,M_ADDR)
-	values(#{M_ID}, #{JOB_T}, #{REV_DT},#{PET_YN},#{STAFF_SEQ},#{REV_NOTE},#{M_ADDR}
-		)
+insert into T_RESERVATION (
+M_ID, JOB_T, REV_DT,STAFF_SEQ,REV_NOTE,M_ADDR)
+values(#{M_ID}, #{JOB_T}, SUBSTR(TO_DATE(#{REV_DT},'yyyy/mm/dd hh24:mi:ss'),1,10))
+,#{PET_YN},#{STAFF_SEQ},#{REV_NOTE},#{M_ADDR})
 	</insert>
 	
 <!--  직원 랜덤 배정  날짜사이 - 있을경우 자를 글자 10 없을경우 8-->
@@ -68,15 +68,23 @@
 SELECT D.STAFF_SEQ FROM ( 
         SELECT *
         FROM T_HOLIDAY A
-        where A.HOLI_DT !=SUBSTR(#{rev_DT},1,8) ) C,
+        where A.HOLI_DT != SUBSTR(TO_DATE(#{REV_DT},'yyyy/mm/dd hh24:mi:ss'),1,10)) C,
        (SELECT *
         FROM T_RESERVATION B
-        where B.REV_DT != {rev_DT}	) D
+        where B.REV_DT !=#{REV_DT}	) D
         WHERE ROWNUM = 1
         order by DBMS_RANDOM.RANDOM;
 </select>
 
-
+<!--  오늘 이후의 직원선택 후 직원의 예약일,휴무일 보내주는 맵퍼 -->
+<select id="StaffRDay" resultType="zipsa.entity.T_RESERVATION">
+SELECT * FROM V_AFTER_TODAY_REV
+WHERE STAFF_SEQ=#{STAFF_SEQ}
+</select>
+<select id="staffHDay" resultType="zipsa.entity.T_HOLIDAY">
+ SELECT * FROM  V_AFTER_TODAY_HOLIDAY
+  WHERE STAFF_SEQ=#{STAFF_SEQ}
+</select>
 
 
 </mapper>

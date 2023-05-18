@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import zipsa.dao.T_MemberDAO;
 
 public class M_DeleteCon implements Controller {
+	//페이지 넘겨줄때 jsp에서 버튼클릭시 페이지 넘겨줄때 delete.do?M_ID=\${M_ID}로 넘겨주기
 	
 	// 회원탈퇴버튼 클릭 시 불러오는 페이지 
 	@Override
