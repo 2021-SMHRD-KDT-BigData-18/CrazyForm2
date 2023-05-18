@@ -59,7 +59,7 @@ public class FrontController extends HttpServlet {
 		mappings.put("/delete.do", new M_DeleteCon()); 	  // 회원탈퇴
 		mappings.put("/Rvupload.do", new M_Rvupload());   // 이전 예약기록불러오기
 		mappings.put("/StaffDay.do", new StaffDayCon());  // 직원의 휴무일,예약일 불러오기
-		mappings.put("/writeReview.do", new goWriteReviewCon()); //리뷰작성으로 가는 페이지
+		mappings.put("/gowriteReview.do", new goWriteReviewCon()); //리뷰작성으로 가는 페이지
 		mappings.put("/writeReivew.do", new M_writeReviewCon());				// 리뷰작성내용 sql등록후 리뷰메인으로 넘기는 페이지
 		mappings.put("/goreviewMain.do", new goReviewMainCon());				// 리뷰보는 게시판
 		
