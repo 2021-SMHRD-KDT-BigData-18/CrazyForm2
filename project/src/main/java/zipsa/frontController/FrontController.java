@@ -54,11 +54,11 @@ public class FrontController extends HttpServlet {
 		mappings.put("/logout.do", new M_LogoutCon());	  // 로그아웃하는 페이지
 		mappings.put("/goRv.do", new goRvCon()); 		  // 예약하기 페이지 이동
 		mappings.put("/Rv.do", new RvCon()); 		      // 예약내용 저장시키고 메인으로 이동하는 페이지
-<<<<<<< HEAD
+
 		
 		mappings.put("/goMinfo.do", new goMInfoCon());   // 회원이 보는 예약내역으로 가는 페이지(예약현황, 회원정보 포함)
-=======
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2.git
+//=======
+//>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2.git
 		mappings.put("/update.do", new M_UpdateCon());    // 비밀번호, 회원정보 수정 후 예약내역으로 다시 가는 페이지
 		mappings.put("/goMinfo.do", new goMInfoCon());   // 회원이 보는 예약내역으로 가는 페이지(예약현황, 회원정보 포함)
 		mappings.put("/delete.do", new M_DeleteCon()); 	  // 회원탈퇴

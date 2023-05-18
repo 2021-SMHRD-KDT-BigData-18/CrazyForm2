@@ -4,7 +4,7 @@
 
 <!-- 리뷰보기 -->
 <select id="reviewselect" resultType="zipsa.entity.T_REVIEW">
-SELECT * FROM T_REVIEW order by REV_DT desc
+SELECT * FROM T_REVIEW order by REVIEW_DT desc
 </select>
 
  <!-- 리뷰작성 -->

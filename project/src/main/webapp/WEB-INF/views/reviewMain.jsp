@@ -43,13 +43,14 @@
   <div class="review-box-wrapper">
     <div class="review-box"> 
       <div class="review-number">리뷰번호: ${dto.REVIEW_SEQ}</div>
-      <div class="review-rating">별점: ${dto.REVIEW_RATING}
-        <div class="rating">
-          <c:forEach begin="1" end="${dto.REVIEW_RATING}" var="rating">
-            <span class="star" data-rating="${dto.REVIEW_RATING}"><i class="fas fa-star"></i></span>
-          </c:forEach>
-        </div>
-      </div>
+      <br>
+   <div class="review-rating space-x-4 mx-auto">별점
+  <div class="rating">
+    <c:forEach begin="1" end="${dto.REVIEW_RATING}" var="rating">
+      <span class="star active">&#9733;</span>
+    </c:forEach>
+  </div>
+</div>
       <div class="review-content">후기: ${dto.REVIEW_CONTENT}</div>
       <div class="review-date">작성일:<fmt:formatDate pattern="yyyy-MM-dd hh:mm:ss" value="${dto.REVIEW_DT}"/></div>
       <div class="review-writer">작성자: ${dto.m_ID}</div>
