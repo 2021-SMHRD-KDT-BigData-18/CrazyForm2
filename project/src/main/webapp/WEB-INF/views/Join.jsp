@@ -31,7 +31,6 @@
 					type="text" name="id"></span>
 				<p id="result"></p>
 				<!-- 아이디 중복체크 결과를 출력하기 -->
-				<button id="check">아이디중복확인</button>
 
 			</div>
 			<div class="field">
