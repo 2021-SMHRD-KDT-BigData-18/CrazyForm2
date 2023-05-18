@@ -59,15 +59,15 @@
             <div>
                 <div id="nav1">
                     <ul>
-                        <li class="info">내정보관리</li>
-                        <li class="res">예약현황보기</li>
+                        <li class="info1">내정보관리</li>
+                        <li class="res1">예약현황보기</li>
                     </ul>
                 </div>
 
             </div>
             
             <div class="info">
-            <form action="" method="POST" id="infoForm">
+            <form action="update.do" method="POST" id="infoForm" style="margin-top: 30px;">
                 <table>
                     <tr>
                         <td>ID</td>
@@ -85,11 +85,21 @@
                         <td>비밀번호</td>
                         <td><%=user.getM_PW() %></td>
                     </tr>
+                    <tr>
+                        <td>변경할 비밀번호를 입력하세요</td>
+                        <td>
+                        	<input name="pw" type="password" style="width: 100px; margin: 0 auto;" value="<%=user.getM_PW() %>">
+                        </td>
+                    </tr>
                 </table>
 
-                <div id="infoDisplay">
-                    <button id="changePasswordBtn" class="btn">비밀번호 변경하기</button>
-                    <button id="deleteAccountBtn" class="btn">회원 탈퇴</button>
+                <div id="pwchange">
+                	<input id="pwBtn" type="submit" value="비밀번호 변경하기" class="pwBtn" style="width: 200px; margin: 10px 0px 0px 500px">
+                    <!--  <button onclick="location.href='delete.do'" id="deleteAccountBtn" class="btn">회원 탈퇴</button>-->
+                </div>
+                <div id="infodelete">
+                	<input id="delBtn" type="submit" value="탈퇴하기" class="delBtn" style="width: 100px; margin: 30px 0px 0px 500px;">
+                    <!--  <button onclick="location.href='delete.do'" id="deleteAccountBtn" class="btn">회원 탈퇴</button>-->
                 </div>
             </form>
             </div>
@@ -106,6 +116,7 @@
                     </tr>
                     <c:forEach items="${list}" var="dto">
                         <tr>
+                        <td><a href="gowriteReview?REV_DT=${REV_DT}"></a></td>
                             <td>${dto.getREV_DT()}</td>
                             <td>${dto.getJOB_T()}</td>
                             <td>${dto.getM_ADDR()}</td>
@@ -129,16 +140,20 @@
 
 
         <script type="text/javascript">
-            $('.info').on('click', function () {
+            $('.info1').on('click', function () {
                 $('#infoForm').toggle();
                 $('#resTable').hide();
                 
             });
-            $('.res').on('click', function () {
+            $('.res1').on('click', function () {
                 $('#resTable').toggle();
                 $('#infoForm').hide();
             });
-
+            
+            $('#pwBtn').on('click', function () {
+				alert('비밀번호 변경이 완료되었습니다.');
+			});
+            
         </script>
 
 
