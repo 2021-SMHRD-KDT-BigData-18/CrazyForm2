@@ -8,7 +8,7 @@
 
 <title></title>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<link rel="stylesheet" href="assets/css/reservation.css">
+<link rel="stylesheet" href="assets/css/reservation2222.css">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
 <link rel="stylesheet"
@@ -54,62 +54,75 @@
 			</header>
 		</div>
 	</div>
+	
+	<div class="Box">예약하기</div>
+	 <form action="/Rv.do" method="POST">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2"></th>
+                </tr>
+            </thead>
+            <tr class="selectBox1">
+                <td class="cate">카테고리 선택</td>
+                <td>
+                    <select name="cate" class="select1">
+                        <option value="가사도우미">가사도우미</option>
+                        <option value="이사청소">이사청소</option>
+                        <option value="사무실청소">사무실청소</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="selectBox2">
+                <td class="meet">반려동물이 있으신가요?</td>
+                <td>
+                    <select name="meet" class="select1">
+                        <option value="Y">네, 있어요</option>
+                        <option value="N">아니요</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="selectBox2">
+                <td class="meet">이전 직원 만나기</td>
+                <td>
+                    <input type="radio" name="meet"> Y
+                    <br>
+                    <input type="radio" name="meet"> N
+                </td>
+            </tr>
+            <tr class="selectBox2">
+                <td class="meet">청소 날짜</td>
+                <td>
+                    <input type='text' class='datetimepicker' 
+                    	placeholder="날짜를 선택하세요" name='start_dt' style='width:250px;'>
+                </td>
+            </tr>
+            
+            <tr class="selectBox2">
+                <td class="meet">요청사항</td>
+                <td>
+                    <textarea class="form-control"
+            			cols="50" rows="4" placeholder="요청사항을 작성해주세요"></textarea>
+                </td>
+            </tr>
 
-	<div>
-		<p class="res">예약하기</p>
+            <tr>
+                <td class="submitBtn" colspan="2" align="center">
+                    <input action="#" type="submit" value="예약하기">
+                </td>
+            </tr>
+        </table>
+    </form>
+    
+    <div id="footer-wrapper">
+		<footer id="footer" class="container">
+			<div class="row">
+			</div>
+		</footer>
 	</div>
-	<form action="/Rv.do" method="post">
-		<div id="Container">
-
-			<div class="selectBox1">
-				<div class="cate">카테고리 선택</div>
-				<div class="cateBox">
-					<select name="cate" class="select1">
-						<option value="가사도우미">가사도우미</option>
-						<option value="이사청소">이사청소</option>
-						<option value="사무실청소">사무실청소</option>
-					</select>
-				</div>
-			</div>
-
-			<div class="selectBox2">
-				<div>반려동물이 있으신가요?</div>
-				<div class="meet">
-					<select name="meet" class="select1">
-						<option value="Y">네, 있어요</option>
-						<option value="N">아니요</option>
-					</select>
-				</div>
-			</div>
-
-			<div class="selectBox2">
-				<div>이전 직원 만나기</div>
-				<div class="meet">
-					<select name="meet" class="select1">
-						<option value="Y">Y</option>
-						<option value="N">N</option>
-					</select>
-				</div>
-			</div>
-			
-			
-			<div class="selectBox2">
-				<div>청소 날짜</div>
-				<div class="meet">
-					<input type='text' class='datetimepicker' name='date' placeholder="날짜를 선택하세요">
-					<button class="dateclick">날짜가져오기</button>
-				</div>
-			</div>
-
-
-		</div>
-
-		<div class="Btn">
-			<input class="resbtn" type="submit" value="예약하기">
-		</div>
-
-	</form>
-
+    
+    
+    
 	<script>
 
 		$.datetimepicker.setLocale('ko');
@@ -128,11 +141,11 @@
 			});
 		});
 		
-		$('.dateclick').on('click', function() {
-			var d = $('input').datetimepicker('getValue');
-			console.log(d);
-
-		});
+		
+		// $('.dateclick').on('click', function() {
+		//	var d = $('input').datetimepicker('getValue');
+		//	console.log(d);
+		//	});
 
 	</script>
 
