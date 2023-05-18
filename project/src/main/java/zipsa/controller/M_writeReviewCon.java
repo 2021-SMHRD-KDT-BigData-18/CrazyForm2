@@ -1,7 +1,6 @@
 package zipsa.controller;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -9,33 +8,28 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import zipsa.dao.T_MemberDAO;
+import zipsa.dao.T_ReviewDAO;
 import zipsa.entity.T_MEMBER;
-import zipsa.entity.T_RESERVATION;
 
-public class goMInfoCon implements Controller {
-	
-	// 회원이 보는 예약내역(예약현황, 회원정보 포함)
-	
+
+public class M_writeReviewCon implements Controller {
+
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+		// 작성한 리뷰 받아서 DB에 저장하는 Controller
 		HttpSession session = request.getSession();
 		T_MEMBER user = (T_MEMBER) session.getAttribute("user");
-		String M_id = user.getM_ID();
+
+		String M_ID = user.getM_ID();
+
 		
-		T_MemberDAO dao = new T_MemberDAO();
-		T_MEMBER dto  = dao.check(M_id);
 		
-		// Mdto에 회원 정보 챙겨가기
-		request.setAttribute("Mdto",dto);		
+		T_ReviewDAO dao = new T_ReviewDAO();
+		dao.
+
 		
-	// Rlist에 예약현황 챙겨가기
-			List<T_RESERVATION> list = dao.selectRv(M_id);
-			request.setAttribute("Rlist", list);
-			
-			return "M_info"; 
-}
-	
-	
+		return "Redirect://goreviewMain.do"; //성공시 리뷰메인으로 이동
+	}
+
 }

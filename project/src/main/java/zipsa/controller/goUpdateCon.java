@@ -11,7 +11,8 @@ public class goUpdateCon implements Controller {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		return "update";
+		
+		return "redirect://Main.do";
 	
 	}
 

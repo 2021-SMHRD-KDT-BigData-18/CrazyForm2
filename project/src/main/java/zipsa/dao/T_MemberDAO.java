@@ -61,7 +61,8 @@ public class T_MemberDAO {
 		session.close();
 		return list;
 	}
-
+	// 예약현황 하나만 불러오기
+	
 	// 회원 탈퇴 → deleteCon에서 id와 pw dto로 묶어줘야함
 	public int delete(String M_ID) {
 		SqlSession session = factory.openSession(true);
@@ -107,5 +108,6 @@ public class T_MemberDAO {
 		session.close();
 		return list;
 	}
+	// 회원의 최근 예약일 하나만 가져오기
 
 }

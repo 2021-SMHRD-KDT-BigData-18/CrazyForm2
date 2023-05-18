@@ -15,7 +15,7 @@ public class T_ReviewDAO {
 // 리뷰 작성
 	public int write(T_REVIEW dto) {
 		SqlSession session = factory.openSession(true);
-		int row = session.insert("reviewWrite"", dto);
+		int row = session.insert("reviewWrite", dto);
 		session.close();
 		return row;
 
