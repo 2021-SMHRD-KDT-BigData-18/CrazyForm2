@@ -19,13 +19,13 @@ public class checkCon implements Controller {
 		// id중복확인
 		
 		request.setCharacterEncoding("UTF-8");
-		String id = request.getParameter("id");
+		String M_ID = request.getParameter("id");
 
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
 
 		T_MemberDAO dao = new T_MemberDAO();
-		T_MEMBER dto = dao.check(id);
+		T_MEMBER dto = dao.check(M_ID);
 
 		// 사용 가능한 id = true , 불가능 = false 응답
 		String res = "";

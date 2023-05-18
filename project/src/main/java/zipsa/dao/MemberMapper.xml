@@ -50,7 +50,7 @@
 	<!-- id중복확인, 회원의 내정보 확인 -->
 	<select id="check" parameterType="zipsa.entity.T_MEMBER"
 		resultType="zipsa.entity.T_MEMBER">
-		SELECT M_PW,M_NAME,M_PHONE,M_ADDR FROM T_MEMBER
+		SELECT M_PW,M_NAME,M_PHONE FROM T_MEMBER
 		WHERE M_ID=#{M_ID}
 	</select>
 
