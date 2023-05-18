@@ -3,6 +3,7 @@ package zipsa.entity;
 import java.util.Date;
 
 public class T_REVIEW {
+
 	// 고객 리뷰
 	
 	// 리뷰 순번
@@ -80,9 +81,9 @@ public class T_REVIEW {
 		REVIEW_RATING = rEVIEW_RATING;
 		REVIEW_DT = rEVIEW_DT;
 		M_ID = m_ID;
-	}
+	
+    }
 
-	public T_REVIEW() {	}
 
 	
 }
