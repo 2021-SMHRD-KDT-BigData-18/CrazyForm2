@@ -12,14 +12,15 @@ import zipsa.entity.T_REVIEW;
 public class T_ReviewDAO {
 	private SqlSessionFactory factory = SqlSessionManager.getSqlSessionFactory();
 
+// 리뷰 작성
 	public int write(T_REVIEW dto) {
 		SqlSession session = factory.openSession(true);
-		int row = session.insert("write", dto);
+		int row = session.insert("reviewWrite"", dto);
 		session.close();
 		return row;
 
 	}
-
+// 리뷰보기
 	public List<T_REVIEW> select() {
 		SqlSession session = factory.openSession(true);
 		List<T_REVIEW> list = session.selectList("reviewselect");

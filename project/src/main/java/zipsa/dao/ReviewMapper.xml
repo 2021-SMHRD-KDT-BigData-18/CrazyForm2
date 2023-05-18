@@ -4,13 +4,13 @@
 
 <!-- 리뷰보기 -->
 <select id="reviewselect" resultType="zipsa.entity.T_REVIEW">
-SELECT * FROM T_REVIEW 
+SELECT * FROM T_REVIEW order by REV_DT desc
 </select>
 
- <!-- 리뷰작성 
-  <insert id="write" parameterType="zipsa.entity.T_REVIEW">
+ <!-- 리뷰작성 -->
+  <insert id="reviewWrite" parameterType="zipsa.entity.T_REVIEW">
     INSERT INTO T_REVIEW (title, writer, filename, content, created_date)
     VALUES (#{title}, #{writer}, #{filename}, #{content}, sysdate)
-  </insert> -->
+  </insert>
 
 </mapper>

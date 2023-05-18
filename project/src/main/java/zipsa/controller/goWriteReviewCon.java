@@ -14,7 +14,7 @@ public class goWriteReviewCon implements Controller {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// 리뷰작성으로 가는 페이지
-		return null;
+		return "writeReview";
 	}
 
 }
