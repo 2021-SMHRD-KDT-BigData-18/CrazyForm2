@@ -24,6 +24,7 @@ public class T_RESERVATION {
 	private String STAFF_NAME;
 	// 예약 번호
 	private int REV_SEQ;
+	
 	public T_RESERVATION(String m_ID, String jOB_T, Date rEV_DT, String pET_YN, int sTAFF_SEQ, String rEV_NOTE,
 			String m_ADDR, int rEV_SEQ) {
 		super();

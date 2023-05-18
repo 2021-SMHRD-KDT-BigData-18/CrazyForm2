@@ -34,7 +34,7 @@
                         <li><a href="https://onnuribed.co.kr/">침구청소</a></li>
                         <li><a href="http://thecleaning.co.kr/default/">에어컨 청소</a></li>
                         <li><a href="https://wayopet.com/home">펫시팅</a></li>
-                        <li><a href="#">예약내역</a></li>
+                        <li><a href="goMinfo.do">예약내역</a></li>
                         <li><a href="reviewMain.do">리뷰보기</a></li>
                     </ul>
                 </nav>
@@ -49,20 +49,22 @@
         </div>
         <div class="info">
             <div class="star-rating space-x-4 mx-auto">
-                <input type="radio" id="5-stars" name="rating" value="5" v-model="ratings" /> <label for="5-stars"
-                    class="star pr-4">★</label>
-                <input type="radio" id="4-stars" name="rating" value="4" v-model="ratings" /> <label for="4-stars"
-                    class="star">★</label> <input type="radio" id="3-stars" name="rating" value="3" v-model="ratings" />
-                <label for="3-stars" class="star">★</label> <input type="radio" id="2-stars" name="rating" value="2"
-                    v-model="ratings" /> <label for="2-stars" class="star">★</label> <input type="radio" id="1-star"
-                    name="rating" value="1" v-model="ratings" /> <label for="1-star" class="star">★</label>
+                 <input type="radio" id="5-stars" name="rating" value="5" v-model="ratings" name="REVIEW_RATING" /> 
+                <label for="5-stars"   class="star pr-4">★</label>
+                 <input type="radio" id="4-stars" name="rating" value="4" v-model="ratings" name="REVIEW_RATING"/> 
+                <label for="4-stars" class="star">★</label>
+                 <input type="radio" id="3-stars" name="rating" value="3" v-model="ratings" name="REVIEW_RATING"/>
+                <label for="3-stars" class="star">★</label>
+                 <input type="radio" id="2-stars" name="rating" value="2"   v-model="ratings" name="REVIEW_RATING"/>
+                <label for="2-stars" class="star">★</label>
+                <input type="radio" id="1-star"  name="rating" value="1" v-model="ratings" name="REVIEW_RATING"/>
+                 <label for="1-star" class="star">★</label>
             </div>
-            <textarea class="form-control" id="bookReview" 
+            <textarea class="form-control" id="bookReview"  name="REVIEW_CONTENT"
             cols="60" rows="5" placeholder="이용 리뷰를 남겨주세요❤️"></textarea>
         </div>
         <div class="review">
-            <button action="reviewMain.do" id="btn-event" onclick="makeReview()" type="button"
-                class="btn btn-primary">리뷰 등록하기</button>
+            <button action="writeReivew.do" id="btn-event" onclick="makeReview()" type="button"   class="btn btn-primary">리뷰 등록하기</button>
         </div>
     </div>
 

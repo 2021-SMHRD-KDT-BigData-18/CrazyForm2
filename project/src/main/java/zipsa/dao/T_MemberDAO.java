@@ -61,7 +61,8 @@ public class T_MemberDAO {
 		session.close();
 		return list;
 	}
-
+	// 예약현황 하나만 불러오기
+	
 	// 회원 탈퇴 → deleteCon에서 id와 pw dto로 묶어줘야함
 	public int delete(String M_ID) {
 		SqlSession session = factory.openSession(true);
@@ -106,6 +107,14 @@ public class T_MemberDAO {
 		List<T_HOLIDAY> list = session.selectList("staffHDay",STAFF_SEQ);
 		session.close();
 		return list;
+	}
+	// 리뷰작성위해 회원이 선택한 예약번호로 예약일자 불러오기
+	public T_RESERVATION forReview(int REV_SEQ){
+		SqlSession session = factory.openSession(true);
+		T_RESERVATION dto = session.selectOne("forReview",REV_SEQ);
+		session.close();
+		return dto;
+		
 	}
 
 }

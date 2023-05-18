@@ -28,15 +28,13 @@ public class goMInfoCon implements Controller {
 		T_MEMBER dto  = dao.check(M_id);
 		
 		// Mdto에 회원 정보 챙겨가기
-		
 		request.setAttribute("Mdto",dto);		
 		
 	// Rlist에 예약현황 챙겨가기
 			List<T_RESERVATION> list = dao.selectRv(M_id);
 			request.setAttribute("Rlist", list);
-			return "M_info"; 
 			
-
+			return "M_info"; 
 }
 	
 	

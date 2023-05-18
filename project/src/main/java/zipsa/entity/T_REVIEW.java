@@ -24,6 +24,10 @@ public class T_REVIEW {
 	// 리뷰 작성자
 	private String M_ID;
 	
+	
+	public T_REVIEW() {
+	}
+
 	public int getREVIEW_SEQ() {
 		return REVIEW_SEQ;
 	}
