@@ -90,4 +90,8 @@
 	</select>
 
 
+<!--  리뷰작성위해 예약현황 하나만 불러오기 -->
+<select id="forReview" resultType="zipsa.entity.T_RESERVATION">
+	select * from reservation where REV_SEQ=#{REV_SEQ} 
+</select>
 </mapper>

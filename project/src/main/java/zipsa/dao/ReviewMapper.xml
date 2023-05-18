@@ -9,9 +9,8 @@ SELECT * FROM T_REVIEW order by REV_DT desc
 
  <!-- 리뷰작성 -->
   <insert id="reviewWrite" parameterType="zipsa.entity.T_REVIEW">
-    INSERT INTO T_REVIEW (REV_SEQ, REVIEW_CONTENT, REVIEW_RATING, REVIEW_DT, M_ID)
-    values (#{REV_SEQ},#{REVIEW_CONTENT},#{REVIEW_RATING),#{REVIEW_DT},#{M_ID})
-    
+    INSERT INTO T_REVIEW (M_ID, REV_SEQ, REVIEW_CONTENT, REVIEW_RATING)
+    			values (#{M_ID},#{REV_SEQ},#{REVIEW_CONTENT},#{REVIEW_RATING))
   </insert>
 
 </mapper>

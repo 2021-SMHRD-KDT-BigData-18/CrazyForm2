@@ -54,10 +54,8 @@ public class FrontController extends HttpServlet {
 		mappings.put("/logout.do", new M_LogoutCon());	  // 로그아웃하는 페이지
 		mappings.put("/goRv.do", new goRvCon()); 		  // 예약하기 페이지 이동
 		mappings.put("/Rv.do", new RvCon()); 		      // 예약내용 저장시키고 메인으로 이동하는 페이지
-		mappings.put("/goUpdate.do", new goUpdateCon());  // 회원정보 수정하는 페이지
-		
-		mappings.put("/goMinfo.do", new goMInfoCon());   // 회원이 보는 예약내역으로 가는 페이지(예약현황, 회원정보 포함)
 		mappings.put("/update.do", new M_UpdateCon());    // 비밀번호, 회원정보 수정 후 예약내역으로 다시 가는 페이지
+		mappings.put("/goMinfo.do", new goMInfoCon());   // 회원이 보는 예약내역으로 가는 페이지(예약현황, 회원정보 포함)
 		mappings.put("/delete.do", new M_DeleteCon()); 	  // 회원탈퇴
 		mappings.put("/Rvupload.do", new M_Rvupload());   // 이전 예약기록불러오기
 		mappings.put("/StaffDay.do", new StaffDayCon());  // 직원의 휴무일,예약일 불러오기
@@ -65,7 +63,7 @@ public class FrontController extends HttpServlet {
 		mappings.put("/writeReivew.do", new M_writeReviewCon());				// 리뷰작성내용 sql등록후 리뷰메인으로 넘기는 페이지
 		mappings.put("/goreviewMain.do", new goReviewMainCon());				// 리뷰보는 게시판
 		
-		mappings.put("/test3.do", new testCon()); 		  //test				
+		mappings.put("/test3.do", new testCon()); 		  //예약내역 저장하는 test			
 		
 		mappings.put("/goM_info.do", new A_MinfoCon()); 		 // 관리자 회원관리페이지 이동
 		mappings.put("/goRvInfo.do", new A_RvinfoCon());		 // 관리자 예약내역관리 페이지 이동

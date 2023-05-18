@@ -108,6 +108,13 @@ public class T_MemberDAO {
 		session.close();
 		return list;
 	}
-	// 회원의 최근 예약일 하나만 가져오기
+	// 리뷰작성위해 회원이 선택한 예약번호로 예약일자 불러오기
+	public T_RESERVATION forReview(int REV_SEQ){
+		SqlSession session = factory.openSession(true);
+		T_RESERVATION dto = session.selectOne("forReview",REV_SEQ);
+		session.close();
+		return dto;
+		
+	}
 
 }
