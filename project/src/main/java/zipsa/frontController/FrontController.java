@@ -59,8 +59,6 @@ public class FrontController extends HttpServlet {
 
 		
 		mappings.put("/goMinfo.do", new goMInfoCon());   // 회원이 보는 예약내역으로 가는 페이지(예약현황, 회원정보 포함)
-//=======
-//>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2.git
 		mappings.put("/update.do", new M_UpdateCon());    // 비밀번호, 회원정보 수정 후 예약내역으로 다시 가는 페이지
 		mappings.put("/goMinfo.do", new goMInfoCon());   // 회원이 보는 예약내역으로 가는 페이지(예약현황, 회원정보 포함)
 		mappings.put("/delete.do", new M_DeleteCon()); 	  // 회원탈퇴

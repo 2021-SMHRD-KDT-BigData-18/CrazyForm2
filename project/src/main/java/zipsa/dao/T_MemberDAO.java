@@ -94,9 +94,9 @@ public class T_MemberDAO {
 	}
 	
 	// 관리자가 캘린더로 보는 회원예약현황
-	public List<T_RESERVATION> selectAllRDate(String ym) {
+	public List<T_RESERVATION> selectAllRDate(String YM) {
 		SqlSession session = factory.openSession(true);
-		List<T_RESERVATION> list = session.selectList("selectAllRDate", ym);
+		List<T_RESERVATION> list = session.selectList("selectAllRDate", YM);
 		session.close();
 		return list;
 	}
@@ -116,11 +116,20 @@ public class T_MemberDAO {
 		return list;
 	}
 	// 리뷰작성위해 회원이 선택한 예약번호로 예약일자 불러오기
-	public T_RESERVATION forReview(int REV_SEQ){
+	public List<T_RESERVATION> sameRevSeq(String m_ID){
 		SqlSession session = factory.openSession(true);
-		T_RESERVATION dto = session.selectOne("forReview",REV_SEQ);
+		List<T_RESERVATION> list = session.selectList("sameRevSeq",m_ID);
 		session.close();
-		return dto;
+		return list;
+		
+	}
+	
+	// 리뷰작성위해 회원이 선택한 예약번호로 예약일자 불러오기
+	public List<T_RESERVATION> forReview(String m_ID){
+		SqlSession session = factory.openSession(true);
+		List<T_RESERVATION> list = session.selectList("forReview",m_ID);
+		session.close();
+		return list;
 		
 	}
 

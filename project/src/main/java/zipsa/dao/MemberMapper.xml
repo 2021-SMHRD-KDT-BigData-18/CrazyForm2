@@ -44,13 +44,14 @@
 		where not M_ID = 'admin'
 	</select>
 
-    <!-- 관리자가 보는 예약현황창 -->
-	<select id="selectALLR" resultType="zipsa.entity.T_RESERVATION">
-	   	select * from T_RESERVATION
-	</select>
-	
-    <select id="selectAllRDate" resultType="zipsa.entity.T_RESERVATION" parameterType="String">
-		select * from T_RESERVATION
+	<!-- 관리자가 보는 예약현황창 <select id="selectALLR" resultType="zipsa.entity.T_RESERVATION"> 
+		select * from T_RESERVATION </select> -->
+
+	<!-- 관리자가 보는 예약현황창 -->
+	<select id="selectAllRDate"
+		resultType="zipsa.entity.T_RESERVATION" parameterType="String">
+		select * from
+		T_RESERVATION
 		where TO_CHAR(REV_DT, 'YYYY-MM') = #{YM}
 	</select>
 
@@ -66,7 +67,8 @@
 	<insert id="reserv" parameterType="zipsa.entity.T_RESERVATION">
 		insert into T_RESERVATION (
 		M_ID, JOB_T, REV_DT,PET_YN,STAFF_SEQ,REV_NOTE,M_ADDR)
-		values(#{M_ID}, #{JOB_T}, #{REV_DT}
+		values(#{M_ID},
+		#{JOB_T}, #{REV_DT}
 		,#{PET_YN},#{STAFF_SEQ},#{REV_NOTE},#{M_ADDR})
 	</insert>
 
@@ -75,27 +77,37 @@
 		SELECT D.STAFF_SEQ FROM (
 		SELECT *
 		FROM T_HOLIDAY A
-		where A.HOLI_DT != #{REV_DT})	C,
+		where A.HOLI_DT != #{REV_DT}) C,
 		(SELECT *
-		FROM T_RESERVATION B
+		FROM
+		T_RESERVATION B
 		where B.REV_DT !=#{REV_DT} ) D
 		WHERE ROWNUM = 1
-		order by DBMS_RANDOM.RANDOM;
+		order by
+		DBMS_RANDOM.RANDOM;
 	</select>
 
 	<!-- 오늘 이후의 직원선택 후 직원의 예약일,휴무일 보내주는 맵퍼 -->
 	<select id="StaffRDay" resultType="zipsa.entity.T_RESERVATION">
-		SELECT * FROM V_AFTER_TODAY_REV
+		SELECT * FROM
+		V_AFTER_TODAY_REV
 		WHERE STAFF_SEQ=#{STAFF_SEQ}
 	</select>
 	<select id="staffHDay" resultType="zipsa.entity.T_HOLIDAY">
-		SELECT * FROM V_AFTER_TODAY_HOLIDAY
+		SELECT * FROM
+		V_AFTER_TODAY_HOLIDAY
 		WHERE STAFF_SEQ=#{STAFF_SEQ}
 	</select>
 
+	<!-- 리뷰작성위해 예약번호가 동일한 예약 불러오기 -->
+	<select id="forReview" resultType="zipsa.entity.T_RESERVATION">
+		select * from reservation where REV_SEQ=#{REV_SEQ}
+	</select>
 
-<!--  리뷰작성위해 예약현황 하나만 불러오기 -->
-<select id="forReview" resultType="zipsa.entity.T_RESERVATION">
-	select * from reservation where REV_SEQ=#{REV_SEQ} 
-</select>
+	<!-- 리뷰작성위해 예약현황 오늘이후의 여러개 불러오기 -->
+	<select id="sameRevSeq" resultType="zipsa.entity.T_RESERVATION">
+		SELECT * FROM V_AFTER_TODAY_REV
+		WHERE M_ID = ${M_ID}
+	</select>
+
 </mapper>
