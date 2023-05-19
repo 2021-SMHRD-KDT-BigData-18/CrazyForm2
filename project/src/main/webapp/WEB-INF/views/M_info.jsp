@@ -119,18 +119,30 @@
 					<td>요청사항</td>
 				</tr>
 
-				<c:forEach items="${list}" var="list">
-					<tr>
-						<td><fmt:formatDate pattern="yyyy-MM-dd hh:mm:ss"
-								value="${list.REV_DT}" /></td>
-						<td>${list.JOB_T}</td>
-						<td>${list.m_ADDR}</td>
-						<td>${list.PET_YN}</td>
-						<td>${list.STAFF_NAME}</td>
-						<td>${list.REV_NOTE}</td>
-					</tr>
-				</c:forEach>
+				
+					<c:choose>
+						<c:when test="${list.isEmpty()}">
+							<tr>
+								<td colspan="6"><h2>예약내역이 없습니다.</h2></td>
+							</tr>
+						</c:when>
+						<c:otherwise>
 
+							<c:forEach items="${list}" var="list">
+								<tr>
+									<td><fmt:formatDate pattern="yyyy-MM-dd hh:mm:ss"
+											value="${list.REV_DT}" /></td>
+									<td>${list.JOB_T}</td>
+									<td>${list.m_ADDR}</td>
+									<td>${list.PET_YN}</td>
+									<td>${list.STAFF_NAME}</td>
+									<td>${list.REV_NOTE}</td>
+								</tr>
+							</c:forEach>
+
+						</c:otherwise>
+					</c:choose>
+				
 			</table>
 		</div>
 	</div>
