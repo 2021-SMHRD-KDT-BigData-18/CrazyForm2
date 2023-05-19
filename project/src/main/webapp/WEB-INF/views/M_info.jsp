@@ -122,9 +122,9 @@
                     <td><fmt:formatDate pattern="yyyy-MM-dd hh:mm:ss" value="${list.REV_DT}"/></td>
                     <td>${list.JOB_T}</td>
                     <td>${list.m_ADDR}</td>
-                    <td>${list.PET_YN()}</td>
-                    <td>${list.STAFF_NAME()}</td>
-                    <td>${list.REV_NOTE()}</td>
+                    <td>${list.PET_YN}</td>
+                    <td>${list.STAFF_NAME}</td>
+                    <td>${list.REV_NOTE}</td>
                 </tr>
                 </c:forEach>
                 </table>
