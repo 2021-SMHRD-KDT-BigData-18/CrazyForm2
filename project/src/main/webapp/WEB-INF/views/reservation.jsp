@@ -9,7 +9,6 @@
 
 <title>예약하기</title>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<link rel="stylesheet" href="assets/css/reservation2222.css">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
 <link rel="stylesheet"
@@ -30,6 +29,7 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
 
+<link rel="stylesheet" href="assets/css/reservation2222.css">
 </head>
 <body>
 	<div id="page-wrapper">
