@@ -59,7 +59,6 @@
         <hr>
         <div class="reservation">내정보</div>
         <div class="Reservation-container">
-            <div>
                 <div id="nav1">
                     <ul>
                         <li class="info1">내정보관리</li>
@@ -67,7 +66,6 @@
                     </ul>
                 </div>
 
-            </div>
             
             <div class="info">
             <form action="update.do" method="POST" id="infoForm" style="margin-top: 30px;">
@@ -119,7 +117,6 @@
                     </tr>
                     <c:forEach items="${list}" var="list">
                         <tr>
-				<tr><td name="STAFF_SEQ" value="${dto.STAFF_SEQ}">√</td>
                     <td><fmt:formatDate pattern="yyyy-MM-dd hh:mm:ss" value="${list.REV_DT}"/></td>
                     <td>${list.JOB_T}</td>
                     <td>${list.m_ADDR}</td>
