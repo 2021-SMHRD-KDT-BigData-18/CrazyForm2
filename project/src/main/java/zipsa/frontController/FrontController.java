@@ -71,8 +71,8 @@ public class FrontController extends HttpServlet {
 		mappings.put("/test3.do", new testCon()); 		  //예약내역 저장하는 test		
 		
 		mappings.put("/rvInfo.do", new A_RvinfoList());		 // 관리자 예약내역관리 리스트
-		mappings.put("goRvInfo.do", new A_RvinfoCon());   // 관리자 예약내역관리 페이지 이동
-		mappings.put("/goMinfo.do", new A_MinfoCon());	 // 관리자 회원관리페이지 이동
+		mappings.put("/goRvInfo.do", new A_RvinfoCon());   // 관리자 예약내역관리 페이지 이동
+//		mappings.put("/goMinfo", new A_MinfoCon());		  // 관리자 회원관리페이지 이동
 		
 	}
 

@@ -20,7 +20,7 @@ public class A_MinfoCon implements Controller {
 		T_MemberDAO dao = new T_MemberDAO();
 		List<T_MEMBER> list = dao.selectMember();
 		request.setAttribute("list", list);
-		return "select";
+		return null;
 	}
 
 }
