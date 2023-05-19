@@ -20,10 +20,10 @@ public class A_RvinfoList implements Controller {
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
 
-		String ym = request.getParameter("ym");
+		String YM = request.getParameter("YM");
 		
 		T_MemberDAO dao = new T_MemberDAO();
-		List<T_RESERVATION> list = dao.selectAllRDate(ym);
+		List<T_RESERVATION> list = dao.selectAllRDate(YM);
 		String listToJson= new Gson().toJson(list);
 		out.print(listToJson);
 		

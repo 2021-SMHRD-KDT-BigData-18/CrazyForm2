@@ -44,8 +44,10 @@
 		where not M_ID = 'admin'
 	</select>
 
-	<!-- 관리자가 보는 예약현황창 <select id="selectALLR" resultType="zipsa.entity.T_RESERVATION"> 
-		select * from T_RESERVATION </select> -->
+	<!-- 관리자가 보는 예약현황창 -->
+	<select id="selectAllR" resultType="zipsa.entity.T_RESERVATION">
+	   	select * from T_RESERVATION
+	</select>
 
 	<!-- 관리자가 보는 예약현황창 -->
 	<select id="selectAllRDate"

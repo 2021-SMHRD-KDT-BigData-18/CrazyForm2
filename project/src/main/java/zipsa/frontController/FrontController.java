@@ -69,7 +69,7 @@ public class FrontController extends HttpServlet {
 		
 		mappings.put("/rvInfo.do", new A_RvinfoList());		 // 관리자 예약내역관리 리스트
 		mappings.put("/goRvInfo.do", new A_RvinfoCon());   // 관리자 예약내역관리 페이지 이동
-		mappings.put("/goAinfo", new A_MinfoCon());		  // 관리자 회원관리페이지 이동
+		mappings.put("/goM_info.do", new A_MinfoCon());		  // 관리자 회원관리페이지 이동
 		
 	}
 

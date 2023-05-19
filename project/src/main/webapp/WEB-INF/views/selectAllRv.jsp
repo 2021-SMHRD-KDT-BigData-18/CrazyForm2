@@ -112,12 +112,12 @@
         events: []
     });
 
-    function selectRvList(ym) {
+    function selectRvList(YM) {
         $.ajax({
             url : 'rvInfo.do',
             type : 'post',
             data : {
-                "ym" : ym
+                "YM" : YM
             },
             success : function (res) {
                 var result = JSON.parse(res);
