@@ -37,8 +37,10 @@ public class M_writeReviewCon implements Controller {
 		dto.setREVIEW_CONTENT(REVIEW_CONTENT);
 		dto.setREVIEW_RATING(REVIEW_RATING);
 		T_ReviewDAO dao = new T_ReviewDAO();
+		
 		int row= dao.write(dto);
 		
+		session.removeAttribute("list");
 		if (row >0) {
 			return "Redirect://goreviewMain.do"; //성공시 리뷰메인으로 이동
 		}else {
