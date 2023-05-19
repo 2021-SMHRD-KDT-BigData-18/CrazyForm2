@@ -22,17 +22,12 @@ public class goMInfoCon implements Controller {
 		
 		HttpSession session = request.getSession();
 		T_MEMBER user = (T_MEMBER) session.getAttribute("user");
-		String M_id = user.getM_ID();
+		String M_ID = user.getM_ID();
 		
-		T_MemberDAO dao = new T_MemberDAO();
-		T_MEMBER dto  = dao.check(M_id);
-		
-		// Mdto에 회원 정보 챙겨가기
-		request.setAttribute("Mdto",dto);		
-		
+		T_MemberDAO dao = new T_MemberDAO();		
 	// Rlist에 예약현황 챙겨가기
-			List<T_RESERVATION> list = dao.selectRv(M_id);
-			request.setAttribute("Rlist", list);
+			List<T_RESERVATION> list = dao.selectRv(M_ID);
+			request.setAttribute("list", list);
 			
 			return "M_info"; 
 }

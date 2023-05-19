@@ -24,7 +24,7 @@
 *예약현황 보기 버튼 누르면 예약현황 출력 Rlist에 담겨있음 하나씩 출력해서 보여주도록
  -->
  
-<%    List<T_RESERVATION> list = (List<T_RESERVATION>) request.getAttribute("Rlist");
+<%    List<T_RESERVATION> list = (List<T_RESERVATION>) request.getAttribute("list");
 	  //request.setAttribute("Rlist", list);
 %>
 <% T_MEMBER user = (T_MEMBER)session.getAttribute("user"); %>
@@ -116,16 +116,17 @@
                     <td>담당매니저</td>
                     <td>요청사항</td>
                     </tr>
-                    <c:forEach items="${list}" var="item">
+                    <c:forEach items="${list}" var="list">
                         <tr>
-                            <td>${item.REV_DT()}</td>
-                            <td>${item.JOB_T()}</td>
-                            <td>${item.M_ADDR()}</td>
-                            <td>${item.PET_YN()}</td>
-                            <td>${item.STAFF_NAME()}</td>
-                            <td>${item.REV_NOTE()}</td>
-                         </tr>
-                    </c:forEach>
+				<tr><td name="STAFF_SEQ" value="${dto.STAFF_SEQ}">√</td>
+                    <td><fmt:formatDate pattern="yyyy-MM-dd hh:mm:ss" value="${list.REV_DT}"/></td>
+                    <td>${list.JOB_T}</td>
+                    <td>${list.m_ADDR}</td>
+                    <td>${list.PET_YN()}</td>
+                    <td>${list.STAFF_NAME()}</td>
+                    <td>${list.REV_NOTE()}</td>
+                </tr>
+                </c:forEach>
                 </table>
             </div>
         </div>
