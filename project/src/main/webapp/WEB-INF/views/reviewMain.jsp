@@ -43,8 +43,12 @@
     <div>
     <h1>리뷰 보기</h1>
     </div>
-    <div>
+    <div><c:choose>
+    <c:when test="${user eq null}">
+    	<a href="gologin.do">리뷰작성하기</a>
+    </c:when><c:otherwise>
     	<a id="reviewWrite" href="gowriteReview.do">리뷰작성하기</a>
+    </c:otherwise></c:choose>
     </div>
     </div>
    <c:forEach  items="${reviewlist}" var="dto">

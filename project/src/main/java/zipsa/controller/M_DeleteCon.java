@@ -25,11 +25,11 @@ public class M_DeleteCon implements Controller {
 
 		T_MemberDAO dao = new T_MemberDAO();
 		int row = dao.delete(M_ID);
-		
 		if (row > 0) {
-			return "redirect:/goMain.do";     // 성공 시 메인페이지로
+			session.removeAttribute("user");
+			return "redirect:/Main.do";     // 성공 시 메인페이지로
 		} else {
-			return "redirect:/goMain.do";	  // 실패 시 메인페이지로???
+			return "redirect:/goMinfo.do";	  // 실패 시 내정보창 재출력
 		}
 	}
 }
