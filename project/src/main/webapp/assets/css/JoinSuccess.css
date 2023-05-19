@@ -1,21 +1,30 @@
 @charset "UTF-8";
-        body {
-            text-align: center;
-            background-color: rgb(229, 229, 229);
-        }
-        .logo {
-            font-size: 7em;
-            color: royalblue;
-        }
-        .start {
-            height: 300px;
-            padding-top: 10%;
-        }
-        button {
-            height: 50px;
-            width: 300px;
-            background-color: royalblue;
-            border:none;
-            color: white;
-            font-size: 1.5em;
-        }
+
+body {
+	text-align: center;
+	background-color: rgb(229, 229, 229);
+}
+
+.logo {
+	font-size: 7em;
+	color: royalblue;
+	padding: 80px 0px 20px 0px;
+}
+
+.start {
+	height: 300px;
+	padding-top: 10%;
+}
+
+button {
+	height: 50px;
+	width: 300px;
+	background-color: royalblue;
+	border: none;
+	color: white;
+	font-size: 1.5em;
+}
+
+button:hover {
+	cursor: pointer;
+}

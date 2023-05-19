@@ -53,7 +53,7 @@
 			</div>
 
 			<!-- 가입하기 버튼 -->
-			<a href="join.do"> <input id="join" type="submit" value="가입하기">
+			<a href="goJoinSuccess.do"> <input id="join" type="submit" value="가입하기">
 			</a>
 
 		</form>
@@ -106,10 +106,10 @@
 	
 
 	// 회원가입 후 alert창 띄우기
-		var join = $('#join');
-		join.on('click', ()=>{
-			alert('회원가입에 성공하셨습니다! 메인화면에서 로그인을 해주세요.');
-		});
+	//	var join = $('#join');
+	//	join.on('click', ()=>{
+	//		alert('회원가입에 성공하셨습니다! 메인화면에서 로그인을 해주세요.');
+	//	});
 		
 	// 전화번호 자동하이픈 넣기
 			var autoHypenPhone = function (str) {
