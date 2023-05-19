@@ -12,6 +12,7 @@
 
 <table border="1">
 <tr>
+
 				<td>선택</td>
 				<td>예약일자</td>
 				<td>예약주소</td>

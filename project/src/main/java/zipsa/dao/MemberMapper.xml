@@ -46,7 +46,7 @@
 
 	<!-- 관리자가 보는 예약현황창 -->
 	<select id="selectAllR" resultType="zipsa.entity.T_RESERVATION">
-	   	select * from T_RESERVATION
+		select * from T_RESERVATION
 	</select>
 
 	<!-- 관리자가 보는 예약현황창 -->
@@ -103,13 +103,13 @@
 
 	<!-- 리뷰작성위해 예약번호가 동일한 예약 불러오기 -->
 	<select id="forReview" resultType="zipsa.entity.T_RESERVATION">
-		select * from reservation where REV_SEQ=#{REV_SEQ}
+		select * from reservation
+		where REV_SEQ=#{REV_SEQ}
 	</select>
 
 	<!-- 리뷰작성위해 예약현황 오늘이후의 여러개 불러오기 -->
 	<select id="sameRevSeq" resultType="zipsa.entity.T_RESERVATION">
-		SELECT * FROM V_AFTER_TODAY_REV
-		WHERE M_ID = ${M_ID}
+		SELECT * FROM V_BEFORE_TODAY WHERE M_ID=#{M_ID}
 	</select>
 
 </mapper>

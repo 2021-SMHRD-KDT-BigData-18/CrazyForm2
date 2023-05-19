@@ -116,18 +116,18 @@ public class T_MemberDAO {
 		return list;
 	}
 	// 리뷰작성위해 회원이 선택한 예약번호로 예약일자 불러오기
-	public List<T_RESERVATION> sameRevSeq(String m_ID){
+	public List<T_RESERVATION> sameRevSeq(String M_ID){
 		SqlSession session = factory.openSession(true);
-		List<T_RESERVATION> list = session.selectList("sameRevSeq",m_ID);
+		List<T_RESERVATION> list = session.selectList("sameRevSeq",M_ID);
 		session.close();
 		return list;
 		
 	}
 	
 	// 리뷰작성위해 회원이 선택한 예약번호로 예약일자 불러오기
-	public List<T_RESERVATION> forReview(String m_ID){
+	public List<T_RESERVATION> forReview(String M_ID){
 		SqlSession session = factory.openSession(true);
-		List<T_RESERVATION> list = session.selectList("forReview",m_ID);
+		List<T_RESERVATION> list = session.selectList("forReview",M_ID);
 		session.close();
 		return list;
 		
