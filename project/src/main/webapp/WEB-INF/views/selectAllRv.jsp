@@ -117,7 +117,7 @@
             url : 'rvInfo.do',
             type : 'post',
             data : {
-                "YM" : YM
+                "YM" : YM    // ym 대신 rv. ~~ 로 하기를 권장 
             },
             success : function (res) {
                 var result = JSON.parse(res);
@@ -127,17 +127,24 @@
                 for (var i = 0; i < result.length; i++) {
                     console.log(result[i])
                     var rv = result[i];
+                    
+                    // 132, 137 (캘린더 시간대 나오게 하는 코드)
+                    // 2시간 간격 (아래 두줄 추가)
+                    var date = new Date(rv.REV_DT)
+                    date.setHours(date.getHours() + 2)
+
                     var newEvent = {
+                    	// end 추가함, start: dateFormat에서 dateTimeFormat함수로 교체 
                         title: rv.JOB_T,
-                        start: dateFormat(rv.REV_DT),
-                  //      end: dataFormat(rv.REV_DT),   이거 왜됨...??? 짜증 ㅡㅡ
+                        start: dateTimeFormat(rv.REV_DT),
+                        end: dateTimeFormat(date),
                         rdt: dateTimeFormat(rv.REV_DT),
                         note: rv.REV_NOTE,
                         addr: rv.M_ADDR,
                         id: rv.M_ID,
                         petYn: rv.PET_YN,
                         seq: rv.REV_SEQ,
-                        staffSeq: rv.STAFF_SEQ
+                        staffSeq: rv.STAFF_SEQ 
                     }
                     calendar.addEvent(newEvent);
                 }

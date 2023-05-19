@@ -57,12 +57,12 @@
 		where TO_CHAR(REV_DT, 'YYYY-MM') = #{YM}
 	</select>
 	
-	<!-- 날짜수정 업데이트??? -->
+	<!-- 날짜수정 업데이트??? 
 	<update id="updateReservationDate" parameterType="zipsa.entity.T_RESERVATION">
     UPDATE T_RESERVATION
     SET REV_DT =#{REV_DT}
     WHERE REV_SEQ = #{REV_SEQ}
-    </update>
+    </update> -->
 
 	<!-- id중복확인, 회원의 내정보 확인 -->
 	<select id="check" parameterType="zipsa.entity.T_MEMBER"
