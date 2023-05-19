@@ -44,18 +44,25 @@
 		where not M_ID = 'admin'
 	</select>
 
-	<!-- 관리자가 보는 예약현황창 -->
+	<!-- 관리자가 보는 예약현황모든정보 -->
 	<select id="selectAllR" resultType="zipsa.entity.T_RESERVATION">
 		select * from T_RESERVATION
 	</select>
 
-	<!-- 관리자가 보는 예약현황창 -->
+	<!-- 관리자가 보는 예약현황날짜 -->
 	<select id="selectAllRDate"
 		resultType="zipsa.entity.T_RESERVATION" parameterType="String">
 		select * from
 		T_RESERVATION
 		where TO_CHAR(REV_DT, 'YYYY-MM') = #{YM}
 	</select>
+	
+	<!-- 날짜수정 업데이트??? -->
+	<update id="updateReservationDate" parameterType="zipsa.entity.T_RESERVATION">
+    UPDATE T_RESERVATION
+    SET REV_DT =#{REV_DT}
+    WHERE REV_SEQ = #{REV_SEQ}
+    </update>
 
 	<!-- id중복확인, 회원의 내정보 확인 -->
 	<select id="check" parameterType="zipsa.entity.T_MEMBER"
