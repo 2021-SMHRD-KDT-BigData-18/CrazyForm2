@@ -1,3 +1,5 @@
+<%@page import="zipsa.dao.T_ReviewDAO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"  prefix="fmt"  %> 
@@ -10,6 +12,7 @@
 <title>리뷰 보기</title>
 </head>
 <body>
+
  <div id="page-wrapper">
         <!-- Header -->
         <div id="header-wrapper">
@@ -36,8 +39,13 @@
     </div>
 
   <div class="review-container">
+  <div class="reviewBox">
     <div>
     <h1>리뷰 보기</h1>
+    </div>
+    <div>
+    	<a id="reviewWrite" href="gowriteReview.do">리뷰작성하기</a>
+    </div>
     </div>
    <c:forEach  items="${reviewlist}" var="dto">
   <div class="review-box-wrapper">

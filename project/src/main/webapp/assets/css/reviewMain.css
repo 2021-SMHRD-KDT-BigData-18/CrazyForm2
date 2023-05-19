@@ -151,3 +151,22 @@
     margin-top: 10px;
     color: #777;
   }
+  .reviewBox {
+  	display: flex;
+  	flex-wrap: wrap;
+  	justify-content: space-between;
+  	align-items: center;
+  }
+  #reviewWrite {
+  	text-decoration: none;
+  	font-weight: 700;
+  	
+  }
+    #reviewWrite:visited { 
+  	color:black;
+  }
+    #reviewWrite:hover {
+  	cursor: pointer;
+  	color:rgb(0, 128, 255);
+  }
+  
