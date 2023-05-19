@@ -42,7 +42,8 @@
 							// if user값 null 이면 goLogin.do로 연결
 							%> <a href="goRv.do">예약하기</a>
 						</li>
-						<li><a href="goRvInfo.do">관리자 예약확인</a></li>
+						<c:if test="${user.m_ID eq'admin'}">
+						<li><a href="goRvInfo.do">관리자 예약확인</a></li></c:if>
 						<li><a href="https://onnuribed.co.kr/">침구청소</a></li>
 						<li><a href="http://thecleaning.co.kr/default/">에어컨 청소</a></li>
 						<li><a href="https://wayopet.com/home">펫시팅</a></li>
