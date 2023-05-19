@@ -10,8 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import zipsa.controller.A_RvinfoCon;
+
+import zipsa.controller.A_RvinfoList;
 import zipsa.controller.A_MinfoCon;
+import zipsa.controller.A_RvinfoCon;
 import zipsa.controller.Controller;
 import zipsa.controller.M_DeleteCon;
 import zipsa.controller.M_JoinCon;
@@ -68,10 +70,12 @@ public class FrontController extends HttpServlet {
 		mappings.put("/writeReivew.do", new M_writeReviewCon());				// 리뷰작성내용 sql등록후 리뷰메인으로 넘기는 페이지
 		mappings.put("/goreviewMain.do", new goReviewMainCon());				// 리뷰보는 게시판
 		
-		mappings.put("/test3.do", new testCon()); 		  //예약내역 저장하는 test			
+		mappings.put("/test3.do", new testCon()); 		  //예약내역 저장하는 test		
 		
-		mappings.put("/goM_info.do", new A_MinfoCon()); 		 // 관리자 회원관리페이지 이동
-		mappings.put("/goRvInfo.do", new A_RvinfoCon());		 // 관리자 예약내역관리 페이지 이동
+		mappings.put("/rvInfo.do", new A_RvinfoList());		 // 관리자 예약내역관리 리스트
+		mappings.put("goRvInfo.do", new A_RvinfoCon());   // 관리자 예약내역관리 페이지 이동
+		mappings.put("/goMinfo.do", new A_MinfoCon());	 // 관리자 회원관리페이지 이동
+		
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
