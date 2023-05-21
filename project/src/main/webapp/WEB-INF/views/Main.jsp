@@ -43,7 +43,9 @@
                     <a href="gologin.do">예약하기</a>
                 </c:when>
                 <c:otherwise>
-                    <a href=""></a>
+         <c:if test="${user.m_ID ne 'admin'}">
+        <a href="reservation.do">예약하기</a>
+         </c:if>
                 </c:otherwise>
             </c:choose>
         </li>
