@@ -26,6 +26,8 @@ public class goRvCon implements Controller {
 		T_MEMBER user = (T_MEMBER) session.getAttribute("user");
 		String M_ID = user.getM_ID();
 		
+		// 오늘이전의 예약현황 가져가도록
+		
 		T_MemberDAO dao = new T_MemberDAO();
 		List<T_RESERVATION> list = dao.selectRv(M_ID);
 		

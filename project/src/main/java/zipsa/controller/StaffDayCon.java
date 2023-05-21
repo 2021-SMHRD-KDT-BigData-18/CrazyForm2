@@ -35,18 +35,18 @@ public class StaffDayCon implements Controller {
 		List<T_HOLIDAY> Hlist = dao.staffHDay(STAFF_SEQ); // 직원 휴무일 리스트 Hlist
 
 		// REV_DT, HOLI_DT 달력에 입력가능한 형식으로 바꿔서 list에 새로 담아서 보내주기
-		ArrayList<String> list = new ArrayList<String>();
+		ArrayList<String> Slist = new ArrayList<String>();
 
 		DateFormat dateFomatter = new SimpleDateFormat("dd.MM.yy");
 		for (T_HOLIDAY dto : Hlist) {
-			list.add(dateFomatter.format(dto.getHOLI_DT().getTime()));
+			Slist.add(dateFomatter.format(dto.getHOLI_DT().getTime()));
 		}
 		for (T_RESERVATION dto : Rlist) {
-			list.add(dateFomatter.format(dto.getREV_DT().getTime()));
+			Slist.add(dateFomatter.format(dto.getREV_DT().getTime()));
 		}
 
 		Gson gson = new Gson();
-		String json = gson.toJson(list);
+		String json = gson.toJson(Slist);
 
 		out.print(json);
 
