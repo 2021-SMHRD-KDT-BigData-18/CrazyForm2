@@ -33,8 +33,8 @@ public class goWriteReviewCon implements Controller {
 		session.setAttribute("list", list);
 		
 		// list에 아무것도 없으면 메인으로
-		if(list == null) { 
-			return "Redirect://Main.do";
+		if(list.isEmpty() == true) { 
+			return "Redirect:/Main.do";
 		}else return "writeReview"; //있으면 작성하기페이지로
 	}
 
