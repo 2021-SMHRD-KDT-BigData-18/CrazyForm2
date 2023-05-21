@@ -37,7 +37,7 @@ public class StaffDayCon implements Controller {
 		// REV_DT, HOLI_DT 달력에 입력가능한 형식으로 바꿔서 list에 새로 담아서 보내주기
 		ArrayList<String> Slist = new ArrayList<String>();
 
-		DateFormat dateFomatter = new SimpleDateFormat("dd.MM.yy");
+	      DateFormat dateFomatter = new SimpleDateFormat("dd.MM.yyyy");
 		for (T_HOLIDAY dto : Hlist) {
 			Slist.add(dateFomatter.format(dto.getHOLI_DT().getTime()));
 		}
