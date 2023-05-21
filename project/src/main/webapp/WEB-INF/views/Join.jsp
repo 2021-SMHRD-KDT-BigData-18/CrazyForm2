@@ -34,10 +34,12 @@
 
 			</div>
 			<div class="field">
-				<b>비밀번호</b> <input class="userpw" type="password" name="pw">
+				<b>비밀번호</b> <input id="userpw" class="userpw" type="password" name="pw">
 			</div>
 			<div class="field">
-				<b>비밀번호 재확인</b> <input class="userpw-confirm" type="password">
+				<b>비밀번호 재확인</b> <input id="userpw-confirm" class="userpw-confirm" type="password">
+				<p id="pwresult"></p>
+				<!-- 비밀번호 재확인 결과를 출력하기 -->
 			</div>
 			<div class="field">
 				<b>이름</b> <input type="text" name="name">
@@ -103,52 +105,65 @@
 			
 		});
 	}
-	
-
-	// 회원가입 후 alert창 띄우기
-	//	var join = $('#join');
-	//	join.on('click', ()=>{
-	//		alert('회원가입에 성공하셨습니다! 메인화면에서 로그인을 해주세요.');
-	//	});
 		
-	// 전화번호 자동하이픈 넣기
-			var autoHypenPhone = function (str) {
-            str = str.replace(/[^0-9]/g, '');
-            var tmp = '';
-            if (str.length < 4) {
-                return str;
-            } else if (str.length < 7) {
-                tmp += str.substr(0, 3);
-                tmp += '-';
-                tmp += str.substr(3);
-                return tmp;
-            } else if (str.length < 11) {
-                tmp += str.substr(0, 3);
-                tmp += '-';
-                tmp += str.substr(3, 3);
-                tmp += '-';
-                tmp += str.substr(6);
-                return tmp;
-            } else {
-                tmp += str.substr(0, 3);
-                tmp += '-';
-                tmp += str.substr(3, 4);
-                tmp += '-';
-                tmp += str.substr(7);
-                return tmp;
-            }
+	
+	
+	
+	$(document).ready(function () {
+		var pwinput = $('#userpw-confirm');
+		pwinput.on('input', pwCheck);
+	});
+	
+	function pwCheck () {
 
-            return str;
-        }
+		var userpw = $('#userpw').val();
+		var confirmpw = $('#userpw-confirm').val();
+		var pwresult = $('#pwresult');
 
+			if (userpw == confirmpw) {
+				pwresult.html("비밀번호가 같습니다.").css("color", "green");
+			} else {
+				pwresult.html("비밀번호가 다릅니다.").css("color", "red");
+			}
 
-        var phoneNum = document.getElementById('phoneNum');
+		};
 
-        phoneNum.onkeyup = function () {
-            console.log(this.value);
-            this.value = autoHypenPhone(this.value);
-        }
+		// 전화번호 자동하이픈 넣기
+		var autoHypenPhone = function(str) {
+			str = str.replace(/[^0-9]/g, '');
+			var tmp = '';
+			if (str.length < 4) {
+				return str;
+			} else if (str.length < 7) {
+				tmp += str.substr(0, 3);
+				tmp += '-';
+				tmp += str.substr(3);
+				return tmp;
+			} else if (str.length < 11) {
+				tmp += str.substr(0, 3);
+				tmp += '-';
+				tmp += str.substr(3, 3);
+				tmp += '-';
+				tmp += str.substr(6);
+				return tmp;
+			} else {
+				tmp += str.substr(0, 3);
+				tmp += '-';
+				tmp += str.substr(3, 4);
+				tmp += '-';
+				tmp += str.substr(7);
+				return tmp;
+			}
 
+			return str;
+		}
+
+		var phoneNum = document.getElementById('phoneNum');
+
+		phoneNum.onkeyup = function() {
+			console.log(this.value);
+			this.value = autoHypenPhone(this.value);
+		}
 	</script>
 
 
