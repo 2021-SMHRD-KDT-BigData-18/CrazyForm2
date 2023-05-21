@@ -73,7 +73,7 @@
 			</thead>
 			<tr class="selectBox1">
 				<td class="cate">카테고리 선택</td>
-				<td><select name="cate" class="select1">
+				<td><select name="JOB_T" class="select1">
 						<option value="가사도우미">가사도우미</option>
 						<option value="이사청소">이사청소</option>
 						<option value="사무실청소">사무실청소</option>
@@ -81,7 +81,7 @@
 			</tr>
 			<tr class="selectBox2">
 				<td class="meet">반려동물이 있으신가요?</td>
-				<td><select name="meet" class="select1">
+				<td><select name="PET_YN" class="select1">
 						<option value="Y">네, 있어요</option>
 						<option value="N">아니요</option>
 				</select></td>
@@ -138,14 +138,14 @@
 			<tr class="selectBox2">
 				<td class="meet">청소 날짜</td>
 				<td><input type='text' class='datetimepicker'
-					placeholder="날짜를 선택하세요" name='start_dt' style='width: 250px;'>
+					placeholder="날짜를 선택하세요" name='REV_DT' style='width: 250px;'>
 				</td>
 			</tr>
 
 			<tr class="selectBox2">
 				<td class="meet">요청사항</td>
 				<td><textarea class="form-control" cols="50" rows="4"
-						placeholder="요청사항을 작성해주세요"></textarea></td>
+						placeholder="요청사항을 작성해주세요" name="REV_NOTE"></textarea></td>
 			</tr>
 
 			<tr>
