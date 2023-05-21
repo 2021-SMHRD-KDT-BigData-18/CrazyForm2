@@ -36,7 +36,8 @@ public class M_LoginCon implements Controller {
 			session.setAttribute("user", user);
 			nextView = "redirect:/Main.do"; // 성공했을 때 Main
 		} else {
-			nextView = "redirect:/gologin.do"; // 실패시 login
+			nextView = "loginFail"; // 실패시 login
+			
 		}
 		return nextView;
 	}
