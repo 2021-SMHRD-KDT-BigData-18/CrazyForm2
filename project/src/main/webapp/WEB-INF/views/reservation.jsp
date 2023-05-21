@@ -219,17 +219,17 @@
 
     // 직원 선택버튼 클릭시 색상 변경
     
- 
-    $('button').click(function(){
-         $('button').removeClass("active");
-         $(this).addClass("active");
-         
-       const value = $(this).prop('value');
-       console.log(value);
-       if (value != null) {
-          request(value);
-       }
-    });
+    $('.rvBtn').click(function(){
+        $('.rvBtn').removeAttr('id','active');
+        $(this).attr('id','active');
+        
+      const value = $(this).prop('value');
+      console.log(value);
+      if (value != null) {
+         request(value);
+      }
+   });
+    
     
     
     // 직원의 휴무일, 예약일 불러오기
