@@ -32,7 +32,7 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
 
 <style type="text/css">
-.active {
+#active {
 	background-color: rgb(0, 128, 255);
 }
 </style>
