@@ -79,6 +79,24 @@
 						<option value="사무실청소">사무실청소</option>
 				</select></td>
 			</tr>
+
+			<!-- 주소 -->
+			<tr class="selectBox2">
+				<td class="meet">서비스 받으실 주소를 선택해주세요<br>&nbsp;&nbsp;&nbsp;&nbsp;<span
+					class="m--font-orange vertical-middle"></span>
+				</td>
+				<td>
+					<button type="button" class="btn btn-info m-btn--air"
+						onclick="execDaumPostcode()">🏠 주소를 등록해주세요</button> <input
+					type="text" class="form-control m-input" name="postcode"
+					id="postcode" placeholder="우편번호" readonly /> <input type="text"
+					class="form-control m-input m--margin-top-10" name="address"
+					id="address" placeholder="도로명 주소" readonly> <input
+					type="text" class="form-control m-input m--margin-top-10"
+					name="detailAddress" placeholder="상세 주소" required>
+				</td>
+			</tr>
+
 			<tr class="selectBox2">
 				<td class="meet">반려동물이 있으신가요?</td>
 				<td><select name="PET_YN" class="select1">
@@ -86,6 +104,9 @@
 						<option value="N">아니요</option>
 				</select></td>
 			</tr>
+
+
+
 			<tr class="selectBox2">
 				<td><span>이전 직원 만나기</span></td>
 				<td>Y<input class="meetY" type="radio" name="meet"> N<input
@@ -150,7 +171,7 @@
 
 			<tr>
 				<td class="submitBtn" colspan="2" align="center"><input
-					 type="submit" value="예약하기"></td>
+					type="submit" value="예약하기"></td>
 			</tr>
 		</table>
 	</form>
@@ -165,6 +186,28 @@
 
 	<script type="text/javascript">
 
+    <!--autoload=false 파라미터를 이용하여 자동으로 로딩되는 것을 막습니다.-->
+    <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js?autoload=false"></script>
+
+	<script>
+        /** 우편번호 찾기 */
+        function execDaumPostcode() {
+            daum.postcode.load(function () {
+                new daum.Postcode({
+                    oncomplete: function (data) {
+                        // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
+                        $("#postcode").val(data.zonecode);
+                        $("#address").val(data.roadAddress);
+                    }
+                }).open();
+            });
+        }
+
+	
+	
+	
+	
+	
 
 	// 직원 골랐을 경우 날짜 불러오기
     $('#staffBox').hide();

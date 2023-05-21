@@ -36,7 +36,7 @@ public class RvCon implements Controller {
 		String JOB_T = request.getParameter("JOB_T");					// 청소내용
 		String PET_YN = request.getParameter("PET_YN");      			// 펫유무
 		String REV_NOTE = request.getParameter("REV_NOTE");				// 요청사항
-		//String M_ADDR = request.getParameter("M_ADDR");					// 주소등록
+		String M_ADDR = request.getParameter("M_ADDR");					// 주소등록
 		String RVDT = request.getParameter("REV_DT");					// 예약일자
 		
 		//직원번호 null로 받아오는지 확인
@@ -62,7 +62,7 @@ public class RvCon implements Controller {
 		dto.setPET_YN(PET_YN);
 		dto.setSTAFF_SEQ(STAFF_SEQ);
 		dto.setREV_NOTE(REV_NOTE);
-		//dto.setM_ADDR(M_ADDR);
+		dto.setM_ADDR(M_ADDR);
 
 		int row = dao.Reserv(dto);
 
