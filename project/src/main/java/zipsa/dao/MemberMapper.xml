@@ -114,7 +114,7 @@
 		where REV_SEQ=#{REV_SEQ}
 	</select>
 
-	<!-- 리뷰작성위해 예약현황 오늘이후의 여러개 불러오기 -->
+	<!-- 리뷰작성위해 예약현황 오늘이전의 여러개 불러오기 -->
 	<select id="sameRevSeq" resultType="zipsa.entity.T_RESERVATION">
 		SELECT * FROM V_BEFORE_TODAY WHERE M_ID=#{M_ID}
 	</select>
