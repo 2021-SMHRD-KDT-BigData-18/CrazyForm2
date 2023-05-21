@@ -200,6 +200,12 @@
 			});
 		});
 		
+		$(function () {
+            $(".datetimepicker").datetimepicker({
+                minTime: 0
+            });
+        });
+		
 
 		
 		// $('.dateclick').on('click', function() {
