@@ -156,6 +156,12 @@
                     minDate: 0
                 });
             });
+            
+            $(function () {
+                $(".datetimepicker").datetimepicker({
+                    minTime: 0
+                });
+            });
 
 		// $('.dateclick').on('click', function() {
 		//	var d = $('input').datetimepicker('getValue');
