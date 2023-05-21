@@ -64,7 +64,7 @@
 	</div>
 
 	<div class="Box">예약하기</div>
-	<form action="/Rv.do" method="POST">
+	<form action="Rv.do" method="POST">
 		<table>
 			<thead>
 				<tr>
@@ -150,7 +150,7 @@
 
 			<tr>
 				<td class="submitBtn" colspan="2" align="center"><input
-					action="#" type="submit" value="예약하기"></td>
+					 type="submit" value="예약하기"></td>
 			</tr>
 		</table>
 	</form>
