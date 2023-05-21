@@ -88,12 +88,13 @@
 				<td>
 					<button type="button" class="btn btn-info m-btn--air"
 						onclick="execDaumPostcode()">🏠 주소를 등록해주세요</button> <input
-					type="text" class="form-control m-input" name="postcode"
+					type="text" class="form-control m-input"
 					id="postcode" placeholder="우편번호" readonly /> <input type="text"
 					class="form-control m-input m--margin-top-10" name="address"
 					id="address" placeholder="도로명 주소" readonly> <input
 					type="text" class="form-control m-input m--margin-top-10"
 					name="detailAddress" placeholder="상세 주소" required>
+					<input name="M_ADDR" type="hidden">
 				</td>
 			</tr>
 
@@ -135,7 +136,7 @@
 								<c:otherwise>
 									<c:forEach items="${list}" var="dto">
 										<tr>
-											<td><button id="rvBtn" type="button" name="STAFF_SEQ"
+											<td><button class="rvBtn" type="button" name="STAFF_SEQ"
 													value="${dto.STAFF_SEQ}">√</button></td>
 											<td><fmt:formatDate pattern="yyyy-MM-dd hh:mm:ss"
 													value="${dto.REV_DT}" /></td>
@@ -159,8 +160,9 @@
 			<tr class="selectBox2">
 				<td class="meet">청소 날짜</td>
 				<td><input type='text' class='datetimepicker'
-					placeholder="날짜를 선택하세요" name='REV_DT' style='width: 250px;'>
-				</td>
+					placeholder="날짜를 선택하세요" style='width: 250px;'>
+					<button class="dayBtn" type="button">날짜 선택하기</button> <input
+					name="REV_DT" type="hidden" class='dayvalue'></td>
 			</tr>
 
 			<tr class="selectBox2">
@@ -185,8 +187,9 @@
 
 
 
-    <!--autoload=false 파라미터를 이용하여 자동으로 로딩되는 것을 막습니다.-->
-    <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js?autoload=false"></script>
+	<!--autoload=false 파라미터를 이용하여 자동으로 로딩되는 것을 막습니다.-->
+	<script
+		src="http://dmaps.daum.net/map_js_init/postcode.v2.js?autoload=false"></script>
 
 	<script type="text/javascript">
 	
@@ -216,7 +219,13 @@
        });
     });      
     
-
+    // 날짜 값 가져오기
+    $('.dayBtn').on('click', function dayvalue() {
+        var day = $('input').datetimepicker('getValue');
+        var dayvalue = $('.dayvalue').val(day);
+		//console.log($('.dayvalue').val(day));
+    });
+    
     // 직원 선택버튼 클릭시 색상 변경
     
     $('.rvBtn').click(function(){
@@ -265,7 +274,7 @@
              }).open();
          });
      };
-		
+	
 
 	</script>
 
