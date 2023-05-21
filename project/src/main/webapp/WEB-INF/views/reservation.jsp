@@ -136,8 +136,8 @@
 								<c:otherwise>
 									<c:forEach items="${list}" var="dto">
 										<tr>
-											<td><button class="rvBtn" type="button" name="STAFF_SEQ"
-													value="${dto.STAFF_SEQ}">√</button></td>
+											<td><input class="rvBtn" type="radio" name="STAFF_SEQ"
+													value="${dto.STAFF_SEQ}"></td>
 											<td><fmt:formatDate pattern="yyyy-MM-dd hh:mm:ss"
 													value="${dto.REV_DT}" /></td>
 											<td>${dto.JOB_T}</td>
