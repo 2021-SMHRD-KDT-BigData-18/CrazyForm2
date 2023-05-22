@@ -27,7 +27,7 @@
                 <!-- Nav -->
                 <nav id="nav">
                     <ul>
-                        <li><a href="goReservation.do">예약하기</a></li>
+                        <li><a href="goRv.do">예약하기</a></li>
                         <li><a href="https://onnuribed.co.kr/">침구청소</a></li>
                         <li><a href="http://thecleaning.co.kr/default/">에어컨 청소</a></li>
                         <li><a href="https://wayopet.com/home">펫시팅</a></li>
