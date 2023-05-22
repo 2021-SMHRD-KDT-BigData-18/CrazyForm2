@@ -35,6 +35,7 @@
 *예약현황 보기 버튼 누르면 예약현황 출력 Rlist에 담겨있음 하나씩 출력해서 보여주도록
  -->
 
+				<body style="padding:30px;">
 	<%
 	List<T_RESERVATION> list = (List<T_RESERVATION>) request.getAttribute("list");
 	%>
@@ -75,20 +76,19 @@
 			<ul>
 				<li class="info1">내정보관리</li>
 				<li class="res1">예약현황보기</li>
-						<c:choose>
+						<!--<c:choose>
 						<c:when test="${list.isEmpty()}">
 							<tr>
 								<td colspan="6"><h2>예약내역이 없습니다.</h2></td>
 							</tr>
 						</c:when>
 						<c:otherwise>
-				<body style="padding:30px;">
-          		<!-- calendar 태그 -->
+          		 calendar 태그 
 				<div id='calendar-container'>
- 				   <div id='calendar'></div>
+ 				   <div id='calendar' style="float:center; width:700px"></div>
 					</div>
 					</c:otherwise>
-					</c:choose>
+					</c:choose> -->
 					
 			</ul>
 		</div>
@@ -132,7 +132,23 @@
 
 			</form>
 		</div>
-
+		
+		<div class="res">
+			<c:choose>
+						<c:when test="${list.isEmpty()}">
+							<tr>
+								<td colspan="6"><h2>예약내역이 없습니다.</h2></td>
+							</tr>
+						</c:when>
+						<c:otherwise>
+          		<!-- calendar 태그 -->
+				<div id='calendar-container'>
+ 				   <div id='calendar' style="float:center; width:1000px"></div>
+					</div>
+					</c:otherwise>
+					</c:choose>
+		
+		</div>
 		<%-- <div class="res">
 			<table id="resTable">
 					   <tr>
@@ -204,8 +220,8 @@
         initialView: 'dayGridMonth', // 초기 로드 될때 보이는 캘린더 화면(기본 설정: 달)
  //       initialDate: '2023-05-11', // 초기 날짜 설정 (설정하지 않으면 오늘 날짜가 보인다.)
         navLinks: true, // 날짜를 선택하면 Day 캘린더나 Week 캘린더로 링크
-        editable: true, // 수정 가능?
-        selectable: true, // 달력 일자 드래그 설정가능
+        editable: false, // 수정 가능?
+        selectable: false, // 달력 일자 드래그 설정가능
         nowIndicator: true, // 현재 시간 마크
         dayMaxEvents: true, // 이벤트가 오버되면 높이 제한 (+ 몇 개식으로 표현)
         locale: 'ko', // 한국어 설정
@@ -228,7 +244,7 @@
 
             selectRvList(currentYear + '-' + currentMonth)
         },
-        select: function(arg) { // 캘린더에서 드래그로 이벤트를 생성할 수 있다.
+ /*       select: function(arg) { // 캘린더에서 드래그로 이벤트를 생성할 수 있다.
             var title = prompt('Event Title:');
             if (title) {
                 calendar.addEvent({
@@ -239,7 +255,7 @@
                 })
             }
             calendar.unselect()
-        },
+        },*/
         eventClick: function(info) {
             var event = info.event; // 클릭된 이벤트 객체
             console.log(event)
@@ -306,7 +322,7 @@
                 alert("요청 실패");
             },
         });
-    }
+    };
 
     function getDate() {
         var today = new Date();
