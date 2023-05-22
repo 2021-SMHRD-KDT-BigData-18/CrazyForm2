@@ -101,6 +101,14 @@ public class T_MemberDAO {
 		return list;
 	}
 	
+	// 관리자가 캘린더로 드래그해서 예약현황변경
+	  public int updateReservation(T_RESERVATION reservation) {
+	      SqlSession session = factory.openSession(true);
+	      int result = session.update("updateReservationDate", reservation);
+	      session.close();
+	      return result;
+	   }
+	
 	// 예약시 선택한 직원번호 예약일
 	public List<T_RESERVATION> staffRDay(int STAFF_SEQ) {
 		SqlSession session = factory.openSession(true);

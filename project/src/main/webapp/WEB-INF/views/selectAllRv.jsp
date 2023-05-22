@@ -60,7 +60,22 @@
             console.log(obj);
         },
         eventChange: function(obj) { // 이벤트가 수정되면 발생하는 이벤트
-            console.log(obj);
+        	 var customProperty = obj.event.extendedProps;
+        	 $.ajax({
+   	            url : 'updateRvInfo.do',
+   	            type : 'post',
+   	            data : {
+   	                "seq" : customProperty.seq,
+   	                "date" : getDateFormat(obj.event.start, true)
+   	            },
+   	            // 521
+   	            success : function (res) {
+   	                console.log("saved");
+   	            },
+   	            error : function (e) {
+   	                alert("요청 실패");
+   	            },
+   	        });   		 
         },
         eventRemove: function(obj){ // 이벤트가 삭제되면 발생하는 이벤트
             console.log(obj);
