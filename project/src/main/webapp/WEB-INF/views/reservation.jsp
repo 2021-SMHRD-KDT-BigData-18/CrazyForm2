@@ -30,7 +30,7 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css">
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <style type="text/css">
 #active {
 	background-color: rgb(0, 128, 255);
@@ -127,27 +127,17 @@
 								<td>예약주소</td>
 								<td>담당매니저</td>
 							</tr>
-							<c:choose>
-								<c:when test="${list.isEmpty()}">
-									<tr>
-										<td colspan="6"><h2>예약내역이 없습니다.</h2></td>
-									</tr>
-								</c:when>
-								<c:otherwise>
-									<c:forEach items="${list}" var="dto">
-										<tr>
-											<td><input class="rvBtn" type="radio" name="STAFF_SEQ"
-												value="${dto.STAFF_SEQ}"></td>
-											<td><fmt:formatDate pattern="yyyy-MM-dd hh:mm:ss"
-													value="${dto.REV_DT}" /></td>
-											<td>${dto.JOB_T}</td>
-											<td>${dto.m_ADDR}</td>
-											<td>${dto.STAFF_NAME}</td>
-										</tr>
-									</c:forEach>
-
-								</c:otherwise>
-							</c:choose>
+							<c:forEach items="${list}" var="dto">
+								<tr>
+									<td><input class="rvBtn" type="radio" name="STAFF_SEQ"
+										value="${dto.STAFF_SEQ}"></td>
+									<td><fmt:formatDate pattern="yyyy-MM-dd hh:mm:ss"
+											value="${dto.REV_DT}" /></td>
+									<td>${dto.JOB_T}</td>
+									<td>${dto.m_ADDR}</td>
+									<td>${dto.STAFF_NAME}</td>
+								</tr>
+							</c:forEach>
 
 						</table>
 					</div>
@@ -202,11 +192,19 @@
     $(document).ready(function() {
        
        $('.meetY').on('click', () => {
-       $('#staffBox').show();
+       		if(${list.isEmpty()}) {
+       			Swal.fire({
+    	            icon: 'warning',                 // Alert 타입
+    	            title: '예약내역이 없습니다.',         // Alert 제목
+    	        });
+       		} else {
+       			$('#staffBox').show();
+       			
+       		}
        });
        
        $('.meetN').on('click', () => {
-       $('#staffBox').hide();
+       		$('#staffBox').hide();
        });
        
     });
