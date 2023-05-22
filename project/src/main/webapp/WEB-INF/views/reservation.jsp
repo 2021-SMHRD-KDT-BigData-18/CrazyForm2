@@ -156,7 +156,7 @@
 
 			<tr>
 				<td class="submitBtn" colspan="2" align="center"><input
-					type="submit" value="예약하기" id="resBtn"></td>
+					type="submit" value="예약하기" id="submitBtn2"></td>
 			</tr>
 		</table>
 	</form>
