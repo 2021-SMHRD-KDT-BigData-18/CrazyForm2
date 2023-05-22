@@ -42,7 +42,7 @@ public class T_MemberDAO {
 	// 예약하기
 	public int Reserv(T_RESERVATION dto) {
 		SqlSession session = factory.openSession(true);
-		int row = session.update("reserv", dto);
+		int row = session.insert("reserv", dto);
 		session.close();
 		return row;
 	}

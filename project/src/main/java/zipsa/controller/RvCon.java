@@ -53,20 +53,15 @@ public class RvCon implements Controller {
       int STAFF_SEQ = 0;
       // RVDT를 date타입으로 변환시켜서 REV_DT에 저장 
       
-      Date REVDT = fmt_in.parse(RVDT, pos); // 영어+숫자된 날짜 date type으로 변경
-      String REVdt = fmt_out.format(REVDT);
-      java.sql.Timestamp REV_DT = java.sql.Timestamp.valueOf(REVdt);
-      System.out.println(REV_DT);
+      Date REV_DT = fmt_in.parse(RVDT, pos); // 영어+숫자된 날짜 date type으로 변경
       
       // 예약일자만 구해서 쉬는날과 예약일이 맞지않은 직원은 배제시키기위함
       T_MemberDAO dao = new T_MemberDAO();
-      System.out.println(STAFFSEQ);
       if (STAFFSEQ == null) {
          STAFF_SEQ=dao.RandomStaff(REV_DT);   
       }else {
          STAFF_SEQ=Integer.parseInt(STAFFSEQ);
       }
-      System.out.println(STAFF_SEQ);
       
       //dto에 정보 맵핑 후 등록
       T_RESERVATION dto = new T_RESERVATION();
@@ -76,11 +71,12 @@ public class RvCon implements Controller {
       dto.setSTAFF_SEQ(STAFF_SEQ);
       dto.setREV_NOTE(REV_NOTE);
       dto.setM_ADDR(M_ADDR);
+      dto.setREV_DT(REV_DT);
 
       int row = dao.Reserv(dto);
 
       if (row > 0) {
-         return "redirect:/goMain.do"; // 예약성공 후 보여줄 화면
+         return "redirect:/Main.do"; // 예약성공 후 보여줄 화면
       } else {
          return "redirect:/goRv.do";   // 예약실패 후 예약하기화면 다시 등록
          }
