@@ -1,366 +1,377 @@
-   @charset "UTF-8"; 
-  @import url("https://fonts.googleapis.com/css?family=Oleo+Script:400|Open+Sans:300,300italic,600,600italic,800");
+@charset "UTF-8";
 
-        #header-wrapper {
-            display: flex;
-        }
+@import
+	url("https://fonts.googleapis.com/css?family=Oleo+Script:400|Open+Sans:300,300italic,600,600italic,800")
+	;
 
-        #header {
-            margin: 0 auto;
-            align-items: center;
-            justify-content: center;
-        }
+#header-wrapper {
+	display: flex;
+}
 
-        #logo h1 {
-            font-size: 2.75em;
-            padding: 0.2em 0.275em;
-        }
+#header {
+	margin: 0 auto;
+	align-items: center;
+	justify-content: center;
+}
 
-        #logo {
-            line-height: 3em;
-            display: inline-block;
-        }
+#logo h1 {
+	font-size: 2.75em;
+	padding: 0.2em 0.275em;
+}
 
-        #logo h1 {
-            background: rgb(0, 128, 255);
-            border-radius: 6px;
-            font-family: 'Oleo Script', serif;
-            font-weight: 400;
-            font-size: 3.25em;
-            letter-spacing: 0.05em;
-            display: inline-block;
-            vertical-align: middle;
-        }
+#logo {
+	line-height: 3em;
+	display: inline-block;
+}
 
-        h1>a {
-            color: rgb(255, 255, 255);
-            text-decoration: none !important;
-        }
+#logo h1 {
+	background: rgb(0, 128, 255);
+	border-radius: 6px;
+	font-family: 'Oleo Script', serif;
+	font-weight: 400;
+	font-size: 3.25em;
+	letter-spacing: 0.05em;
+	display: inline-block;
+	vertical-align: middle;
+}
 
-        #logo {
-            font-weight: 800;
-            letter-spacing: 0.025em;
-            font-size: 0.9em;
-            vertical-align: middle;
-            margin: 0 0 0 1.25em;
-        }
+h1>a {
+	color: rgb(255, 255, 255);
+	text-decoration: none !important;
+}
 
-        #nav {
-            position: absolute;
-            right: 0;
-            top: 0;
-        }
+#logo {
+	font-weight: 800;
+	letter-spacing: 0.025em;
+	font-size: 0.9em;
+	vertical-align: middle;
+	margin: 0 0 0 1.25em;
+}
 
-        #nav ul {
-            list-style: none;
-            padding-left: 0;
-        }
+#nav {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
 
-        #nav ul li {
-            float: left;
-            line-height: 4.5em;
-            padding-left: 1.5em;
-        }
+#nav ul {
+	list-style: none;
+	padding-left: 0;
+}
 
-        #nav ul li a,
-        #nav ul li {
-            -moz-transition: background-color .25s ease-in-out;
-            -webkit-transition: background-color .25s ease-in-out;
-            -ms-transition: background-color .25s ease-in-out;
-            transition: background-color .25s ease-in-out;
-            font-weight: 800;
-            letter-spacing: 0.025em;
-            color: #696969;
-            text-decoration: none;
-            border-radius: 6px;
-            padding: 0.5em 1em 0.5em 1em;
-        }
+#nav ul li {
+	float: left;
+	line-height: 4.5em;
+	padding-left: 1.5em;
+}
 
-        #nav ul li>ul {
-            display: none;
-        }
+#nav ul li a, #nav ul li {
+	-moz-transition: background-color .25s ease-in-out;
+	-webkit-transition: background-color .25s ease-in-out;
+	-ms-transition: background-color .25s ease-in-out;
+	transition: background-color .25s ease-in-out;
+	font-weight: 800;
+	letter-spacing: 0.025em;
+	color: #696969;
+	text-decoration: none;
+	border-radius: 6px;
+	padding: 0.5em 1em 0.5em 1em;
+}
 
-        #nav ul li:hover a,
-        #nav ul li:hover span {
-            background: #fff;
-        }
+#nav ul li>ul {
+	display: none;
+}
 
-        #nav ul li.active a,
-        #nav ul li.active span {
-            background: #fff;
-        }
+#nav ul li:hover a, #nav ul li:hover span {
+	background: #fff;
+}
 
-        #nav ul li.current a {
-            background: #444;
-            color: #fff;
-        }
+#nav ul li.active a, #nav ul li.active span {
+	background: #fff;
+}
 
-        .container {
-            margin: 1% !important;
-            max-width: 100%;
-            width: 1000px;
-            overflow: hidden;
-        }
+#nav ul li.current a {
+	background: #444;
+	color: #fff;
+}
 
-        #page-wrapper {
-            display: flex;
-        }
+.container {
+	margin: 1% !important;
+	max-width: 100%;
+	width: 1000px;
+	overflow: hidden;
+}
 
-        form {
-            margin-top: -5%;
-            color: #696969;
-            display: flex;
-            justify-content: center;
-            text-align: center;
-        }
+#page-wrapper {
+	display: flex;
+}
 
-        #Container {
-            margin-left: 10%;
-        }
+form {
+	margin-top: -5%;
+	color: #696969;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+}
 
-        table {
-            width: 150%;
-            /* border: 1px solid #444444; */
-            border-collapse: collapse;
-            background-color: white;
-        }
+#Container {
+	margin-left: 10%;
+}
 
-        th,
-        td {
-            padding: 10px;
-        }
+table {
+	width: 100%;
+	/* border: 1px solid #444444; */
+	border-collapse: collapse;
+	background-color: white;
+	justify-content: center;
+}
 
-        td {
-            width: 50%;
-            border: none;
-        }
+th, td {
+	padding: 10px;
+}
 
-        select {
-            width: 250px;
-            text-align: center;
-        }
+td {
+	width: 100%;
+	border: none;
+}
 
-        .datetimepicker {
-            width: 50%;
-            text-align: center;
-        }
+select {
+	width: 250px;
+	text-align: center;
+}
 
-        #footer-wrapper {
-            margin-top: 15%;
-        }
+.datetimepicker {
+	width: 50%;
+	text-align: center;
+}
 
-        .submitBtn {
-            background-color: rgb(229, 229, 229);
-            padding: 100px;
-            margin-top: -20px;
-            padding-top: 10px;
-        }
+#footer-wrapper {
+	margin-top: 15%;
+}
 
-        .Box {
-            display: flex;
-            justify-content: baseline;
-            color: black;
-            font-size: 1.7em;
-            background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 100px;
-            margin-top: -25px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 4px rgba(17, 17, 17, 0.1);
-        }
+.submitBtn {
+	padding: 100px;
+	margin-top: -20px;
+	padding-top: 10px;
+}
 
-        .form-control {
-            text-align: center;
-        }
+.Box {
+	display: flex;
+	justify-content: space-around;
+	color: black;
+	font-size: 1.7em;
+	background-color: white;
+	padding: 100px;
+	margin-top: -25px;
+	margin-bottom: 30px;
+}
 
-        #page-wrapper {
-            /* border: 1px solid #ddd; */
-            border-radius: 5px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+.form-control {
+	text-align: center;
+}
 
-        /*  예약하기 버튼 */
-        #submitBtn2 {
-            margin: 20px;
-            position: relative;
-            border: none;
-            display: inline-block;
-            padding: 25px 100px;
-            border-radius: 35px;
-            font-family: "paybooc-Light", sans-serif;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            text-decoration: none;
-            font-size: large;
-            font-weight: 600;
-            transition: 0.25s;
-        }
+#page-wrapper {
+	/* border: 1px solid #ddd; */
+	border-radius: 5px;
+	padding: 20px;
+	margin-bottom: 20px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-        /* 주소 */
-         body {
-            font-family: 'Noto Sans KR', sans-serif;
-            font-size: 14px;
-            background-color: rgb(229, 229, 229);
-            line-height: 1.5em;
-            color: #222;
-            margin: 50px;
-        }
+/*  예약하기 버튼 */
+#submitBtn2 {
+	margin: 20px;
+	position: relative;
+	border: none;
+	display: inline-block;
+	padding: 25px 100px;
+	border-radius: 35px;
+	font-family: "paybooc-Light", sans-serif;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+	text-decoration: none;
+	font-size: large;
+	font-weight: 600;
+	transition: 0.25s;
+}
 
-        a {
-            text-decoration: none;
-            color: #222;
-        }
+/* 주소 */
+body {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 14px;
+	background-color: rgb(229, 229, 229);
+	line-height: 1.5em;
+	color: #222;
+	margin: 50px;
+}
 
-        /*member sign in*/
-        .member {
-            width: 400px;
-            /* border: 1px solid #000; */
-            margin: auto;
-            /*중앙 정렬*/
-            padding: 0 20px;
-            margin-bottom: 20px;
-        }
+a {
+	text-decoration: none;
+	color: #222;
+}
 
-        .member .logo {
-            /*로고는 이미지라 인라인 블록이니까 마진 오토 안됨 블록요소만 됨 */
-            display: block;
-            margin: 50px auto;
-        }
+/*member sign in*/
+.member {
+	width: 400px;
+	/* border: 1px solid #000; */
+	margin: auto;
+	/*중앙 정렬*/
+	padding: 0 20px;
+	margin-bottom: 20px;
+}
 
-        .member .field {
-            margin: 5px 0;
-            /*상하로 좀 띄워주기*/
-        }
+.member .logo {
+	/*로고는 이미지라 인라인 블록이니까 마진 오토 안됨 블록요소만 됨 */
+	display: block;
+	margin: 50px auto;
+}
 
-        .member b {
-            /* border: 1px solid #000; */
-            display: block;
-            /*수직 정렬하기 */
-            margin-bottom: 5px;
-        }
+.member .field {
+	margin: 5px 0;
+	/*상하로 좀 띄워주기*/
+}
 
-        /*input 중 radio 는 width 가 100%면 안되니까 */
-        .member input:not(input[type=radio]),
-        .member select {
-            border: 1px solid #dadada;
-            padding: 15px;
-            width: 100%;
-            margin-bottom: 5px;
-        }
+.member b {
+	/* border: 1px solid #000; */
+	display: block;
+	/*수직 정렬하기 */
+	margin-bottom: 5px;
+}
 
-        .member input[type=button],
-        .member input[type=submit] {
-            background-color: #5da4f6;
-            color: #fff
-        }
+/*input 중 radio 는 width 가 100%면 안되니까 */
+.member input:not(input[type=radio]), .member select {
+	border: 1px solid #dadada;
+	padding: 15px;
+	width: 100%;
+	margin-bottom: 5px;
+}
 
-        .member input:focus,
-        .member select:focus {
-            border: 1px solid #2db400;
-        }
+.member input[type=button], .member input[type=submit] {
+	background-color: #5da4f6;
+	color: #fff
+}
 
-        .field.birth div {
-            /*field 이면서 birth*/
-            display: flex;
-            gap: 10px;
-            /*간격 벌려줄때 공식처럼 사용핟나 */
-        }
+.member input:focus, .member select:focus {
+	border: 1px solid #2db400;
+}
 
-        /* .field.birth div > * {  gap 사용한거랑 같은 효과를 줌 
+.field.birth div {
+	/*field 이면서 birth*/
+	display: flex;
+	gap: 10px;
+	/*간격 벌려줄때 공식처럼 사용핟나 */
+}
+
+/* .field.birth div > * {  gap 사용한거랑 같은 효과를 줌 
     flex:1;
 } */
+.field.tel-number div {
+	display: flex;
+}
 
-        .field.tel-number div {
-            display: flex;
-        }
+.field.tel-number div input:nth-child(1) {
+	flex: 2;
+}
 
-        .field.tel-number div input:nth-child(1) {
-            flex: 2;
-        }
+.field.tel-number div input:nth-child(2) {
+	flex: 1;
+}
 
-        .field.tel-number div input:nth-child(2) {
-            flex: 1;
-        }
+.field div {
+	border: 1px solid #dadada;
+	padding: 15px 5px;
+	background-color: #fff;
+}
 
-        .field div {
-            border: 1px solid #dadada;
-            padding: 15px 5px;
-            background-color: #fff;
-        }
+.placehold-text {
+	display: block;
+	/*span 으로 감싸서 크기영역을 블록요소로 만들어ㅜ저야한다*/
+	position: relative;
+	/* border: 1px solid #000; */
+}
 
-        .placehold-text {
-            display: block;
-            /*span 으로 감싸서 크기영역을 블록요소로 만들어ㅜ저야한다*/
-            position: relative;
-            /* border: 1px solid #000; */
-        }
+.placehold-text:before {
+	position: absolute;
+	/*before은 inline 요소이기 때문에 span으로 감싸줌 */
+	right: 20px;
+	top: 13px;
+	pointer-events: none;
+	/*자체가 가지고 있는 pointer event 를 없애준다 */
+}
 
-        .placehold-text:before {
-            position: absolute;
-            /*before은 inline 요소이기 때문에 span으로 감싸줌 */
-            right: 20px;
-            top: 13px;
-            pointer-events: none;
-            /*자체가 가지고 있는 pointer event 를 없애준다 */
-        }
+.userpw {
+	background: url(./images/images2/icon-01.png) no-repeat center right
+		15px;
+	background-size: 20px;
+	background-color: #fff;
+}
 
-        .userpw {
-            background: url(./images/images2/icon-01.png) no-repeat center right 15px;
-            background-size: 20px;
-            background-color: #fff;
-        }
+.userpw-confirm {
+	background: url(./images/images2/icon-02.png) no-repeat center right
+		15px;
+	background-size: 20px;
+	background-color: #fff;
+}
 
-        .userpw-confirm {
-            background: url(./images/images2/icon-02.png) no-repeat center right 15px;
-            background-size: 20px;
-            background-color: #fff;
-        }
+.member-footer {
+	text-align: center;
+	font-size: 12px;
+	margin-top: 20px;
+}
 
-        .member-footer {
-            text-align: center;
-            font-size: 12px;
-            margin-top: 20px;
-        }
+.member-footer div a:hover {
+	text-decoration: underline;
+	color: #5da4f6
+}
 
-        .member-footer div a:hover {
-            text-decoration: underline;
-            color: #5da4f6
-        }
+.member-footer div a:after {
+	content: '|';
+	font-size: 10px;
+	color: #bbb;
+	margin-right: 5px;
+	margin-left: 7px;
+	/*살짝 내려가 있기 때문에 위로 올려주기 위해 transform 사용하기*/
+	display: inline-block;
+	transform: translateY(-1px);
+}
 
-        .member-footer div a:after {
-            content: '|';
-            font-size: 10px;
-            color: #bbb;
-            margin-right: 5px;
-            margin-left: 7px;
-            /*살짝 내려가 있기 때문에 위로 올려주기 위해 transform 사용하기*/
-            display: inline-block;
-            transform: translateY(-1px);
-        }
+.member-footer div a:last-child:after {
+	display: none;
+}
 
-        .member-footer div a:last-child:after {
-            display: none;
-        }
+@media ( max-width :768px) {
+	.member {
+		width: 100%;
+	}
+}
 
-        @media (max-width:768px) {
-            .member {
-                width: 100%;
-            }
-        }
+.selectBox1 {
+	color: black;
+	font-size: 1.4em;
+	display: flex;
+	align-items: center;
+	text-align: left;
+	background-color: rgb(255, 255, 255);
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	padding: 50px;
+	margin-top: -25px;
+	box-shadow: 0 2px 4px rgba(17, 17, 17, 0.1);
+}
 
-        .selectBox2 {
-            color: black;
-            font-size: 1.4em;
-            display: flex;
-            align-items: center;
-            text-align: left;
-            background-color: rgb(255, 255, 255);
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 50px;
-            margin-top: -25px;
-            box-shadow: 0 2px 4px rgba(17, 17, 17, 0.1);
-        }
+.selectBox2 {
+	color: black;
+	font-size: 1.4em;
+	display: flex;
+	align-items: center;
+	text-align: left;
+	background-color: rgb(255, 255, 255);
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	padding: 50px;
+	margin-top: -25px;
+	box-shadow: 0 2px 4px rgba(17, 17, 17, 0.1);
+}
 
+.dayBtn {
+	margin-top: 10px;
+}

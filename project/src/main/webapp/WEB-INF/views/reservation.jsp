@@ -160,8 +160,8 @@
 			<tr class="selectBox2">
 				<td class="meet">청소 날짜</td>
 				<td><input type='text' class='datetimepicker'
-					placeholder="날짜를 선택하세요" style='width: 250px;'>
-					<button class="dayBtn" type="button">선택하기</button> <input
+					placeholder="여기를 클릭하세요" style='width: 250px;'>
+					<button class="dayBtn" type="button">선택</button> <input
 					name="REV_DT" type="hidden" class='dayvalue'></td>
 			</tr>
 
@@ -194,6 +194,8 @@
 	<script type="text/javascript">
 	
 
+	
+	
 	// 직원 골랐을 경우 날짜 불러오기
     $('#staffBox').hide();
     
@@ -206,7 +208,7 @@
        $('.meetN').on('click', () => {
        $('#staffBox').hide();
        });
- 
+       
     });
     
     $.datetimepicker.setLocale('ko');
@@ -235,8 +237,6 @@
     // 직원 선택버튼 클릭시 색상 변경
     
     $('.rvBtn').click(function(){
-        $('.rvBtn').removeAttr('id','active');
-        $(this).attr('id','active');
         
       const value = $(this).prop('value');
       console.log(value);
