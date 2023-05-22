@@ -39,7 +39,7 @@
 					<!-- Nav -->
 					<nav id="nav">
 						<ul>
-							<li><a href="goReservation.do">예약하기</a></li>
+							<li><a href="goRv.do">예약하기</a></li>
 							<li><a href="https://onnuribed.co.kr/">침구청소</a></li>
 							<li><a href="http://thecleaning.co.kr/default/">에어컨 청소</a></li>
 							<li><a href="https://wayopet.com/home">펫시팅</a></li>
@@ -66,6 +66,7 @@
 					<td>담당매니저</td>
 					<td>요청사항</td>
 				</tr>
+		<form action="writeReivew.do" method="POST">
 				<c:forEach items="${list}" var="list">
 					<tr>
 						<td ><input type="radio"
@@ -82,24 +83,23 @@
 			</table>
 		</div>
 
-		<form action="writeReivew.do" method="POST">
 			<div class="container2">
 				<div>
 					<p>별점을 선택하세요</p>
 				</div>
 				<div class="info">
 					<div class="star-rating space-x-4 mx-auto">
-						<input type="radio" id="5-stars" name="rating" value="5"
+						<input type="radio" id="5-stars" value="5"
 							v-model="ratings" name="REVIEW_RATING" /> <label for="5-stars"
 							class="star pr-4">★</label> <input type="radio" id="4-stars"
-							name="rating" value="4" v-model="ratings" name="REVIEW_RATING" />
+							value="4" v-model="ratings" name="REVIEW_RATING" />
 						<label for="4-stars" class="star">★</label> <input type="radio"
-							id="3-stars" name="rating" value="3" v-model="ratings"
+							id="3-stars"value="3" v-model="ratings"
 							name="REVIEW_RATING" /> <label for="3-stars" class="star">★</label>
-						<input type="radio" id="2-stars" name="rating" value="2"
+						<input type="radio" id="2-stars" value="2"
 							v-model="ratings" name="REVIEW_RATING" /> <label for="2-stars"
 							class="star">★</label> <input type="radio" id="1-star"
-							name="rating" value="1" v-model="ratings" name="REVIEW_RATING" />
+							value="1" v-model="ratings" name="REVIEW_RATING" />
 						<label for="1-star" class="star">★</label>
 					</div>
 					<textarea class="form-control" id="bookReview"
@@ -107,9 +107,7 @@
 						placeholder="이용 리뷰를 남겨주세요❤️"></textarea>
 				</div>
 				<div class="review">
-					<a href="goreviewMain.do"> <input id="btn-event" name="user"
-						class="btn btn-primary" type="submit" value="리뷰 등록하기">
-					</a>
+					<button id="btn-event" class="btn btn-primary" type="submit">리뷰 등록하기</button>
 				</div>
 			</div>
 		</form>
@@ -119,10 +117,6 @@
 
 </html>
 <script type="text/javascript">
-    let eventBtn = document.getElementById('btn-event');
-    eventBtn.addEventListener('click', () => {
-        alert('리뷰 등록완료🙏');
-    });
     
     $('.selectBtn').on('click', function () {
     	$('.container2').toggle();

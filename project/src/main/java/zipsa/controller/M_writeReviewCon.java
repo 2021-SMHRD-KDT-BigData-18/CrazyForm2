@@ -30,6 +30,9 @@ public class M_writeReviewCon implements Controller {
 		int REV_SEQ = Integer.parseInt((String) request.getParameter("REV_SEQ"));
 		String REVIEW_CONTENT = request.getParameter("REVIEW_CONTENT");
 		double REVIEW_RATING = Integer.parseInt(request.getParameter("REVIEW_RATING"));
+//		System.out.println(REV_SEQ);
+//		System.out.println(REVIEW_CONTENT);
+//		System.out.println(REVIEW_RATING);
 		
 		T_REVIEW dto = new T_REVIEW();
 		dto.setM_ID(M_ID);
@@ -41,10 +44,10 @@ public class M_writeReviewCon implements Controller {
 		int row= dao.write(dto);
 		
 		session.removeAttribute("list");
-		if (row >0) {
-			return "Redirect://goreviewMain.do"; //성공시 리뷰메인으로 이동
+		if (row > 0) {
+			return "successReview"; //성공시 리뷰메인으로 이동
 		}else {
-			return "Redirect://gowriteReview.do"; //실패시 리뷰작성 재이동
+			return "redirect:/gowriteReview.do"; //실패시 리뷰작성 재이동
 		}
 
 	}
