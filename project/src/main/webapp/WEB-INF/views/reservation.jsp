@@ -31,12 +31,6 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-<style type="text/css">
-#active {
-	background-color: rgb(0, 128, 255);
-}
-</style>
-
 </head>
 <body>
 	<div id="page-wrapper">
@@ -120,7 +114,6 @@
 					<div class="res">
 						<table id="resTable">
 							<tr>
-
 								<td>선택</td>
 								<td>예약일자</td>
 								<td>청소내용</td>
@@ -163,7 +156,7 @@
 
 			<tr>
 				<td class="submitBtn" colspan="2" align="center"><input
-					type="submit" value="예약하기"></td>
+					type="submit" value="예약하기" id="resBtn"></td>
 			</tr>
 		</table>
 	</form>
@@ -186,10 +179,10 @@
 
 	
 	
-	// 직원 골랐을 경우 날짜 불러오기
-    $('#staffBox').hide();
+	// 직원 골랐을 경우 날짜 불러오기 (예약 내역 없을 시 띄워주기)
     
     $(document).ready(function() {
+    	$('#staffBox').hide();
        
        $('.meetY').on('click', () => {
        		if(${list.isEmpty()}) {
@@ -208,6 +201,7 @@
        });
        
     });
+    
     
     $.datetimepicker.setLocale('ko');
     $(function() {
@@ -232,7 +226,7 @@
 		//console.log($('.dayvalue').val(day));
     });
     
-    // 직원 선택버튼 클릭시 색상 변경
+    // 직원 선택버튼 클릭시 값 가져오기
     
     $('.rvBtn').click(function(){
         

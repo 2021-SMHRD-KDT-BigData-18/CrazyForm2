@@ -79,9 +79,9 @@ public class RvCon implements Controller {
       int row = dao.Reserv(dto);
 
       if (row > 0) {
-         return "redirect:/Main.do"; // 예약성공 후 보여줄 화면
+         return "successReservation"; // 예약성공 후 보여줄 화면
       } else {
-         return "redirect:/goRv.do";   // 예약실패 후 예약하기화면 다시 등록
+         return "redirect:/Rv.do";   // 예약실패 후 예약하기화면 다시 등록
          }
    }
    }
