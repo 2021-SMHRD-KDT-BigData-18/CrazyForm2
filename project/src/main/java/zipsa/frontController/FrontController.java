@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 import zipsa.controller.A_RvinfoList;
+import zipsa.controller.A_RvinfoUpdate;
 import zipsa.controller.A_MinfoCon;
 import zipsa.controller.A_RvinfoCon;
 import zipsa.controller.Controller;
@@ -69,6 +70,7 @@ public class FrontController extends HttpServlet {
 		
 		mappings.put("/rvInfo.do", new A_RvinfoList());		 // 관리자 예약내역관리 리스트
 		mappings.put("/goRvInfo.do", new A_RvinfoCon());   // 관리자 예약내역관리 페이지 이동
+		mappings.put("/updateRvInfo.do", new A_RvinfoUpdate()); // 관리자 캘린더로 예약내역관리
 		mappings.put("/goM_info.do", new A_MinfoCon());		  // 관리자 회원관리페이지 이동
 		
 	}
