@@ -203,7 +203,7 @@ p, ul, ol, dl, table {
 .container {
 	margin: 0 auto;
 	max-width: 100%;
-	width: 1500px;
+	width: 1000px;
 	overflow: hidden;
 }
 
@@ -666,6 +666,7 @@ p, ul, ol, dl, table {
 		flex-wrap: wrap;
 		box-sizing: border-box;
 		align-items: stretch;
+		justify-content: space-between;
 	}
 	.row>* {
 		box-sizing: border-box;
@@ -1381,7 +1382,7 @@ input[type="button"], input[type="submit"], input[type="reset"], button,
 	-webkit-appearance: none;
 	position: relative;
 	display: inline-block;
-	background: #0090c5;
+	background: rgb(0, 128, 255);
 	color: #fff;
 	text-decoration: none;
 	border-radius: 6px;
@@ -1813,7 +1814,6 @@ ul.menu li:first-child {
 
 #banner .button {
 	width: 400px;
-	height: 50px;
 }
 
 #banner .button.icon:before {
