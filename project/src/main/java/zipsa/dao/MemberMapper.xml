@@ -27,7 +27,7 @@
 	<!-- 내 예약현황 확인 -->
 	<select id="selectRv" parameterType="zipsa.entity.T_MEMBER"
 		resultType="zipsa.entity.T_RESERVATION">
-		SELECT * V_BEFORE_TODAY
+		SELECT * from V_BEFORE_TODAY
 		WHERE M_ID=#{M_ID}
 	</select>
 
@@ -56,13 +56,14 @@
 		T_RESERVATION
 		where TO_CHAR(REV_DT, 'YYYY-MM') = #{YM}
 	</select>
-	
-	 <!--날짜수정 업데이트-->
-	<update id="updateReservationDate" parameterType="zipsa.entity.T_RESERVATION">
-    UPDATE T_RESERVATION
-    SET REV_DT =#{REV_DT}
-    WHERE REV_SEQ = #{REV_SEQ}
-    </update> 
+
+	<!--날짜수정 업데이트 -->
+	<update id="updateReservationDate"
+		parameterType="zipsa.entity.T_RESERVATION">
+		UPDATE T_RESERVATION
+		SET REV_DT =#{REV_DT}
+		WHERE REV_SEQ = #{REV_SEQ}
+	</update>
 
 	<!-- id중복확인, 회원의 내정보 확인 -->
 	<select id="check" parameterType="zipsa.entity.T_MEMBER"
@@ -76,24 +77,30 @@
 	<insert id="reserv" parameterType="zipsa.entity.T_RESERVATION">
 		insert into T_RESERVATION (
 		M_ID, JOB_T, REV_DT,PET_YN,STAFF_SEQ,REV_NOTE,M_ADDR)
-		values(#{M_ID}, #{JOB_T}, #{REV_DT}, #{PET_YN}, #{STAFF_SEQ}, #{REV_NOTE}, #{M_ADDR})
+		values(#{M_ID},
+		#{JOB_T}, #{REV_DT}, #{PET_YN}, #{STAFF_SEQ}, #{REV_NOTE}, #{M_ADDR})
 	</insert>
 
 	<!-- 직원 랜덤 배정 날짜사이 - 있을경우 자를 글자 10 없을경우 8 -->
-	<select id="RandomStaff" resultType="zipsa.entity.T_RESERVATION">
-		SELECT D.STAFF_SEQ FROM (
-		SELECT *
-		FROM T_HOLIDAY A
-		where to_char(A.HOLI_DT,'yyyy/mm/dd') != #{REV_DT}) C,
-		(SELECT *
-		FROM
-		T_RESERVATION B
-		where B.REV_DT != #{REV_DT} ) D
-		WHERE ROWNUM < 1
-		order by
-		DBMS_RANDOM.RANDOM;
-	</select>
+	<select id="RandomStaff" parameterType="zipsa.entity.T_RESERVATION" resultType="zipsa.entity.T_RESERVATION">
+SELECT c.STAFF_SEQ 
+FROM T_STAFF c
+where c.STAFF_SEQ not in (select A.STAFF_SEQ from T_HOLIDAY a where a.HOLI_DT = #{REV_DT})
+  and c.STAFF_SEQ not in (select B.STAFF_SEQ from T_RESERVATION b where b.REV_DT = #{REV_DT})
+  and rownum =1
 
+	</select>
+	
+	<!-- 직원 랜덤 배정 (펫있을경우) -->
+	<select id="RandomStaffY" parameterType="zipsa.entity.T_RESERVATION" resultType="zipsa.entity.T_RESERVATION">
+SELECT c.STAFF_SEQ 
+FROM T_STAFF c
+where c.STAFF_SEQ not in (select A.STAFF_SEQ from T_HOLIDAY a where a.HOLI_DT = substr(#{REV_DT},1,10))
+  and c.STAFF_SEQ not in (select B.STAFF_SEQ from T_RESERVATION b where b.REV_DT = #{REV_DT})
+  and c.allergy_yn='N'
+  and rownum =1
+	</select>
+	
 	<!-- 오늘 이후의 직원선택 후 직원의 예약일,휴무일 보내주는 맵퍼 -->
 	<select id="StaffRDay" resultType="zipsa.entity.T_RESERVATION">
 		SELECT * FROM
@@ -114,7 +121,8 @@
 
 	<!-- 리뷰작성위해 예약현황 오늘이전의 여러개 불러오기 -->
 	<select id="sameRevSeq" resultType="zipsa.entity.T_RESERVATION">
-		SELECT * FROM V_BEFORE_TODAY WHERE M_ID=#{M_ID}
+		SELECT * FROM V_BEFORE_TODAY
+		WHERE M_ID=#{M_ID}
 	</select>
 
 </mapper>

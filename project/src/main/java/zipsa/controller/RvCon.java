@@ -54,11 +54,14 @@ public class RvCon implements Controller {
       // RVDT를 date타입으로 변환시켜서 REV_DT에 저장 
       
       Date REV_DT = fmt_in.parse(RVDT, pos); // 영어+숫자된 날짜 date type으로 변경
-      
+      System.out.println(REV_DT);
       // 예약일자만 구해서 쉬는날과 예약일이 맞지않은 직원은 배제시키기위함
       T_MemberDAO dao = new T_MemberDAO();
       if (STAFFSEQ == null) {
-         STAFF_SEQ=dao.RandomStaff(REV_DT);   
+    	  // 펫유무확인
+    	  if (PET_YN.equals('Y')) {
+    		  STAFF_SEQ=dao.RandomStaffY(REV_DT);
+    	  }else  {STAFF_SEQ=dao.RandomStaff(REV_DT);   }
       }else {
          STAFF_SEQ=Integer.parseInt(STAFFSEQ);
       }
