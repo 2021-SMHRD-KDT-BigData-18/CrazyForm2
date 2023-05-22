@@ -12,29 +12,29 @@
 </head>
 
 <body>
-	<h1 id="title" style="text-align: center;">
-		ZIPSA
-		</p>
-		<form action="login.do" method="POST">
-			<div id="text">
-				<input type="text" cursor="pointer" id="ID" maxlength="11"
-					placeholder="아이디" name="id"> <img id="img"
-					src="images/1.1.jpg" alt="person">
-			</div>
-
-			<div id="text">
-				<input type="password" cursor="pointer" id="PW" maxlength="11"
-					placeholder="비밀번호" name="pw"> <img id="img"
-					src="images/2.2.jpg" alt="lock">
-				<!-- <a id="link" href="">Forgot Password?</a> -->
-			</div>
-
-			<div>
-				<button type="submit" id="btn" onclick="check()">로그인</button>
-		</form>
-
-
+	<div id="title">
+		<h1>
+			<a href="Main.do"> ZIPSA </a>
+		</h1>
+	</div>
+	<form action="login.do" method="POST">
+		<div id="text">
+			<input type="text" cursor="pointer" id="ID" maxlength="11"
+				placeholder="아이디" name="id"> <img id="img"
+				src="images/1.1.jpg" alt="person">
 		</div>
+
+		<div id="text">
+			<input type="password" cursor="pointer" id="PW" maxlength="11"
+				placeholder="비밀번호" name="pw"> <img id="img"
+				src="images/2.2.jpg" alt="lock">
+			<!-- <a id="link" href="">Forgot Password?</a> -->
+		</div>
+
+		<div>
+			<button type="submit" id="btn" onclick="check()">로그인</button>
+		</div>
+	</form>
 </body>
 
 </html>
