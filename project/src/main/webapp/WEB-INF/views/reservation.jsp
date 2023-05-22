@@ -217,7 +217,13 @@
           allowTimes : [ '10:00', '12:00', '14:00', '16:00', '18:00' ],
           minDate : 0
        });
-    });      
+    });   
+    
+    $(function () {
+        $(".datetimepicker").datetimepicker({
+            minTime: 0
+        });
+    });
     
     // 날짜 값 가져오기
     $('.dayBtn').on('click', function dayvalue() {
