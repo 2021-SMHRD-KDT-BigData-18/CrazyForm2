@@ -71,8 +71,9 @@
 
 	<hr>
 	<div class="reservation">내정보</div>
-	<div class="Reservation-container">
-		<div id="nav1">
+		<div class="rvContainer">
+		<div class="Reservation-container">
+			<div id="nav1">
 			<ul>
 				<li class="info1">내정보관리</li>
 				<li class="res1">예약현황보기</li>
@@ -92,7 +93,7 @@
 					
 			</ul>
 		</div>
-
+		
 
 		<div class="info">
 			<form action="update.do" method="POST" id="infoForm"
@@ -148,6 +149,7 @@
 					</c:otherwise>
 					</c:choose>
 		
+		</div>
 		</div>
 		<%-- <div class="res">
 			<table id="resTable">
@@ -283,7 +285,7 @@
 
     function selectRvList(YM) {
         $.ajax({
-            url : 'rvInfo.do',     // rvinfo는 모든회원, minfo 내 예약정보를 가져오는 데이터베이스 URL로 수정?
+            url : 'goMinfo.do',     // rvinfo는 모든회원, minfo 내 예약정보를 가져오는 데이터베이스 URL로 수정?
             type : 'post',
             data : {
                 "YM" : YM    // ym 대신 rv. ~~ 로 하기를 권장 

@@ -112,6 +112,7 @@ h1>a {
 }
 
 .Reservation-container {
+	width: 1200px;
 	background-color: #fff;
 	border: 1px solid #ddd;
 	border-radius: 5px;
@@ -246,4 +247,13 @@ and
 #nav {
 	display: none;
 }
+}
+.rvContainer {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.res {
+	margin-left: 15px;	
+	margin-right: 15px;	
 }
