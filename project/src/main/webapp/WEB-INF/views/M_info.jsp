@@ -123,8 +123,7 @@
 				</table>
 
 				<div id="pwchange">
-					<input id="pwBtn" type="submit" value="비밀번호 변경하기" class="pwBtn"
-						style="width: 200px; margin: 10px 0px 0px 500px">
+					<input id="pwBtn" type="submit" value="비밀번호 변경하기" class="pwBtn">
 				</div>
 
 				<div id="infodelete">
@@ -203,9 +202,9 @@
 
 	<script type="text/javascript">
 	$('.res1').on('click', function() {
-		
 		$('#infoForm').hide();
 	    $('#calendar-container').toggle();
+	    $('.info1').toggle();
 		
 	var calendarEl = $('#calendar')[0];
     var calendar = new FullCalendar.Calendar(calendarEl, {
