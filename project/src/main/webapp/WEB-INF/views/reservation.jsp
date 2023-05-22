@@ -56,7 +56,7 @@
 						<li><a href="https://onnuribed.co.kr/">침구청소</a></li>
 						<li><a href="http://thecleaning.co.kr/default/">에어컨 청소</a></li>
 						<li><a href="https://wayopet.com/home">펫시팅</a></li>
-						<li><a href="">예약내역</a></li>
+						<li><a href="goMinfo.do">예약내역</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -88,13 +88,13 @@
 				<td>
 					<button type="button" class="btn btn-info m-btn--air"
 						onclick="execDaumPostcode()">🏠 주소를 등록해주세요</button> <input
-					type="text" class="form-control m-input"
-					id="postcode" placeholder="우편번호" readonly /> <input type="text"
+					type="text" class="form-control m-input" id="postcode"
+					placeholder="우편번호" readonly /> <input type="text"
 					class="form-control m-input m--margin-top-10" name="address"
 					id="address" placeholder="도로명 주소" readonly> <input
 					type="text" class="form-control m-input m--margin-top-10"
-					name="detailAddress" placeholder="상세 주소" required>
-					<input name="M_ADDR" type="hidden">
+					name="detailAddress" placeholder="상세 주소" required> <input
+					name="M_ADDR" type="hidden">
 				</td>
 			</tr>
 
@@ -137,7 +137,7 @@
 									<c:forEach items="${list}" var="dto">
 										<tr>
 											<td><input class="rvBtn" type="radio" name="STAFF_SEQ"
-													value="${dto.STAFF_SEQ}"></td>
+												value="${dto.STAFF_SEQ}"></td>
 											<td><fmt:formatDate pattern="yyyy-MM-dd hh:mm:ss"
 													value="${dto.REV_DT}" /></td>
 											<td>${dto.JOB_T}</td>
@@ -161,7 +161,7 @@
 				<td class="meet">청소 날짜</td>
 				<td><input type='text' class='datetimepicker'
 					placeholder="날짜를 선택하세요" style='width: 250px;'>
-					<button class="dayBtn" type="button">날짜 선택하기</button> <input
+					<button class="dayBtn" type="button">선택하기</button> <input
 					name="REV_DT" type="hidden" class='dayvalue'></td>
 			</tr>
 
