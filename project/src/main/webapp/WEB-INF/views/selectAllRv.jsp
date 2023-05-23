@@ -15,13 +15,9 @@
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.js'></script>
     <!-- fullcalendar 언어 CDN -->
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/locales-all.min.js'></script>
+    <link rel="stylesheet" href="assets/css/selectAllRv.css" />
     <style>
-        /* body 스타일 */
-        html, body {
-            overflow: hidden;
-            font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
-            font-size: 14px;
-        }
+
         /* 캘린더 위의 해더 스타일(날짜가 있는 부분) */
         .fc-header-toolbar {
             padding-top: 1em;
@@ -30,15 +26,49 @@
         }
     </style>
 </head>
-<body style="padding:30px;">
+<body class="is-preload homepage">
+
+ <div id="page-wrapper">
+        <!-- Header -->
+        <div id="header-wrapper">
+            <header id="header" class="container">
+                <!-- Logo -->
+                <div id="logo">
+                    <h1>
+                        <a href="Main.do">ZIPSA</a>
+                    </h1>
+                </div>
+
+                <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li><a href="https://onnuribed.co.kr/">침구청소</a></li>
+                        <li><a href="http://thecleaning.co.kr/default/">에어컨 청소</a></li>
+                        <li><a href="https://wayopet.com/home">펫시팅</a></li>
+                        <li><a href="goreviewMain.do">리뷰보기</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+    </div>
+
+<div class="Box">관리자 예약확인</div>
 <!-- calendar 태그 -->
 <div id='calendar-container'>
     <div id='calendar'></div>
 </div>
+
+	<div id="footer-wrapper">
+		<footer id="footer" class="container">
+			<div class="row"></div>
+		</footer>
+	</div>
+	
 <script>
     var calendarEl = $('#calendar')[0];
     var calendar = new FullCalendar.Calendar(calendarEl, {
-        height: '700px', // calendar 높이 설정
+    	contentHeight: 600,
+        //height: '700px', // calendar 높이 설정
         expandRows: true, // 화면에 맞게 높이 재설정
         slotMinTime: '08:00', // Day 캘린더에서 시작 시간
         slotMaxTime: '20:00', // Day 캘린더에서 종료 시간

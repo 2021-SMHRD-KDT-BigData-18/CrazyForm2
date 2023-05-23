@@ -38,11 +38,11 @@
             </header>
         </div>
     </div>
-
+<hr>
   <div class="review-container">
   <div class="reviewBox">
-    <div>
-    <h1>리뷰 보기</h1>
+    <div class="text">
+     	리뷰 보기
     </div>
     <div><c:choose>
     <c:when test="${user eq null}">

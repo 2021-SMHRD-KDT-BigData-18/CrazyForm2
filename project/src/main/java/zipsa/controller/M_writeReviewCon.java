@@ -47,7 +47,7 @@ public class M_writeReviewCon implements Controller {
 		if (row > 0) {
 			return "successReview"; //성공시 리뷰메인으로 이동
 		}else {
-			return "redirect:/gowriteReview.do"; //실패시 리뷰작성 재이동
+			return "failReview"; //실패시 리뷰작성 재이동
 		}
 
 	}

@@ -50,11 +50,12 @@
 				</header>
 			</div>
 		</div>
-
+<hr>
 		<div class="reviewArea">
-			<p>리뷰 작성</p>
+			<p>예약리스트</p>
 		</div>
-
+		
+		<div class="resBox">
 		<div class="res">
 			<table id="resTable">
 				<tr>
@@ -82,13 +83,14 @@
 				</c:forEach>
 			</table>
 		</div>
-
+		</div>
 			<div class="container2">
 				<div>
-					<p>별점을 선택하세요</p>
+					<p>리뷰 작성하기</p>
 				</div>
+				<hr>
 				<div class="info">
-					<div class="star-rating space-x-4 mx-auto">
+					별점 선택<span class="star-rating space-x-4 mx-auto">
 						<input type="radio" id="5-stars" value="5"
 							v-model="ratings" name="REVIEW_RATING" /> <label for="5-stars"
 							class="star pr-4">★</label> <input type="radio" id="4-stars"
@@ -101,9 +103,9 @@
 							class="star">★</label> <input type="radio" id="1-star"
 							value="1" v-model="ratings" name="REVIEW_RATING" />
 						<label for="1-star" class="star">★</label>
-					</div>
+					</span>
 					<textarea class="form-control" id="bookReview"
-						name="REVIEW_CONTENT" cols="60" rows="5"
+						name="REVIEW_CONTENT" cols="70" rows="8"
 						placeholder="이용 리뷰를 남겨주세요❤️"></textarea>
 				</div>
 				<div class="review">
@@ -113,6 +115,15 @@
 		</form>
 	</div>
 	</div>
+	
+		<div id="footer-wrapper">
+		<footer id="footer" class="container">
+			<div class="row">
+				<div class="col-3 col-6-medium col-12-small"></div>
+			</div>
+		</footer>
+	</div>
+	
 </body>
 
 </html>
