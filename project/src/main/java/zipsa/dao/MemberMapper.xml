@@ -24,12 +24,12 @@
 		where M_ID=#{M_ID}
 	</update>
 
-	<!-- 내 예약현황 확인 -->
-	<select id="selectRv" parameterType="zipsa.entity.T_MEMBER"
-		resultType="zipsa.entity.T_RESERVATION">
-		SELECT * from V_BEFORE_TODAY
-		WHERE M_ID=#{M_ID}
-	</select>
+   <!-- 내 예약현황 확인 -->
+   <select id="selectRv" parameterType="zipsa.entity.T_MEMBER"
+      resultType="zipsa.entity.T_RESERVATION">
+      SELECT * from V_RV_STAFF
+      WHERE M_ID=#{M_ID}
+   </select>
 
 	<!-- 회원 탈퇴기능 -->
 	<delete id="delete" parameterType="zipsa.entity.T_MEMBER">
