@@ -1,3 +1,4 @@
+<%@page import="zipsa.entity.T_RESERVATION"%>
 <%@page import="zipsa.dao.T_ReviewDAO"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
@@ -12,6 +13,9 @@
 <title>리뷰 보기</title>
 </head>
 <body>
+	<%
+	List<T_RESERVATION> list = (List<T_RESERVATION>) request.getAttribute("list");
+	%>
 
  <div id="page-wrapper">
         <!-- Header -->
@@ -44,12 +48,15 @@
     <div class="text">
      	리뷰 보기
     </div>
-    <div><c:choose>
-    <c:when test="${user eq null}">
-    	<a id="reviewWrite" href="gologin.do">리뷰작성하기</a>
-    </c:when><c:otherwise>
-    	<a id="reviewWrite" href="gowriteReview.do">리뷰작성하기</a>
-    </c:otherwise></c:choose>
+    <div>
+    <c:choose>
+    	<c:when test="${user eq null}">
+    		<a id="reviewWrite" href="gologin.do">리뷰작성하기</a>
+    	</c:when>
+    	<c:otherwise>
+    		<a id="reviewWrite" href="gowriteReview.do">리뷰작성하기</a>
+    	</c:otherwise>
+    </c:choose>
     </div>
     </div>
    <c:forEach  items="${reviewlist}" var="dto">
@@ -80,6 +87,9 @@
         star.classList.add('active');
       }
     });
+    
+    // 리뷰 작성할 리스트가 없을 때
+    
     </script>
 </body>
 </html>

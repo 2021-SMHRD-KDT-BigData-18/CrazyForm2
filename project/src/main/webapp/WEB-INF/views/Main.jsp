@@ -17,9 +17,25 @@
 <link rel="stylesheet" href="assets/css/loginbox.css" />
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<link rel="stylesheet" href="assets/css/popup.css" />
+<script type="text/javascript">
+	function setCookie(name, value, expiredays) {
+		var todayDate = new Date();
+		todayDate.setDate(todayDate.getDate() + expiredays);
+		document.cookie = name + "=" + escape(value) + "; path=/; expires="
+				+ todayDate.toGMTString() + ";"
+	}
+	function closePop() {
+		if (document.pop_form.chkbox.checked) {
+			setCookie("maindiv", "done", 1);
+		}
+		document.all['layer_popup'].style.visibility = "hidden";
+		//self.close();
 
+	}
+</script>
 </head>
-<body class="is-preload homepage" onload="window.open('popup.do', 'popup', 'width=500, height=750')">
+<body class="is-preload homepage">
 
 	<div id="page-wrapper">
 
@@ -70,20 +86,39 @@
 
 			</header>
 		</div>
-
+		
+		<!-- 팝업 부분 -->
+		<div class="layerPopup" id="layer_popup" style="visibility: visible;">
+			<div class="layerBox">
+				<h4 class="title">ZIPSA 공지사항</h4>
+				<div class="cont">
+					<p>
+						<img id="popImg" src="images/clean3.jpg" width=350 height=300 usemap="#popup"
+							alt="event page">
+							<br>집사를 찾아주셔서 감사합니다. <br> 당일 예약은 불가능합니다. <br> 집사 서비스의 기본 제공 시간은 <br> 2시간입니다.
+					</p>
+				</div>
+				<form id="popBtn" name="pop_form">
+					<div id="check">
+						<p id="todayBtn" for="chkbox">&nbsp&nbsp오늘 하루동안 보지 않기</label>
+						<input type="checkbox" name="chkbox" value="checkbox" id='chkbox'>
+					</div>
+					<div id="close">
+						<a id="closeBtn" onclick="closePop();">닫기</a>
+					</div>
+				</form>
+			</div>
+		</div>
 		<!-- Banner -->
 		<div id="banner-wrapper">
 			<div id="banner" class="box container">
 				<div class="row">
-					<img height="500" width="1300"
-						src="images/clean.jpg">
+					<img height="500" width="1300" src="images/clean.jpg">
 
 				</div>
 				<div class="colBox">
 					<div class="col-7 col-12-medium">
-						<h3>
-							당신의 일상이 행복하도록 집사가 함께 할게요
-						</h3>
+						<h3>당신의 일상이 행복하도록 집사가 함께 할게요</h3>
 					</div>
 					<div class="col-5 col-12-medium">
 						<ul>
@@ -93,21 +128,21 @@
 						</ul>
 					</div>
 				</div>
-					<div class="loginBox">
-						<span class="msg">집사를 더 안전하고 편리하게 이용하세요.</span>
-						<c:if test="${user eq null}">
-							<a class="loginBtn" href="gologin.do">로그인</a>
-							<div>
-								<a class="joinBtn" href="gojoin.do">회원가입</a>
-							</div>
-						</c:if>
+				<div class="loginBox">
+					<span class="msg">집사를 더 안전하고 편리하게 이용하세요.</span>
+					<c:if test="${user eq null}">
+						<a class="loginBtn" href="gologin.do">로그인</a>
 						<div>
-							<c:if test="${user ne null}">
-								<a href="logout.do" class="logoutButton">로그아웃</a>
-							</c:if>
+							<a class="joinBtn" href="gojoin.do">회원가입</a>
 						</div>
-
+					</c:if>
+					<div>
+						<c:if test="${user ne null}">
+							<a href="logout.do" class="logoutButton">로그아웃</a>
+						</c:if>
 					</div>
+
+				</div>
 
 
 			</div>
@@ -324,6 +359,15 @@
 			js.crossOrigin = 'anonymous';
 			fjs.parentNode.insertBefore(js, fjs);
 		})(document, 'script', 'kakao-js-sdk');
+
+		cookiedata = document.cookie;
+		if (cookiedata.indexOf("maindiv=done") < 0) {
+			//document.all['layer_popup'].style.visibility = "visible";
+			document.getElementById('layer_popup').style.display = "block";
+		} else {
+			//document.all['layer_popup'].style.visibility = "hidden";
+			document.getElementById('layer_popup').style.display = "none";
+		}
 	</script>
 
 

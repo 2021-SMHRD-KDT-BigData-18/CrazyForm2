@@ -34,7 +34,7 @@ public class goWriteReviewCon implements Controller {
 		
 		// list에 아무것도 없으면 메인으로
 		if(list.isEmpty() == true) { 
-			return "redirect:/Main.do";
+			return "noReview";
 		}else return "writeReview"; //있으면 작성하기페이지로
 	}
 
