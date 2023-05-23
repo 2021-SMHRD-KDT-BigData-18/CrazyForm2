@@ -1,6 +1,9 @@
 @charset "UTF-8";
 /* Google web font CDN*/
 @import
+	url("https://fonts.googleapis.com/css?family=Oleo+Script:400|Open+Sans:300,300italic,600,600italic,800")
+	;
+@import
 	url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap')
 	;
 
@@ -59,7 +62,6 @@ a {
 .member input[type=button], .member input[type=submit] {
 	background-color: #5da4f6;
 	color: #fff
-	
 }
 
 .member input:focus, .member select:focus {
@@ -153,4 +155,24 @@ a {
 
 #join:hover {
 	cursor: pointer;
+}
+
+form {
+	margin-top: 100px;
+}
+
+a:-webkit-any-link {
+    color: rgb(0, 128, 255);
+    text-decoration: none;
+    cursor: pointer;
+}
+#title h1 {
+    font-family: 'Oleo Script', serif;
+    font-weight: 400;
+    font-size: 5em;
+    letter-spacing: 0.05em;
+    text-align: center;
+}
+#title {
+	margin-top: 5%;
 }

@@ -36,12 +36,14 @@
 		}).then(result => {
 		   // 만약 Promise리턴을 받으면,
 		   if (result.isConfirmed) { // 만약 모달창에서 confirm 버튼을 눌렀다면
-		   
-		      Swal.fire('탈퇴가 완료되었습니다.', 'success');
-		   }.then(function () {
-				location.href="Main.do";
-		})
-		})
+			   Swal.fire({
+				   icon:'success',
+				   title:'탈퇴 완료'
+			   }).then(function () {
+		   			location.href="Main.do";
+			});
+		   };
+		});
 	});
 
 	</script>

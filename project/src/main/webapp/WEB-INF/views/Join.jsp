@@ -22,6 +22,12 @@
 		<input name="address" type="text" placeholder="집주소를 입력하세요">
 		<input type="submit" value="회원가입" class="button fit">
 	</form> -->
+	<div id="title">
+		<h1>
+			<a href="Main.do">ZIPSA</a>
+		</h1>
+	</div>
+	
 	<div class="member">
 
 		<!-- 필드 -->
