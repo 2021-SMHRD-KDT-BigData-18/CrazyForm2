@@ -379,3 +379,10 @@ button:hover {
 	display: none;
 	text-align: center;
 }
+table tr td {
+	max-width: 140px;
+	text-overflow: ellipsis;
+}
+.trHead {
+	font-size: 1.2em;
+}

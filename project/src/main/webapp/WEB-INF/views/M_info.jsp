@@ -113,7 +113,7 @@
 		
 		 <div class="res">
 			<table id="resTable">
-					   <tr>
+				<tr class="trHead">
 					<td>예약일자</td>
 					<td>청소내용</td>
 					<td>예약주소</td>
