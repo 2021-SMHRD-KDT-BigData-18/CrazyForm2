@@ -19,7 +19,7 @@
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 
 </head>
-<body class="is-preload homepage">
+<body class="is-preload homepage" onload="window.open('popup.do', 'popup', 'width=500, height=700')">
 
 	<div id="page-wrapper">
 

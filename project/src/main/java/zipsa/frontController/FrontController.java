@@ -34,6 +34,7 @@ import zipsa.controller.goRvCon;
 import zipsa.controller.goUpdateCon;
 import zipsa.controller.goWriteReviewCon;
 import zipsa.controller.gojoinCon;
+import zipsa.controller.popupCon;
 import zipsa.controller.testCon;
 import zipsa.controller.M_Rvupload;
 
@@ -72,6 +73,8 @@ public class FrontController extends HttpServlet {
 		mappings.put("/goRvInfo.do", new A_RvinfoCon());   // 관리자 예약내역관리 페이지 이동
 		mappings.put("/updateRvInfo.do", new A_RvinfoUpdate()); // 관리자 캘린더로 예약내역관리
 		mappings.put("/goM_info.do", new A_MinfoCon());		  // 관리자 회원관리페이지 이동
+		
+		mappings.put("/popup.do", new popupCon());		  // 관리자 회원관리페이지 이동
 		
 	}
 
