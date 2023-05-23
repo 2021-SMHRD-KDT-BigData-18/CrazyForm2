@@ -210,11 +210,3 @@
     }
 
     }
-        a {
-    	text-decoration: none;
-    	color: black;
-    	font-weight: 700;
-    }
-    a:hover {
-    	color: rgb(0, 128, 255);
-    }
