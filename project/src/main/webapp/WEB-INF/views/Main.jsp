@@ -56,11 +56,11 @@
 						</c:if>
 
 						<c:if test="${user eq null}">
-							<li><a href="gologin.do">예약내역</a></li>
+							<li><a href="gologin.do">내 정보</a></li>
 						</c:if>
 
 						<c:if test="${user ne null and user.m_ID ne 'admin'}">
-							<li><a href="goMinfo.do">예약내역</a></li>
+							<li><a href="goMinfo.do">내 정보</a></li>
 						</c:if>
 
 						<li><a href="goreviewMain.do">리뷰보기</a></li>
