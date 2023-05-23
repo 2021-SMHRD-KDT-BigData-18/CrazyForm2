@@ -75,9 +75,24 @@
 		<div id="banner-wrapper">
 			<div id="banner" class="box container">
 				<div class="row">
-					<img height="500" width="500"
-						src="https://i.pinimg.com/564x/1f/69/c2/1f69c2f21ad625ba642c4979614e5959.jpg">
+					<img height="500" width="1300"
+						src="images/clean.jpg">
 
+				</div>
+				<div class="colBox">
+					<div class="col-7 col-12-medium">
+						<h3>
+							당신의 일상이 행복하도록 집사가 함께 할게요
+						</h3>
+					</div>
+					<div class="col-5 col-12-medium">
+						<ul>
+							<li><a href="goRv.do"
+								class="button large icon solid fa-arrow-circle-right">집사
+									예약하기</a></li>
+						</ul>
+					</div>
+				</div>
 					<div class="loginBox">
 						<span class="msg">집사를 더 안전하고 편리하게 이용하세요.</span>
 						<c:if test="${user eq null}">
@@ -93,22 +108,7 @@
 						</div>
 
 					</div>
-				</div>
 
-				<div class="colBox">
-					<div class="col-7 col-12-medium">
-						<h3>
-							당신의 일상이 행복하도록 <br> 집사가 함께 할게요
-						</h3>
-					</div>
-					<div class="col-5 col-12-medium">
-						<ul>
-							<li><a href="goRv.do"
-								class="button large icon solid fa-arrow-circle-right">집사
-									예약하기</a></li>
-						</ul>
-					</div>
-				</div>
 
 			</div>
 		</div>

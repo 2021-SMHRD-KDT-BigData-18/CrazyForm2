@@ -1,19 +1,11 @@
 @charset "UTF-8";
 /* loginbox */
 .loginBox {
-	margin: 5% 0 0 50px;
-	width: 350px;
-	height: 170px;
-	padding: 20px 20px 0px 20px;
-	/*background-color: #f7f9fa;*/
-	border: 1px solid #dae1e6;
 	text-align: center;
 }
 
 .msg {
-	line-height: 12px;
-	font-size: 15px;
-	color: grey;
+	color: black;
 	text-align: center;
 	font-weight: 700;
 }
@@ -23,12 +15,11 @@
 	margin-left: 50px;
 	margin-top: 10px;
 	text-align: center;
-	font-size: 15px;
 	font-weight: 700;
-	color: honeydew;
+	color: white;
 	width: 200px;
 	height: 50px;
-	background-color: rgba(0, 128, 255, 0.8);
+	background-color: rgba(116, 23, 255, 0.7);
 	border-radius: 3px;
 	text-decoration: none;
 	display: flex;
@@ -46,9 +37,6 @@
 }
 
 .colBox {
-	display: flex;
-	margin-top: 30px;
-	align-items: center;
 	text-align: center;
 }
 /* 수정 */
