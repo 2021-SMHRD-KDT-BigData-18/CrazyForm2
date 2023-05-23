@@ -210,21 +210,17 @@
           format : "Y-m-d H:i",
           datepicker : true,
           allowTimes : [ '10:00', '12:00', '14:00', '16:00', '18:00' ],
-          minDate : 0
+          minDate : '+1970/01/02'
        });
     });   
-    
-    $(function () {
-        $(".datetimepicker").datetimepicker({
-            minTime: 0
-        });
-    });
+
     
     // 날짜 값 가져오기
     $('.dayBtn').on('click', function dayvalue() {
         var day = $('input').datetimepicker('getValue');
         var dayvalue = $('.dayvalue').val(day);
 		//console.log($('.dayvalue').val(day));
+		alert('날짜 선택이 완료되었습니다.');
     });
     
     // 직원 선택버튼 클릭시 값 가져오기
@@ -251,7 +247,7 @@
               success : function(Slist) {
            $(".datetimepicker").datetimepicker({
           disabledDates: Slist,
-          formatDate:'d.m.Y'
+          formatDate:'d.m.Y',
        });
 
               },error : function() {
