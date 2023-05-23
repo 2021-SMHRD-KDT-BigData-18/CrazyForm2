@@ -27,13 +27,14 @@
 					<label for="chkbox">&nbsp&nbsp오늘 하루동안 보지 않기</label>
 				</div>
 				<div id="close">
-					<a href="javascript:closePop();">닫기</a>
+					<a onclick="closePop();">닫기</a>
 				</div>
 			</form>
 		</div>
 	</div>
 
 	<script type="text/javascript">
+	
 	//head 태그 안에 스크립트 선언
 	        function setCookie( name, value, expiredays ) {
 	            var todayDate = new Date();
@@ -45,13 +46,17 @@
 	                setCookie( "maindiv", "done" , 1 );
 	            }
 	            document.all['layer_popup'].style.visibility = "hidden";
+	            window.close();
+	            
 	        }
-	    cookiedata = document.cookie;   
+	    cookiedata = document.cookie;
 	    if ( cookiedata.indexOf("maindiv=done") < 0 ){     
-	        document.all['layer_popup'].style.visibility = "visible";
+	        //document.all['layer_popup'].style.visibility = "visible";
+	            document.getElementById('layer_popup').style.display = "block";
 	    }
 	    else {
-	        document.all['layer_popup'].style.visibility = "hidden";
+	        //document.all['layer_popup'].style.visibility = "hidden";
+	            document.getElementById('layer_popup').style.display = "none";
 	    }
 	</script>
 	

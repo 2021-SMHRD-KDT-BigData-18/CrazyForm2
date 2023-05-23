@@ -74,7 +74,7 @@ public class FrontController extends HttpServlet {
 		mappings.put("/updateRvInfo.do", new A_RvinfoUpdate()); // 관리자 캘린더로 예약내역관리
 		mappings.put("/goM_info.do", new A_MinfoCon());		  // 관리자 회원관리페이지 이동
 		
-		mappings.put("/popup.do", new popupCon());		  // 관리자 회원관리페이지 이동
+		mappings.put("/popup.do", new popupCon());		  // 팝업 이동
 		
 	}
 
