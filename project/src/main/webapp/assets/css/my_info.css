@@ -351,15 +351,15 @@ li:hover {
 }
 
 #pwBtn {
-	margin-left: 340px;
-	margin-top: 10px;
+	margin-left: 500px;
+	margin-top: 20px;
 	text-align: center;
 	font-size: 15px;
 	font-weight: 700;
 	color: white;
 	height: 35px;
 	background-color: rgba(0, 128, 255, 0.7);
-	border-radius: 3px;
+	border-radius: 10px;
 	text-decoration: none;
 	border: none;
 }
@@ -373,16 +373,36 @@ button:hover {
 }
 
 #infodelete {
-	margin: 70px 0px 0px 450px;
+	margin: 70px 0px 0px 500px;
 }
 #resTable{
 	display: none;
 	text-align: center;
 }
 table tr td {
-	max-width: 140px;
+	max-width: 200px;
 	text-overflow: ellipsis;
 }
 .trHead {
 	font-size: 1.2em;
+}
+
+
+table {
+     border-collapse: collapse;
+     width: 100%;
+}
+
+th, td {
+     padding: 10px;
+     border-bottom: 1px solid rgba(0, 128, 255, 0.7);
+}
+
+/* 커서 갖다대면 색깔이 바뀌며 직관적으로 표현한다 */
+tr:hover { background-color: #F5F5F5; }
+
+.deleteBtn {
+	font-size: 15px;
+	cursor: pointer;
+	border-radius: 10px;
 }

@@ -101,11 +101,11 @@
 				</table>
 
 				<div id="pwchange">
-					<input id="pwBtn" type="submit" value="비밀번호 변경하기" class="pwBtn">
+					<input id="pwBtn" type="submit" value="변경하기" class="pwBtn">
 				</div>
 
 				<div id="infodelete">
-					<button type="button" onclick="location.href='delete.do'">탈퇴하기</button>
+					<button class="deleteBtn" type="button" onclick="location.href='delete.do'">탈퇴하기</button>
 				</div>
 
 			</form>
@@ -166,6 +166,7 @@
 	$('.res1').on('click', function() {
 		$('#infoForm').hide();
 	    $('#resTable').toggle();
+	    $('.info1').toggle();
     });
 
 	$('.info1').on('click', function() {
