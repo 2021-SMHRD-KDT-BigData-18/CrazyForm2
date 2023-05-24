@@ -64,7 +64,7 @@
 								</c:otherwise>
 							</c:choose></li>
 						<li><a href="https://onnuribed.co.kr/">침구청소</a></li>
-						<li><a href="http://thecleaning.co.kr/default/">에어컨 청소</a></li>
+						<li><a href="https://form.office.naver.com/form/responseView.cmd?formkey=MmYxMTE2MzUtYWQwNi00ZGZjLTgxMzYtZmQ1NDVlYjQ5ZmRk&sourceId=urlshare">에어컨 청소</a></li>
 						<li><a href="https://wayopet.com/home">펫시팅</a></li>
 
 						<c:if test="${user.m_ID eq 'admin'}">
@@ -176,7 +176,7 @@
 
 					<!-- Box -->
 					<section class="box feature">
-						<a href="http://thecleaning.co.kr/default/" class="image featured"><img
+						<a href="https://form.office.naver.com/form/responseView.cmd?formkey=MmYxMTE2MzUtYWQwNi00ZGZjLTgxMzYtZmQ1NDVlYjQ5ZmRk&sourceId=urlshare" class="image featured"><img
 							src="images/KakaoTalk_20230515_092559032.png" width="528"
 							height="300" alt="" /></a>
 						<div class="inner">
