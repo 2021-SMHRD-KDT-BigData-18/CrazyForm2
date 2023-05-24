@@ -25,11 +25,9 @@
 		   title: '정말로 탈퇴하시겠습니까?',
 		   text: '확인을 누르면 탈퇴가 완료됩니다.',
 		   
-		   showCancelButton: true, // cancel버튼 보이기. 기본은 원래 없음
+		   showCancelButton: false, // cancel버튼 보이기. 기본은 원래 없음
 		   confirmButtonColor: '#3085d6', // confrim 버튼 색깔 지정
-		   cancelButtonColor: '#d33', // cancel 버튼 색깔 지정
 		   confirmButtonText: '확인', // confirm 버튼 텍스트 지정
-		   cancelButtonText: '취소', // cancel 버튼 텍스트 지정
 		   
 		   reverseButtons: true, // 버튼 순서 거꾸로
 		   
@@ -42,6 +40,7 @@
 			   }).then(function () {
 		   			location.href="Main.do";
 			});
+		   
 		   };
 		});
 	});
