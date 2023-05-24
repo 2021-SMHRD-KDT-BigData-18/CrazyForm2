@@ -28,7 +28,7 @@ public class A_RvinfoUpdate implements Controller {
 		T_RESERVATION rev = new T_RESERVATION();			
 		rev.setREV_SEQ(Integer.parseInt(seq));
 		
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd kk:mm:ss");
 		try {
 			rev.setREV_DT(sdf.parse(date));
 		} catch (ParseException e) {
