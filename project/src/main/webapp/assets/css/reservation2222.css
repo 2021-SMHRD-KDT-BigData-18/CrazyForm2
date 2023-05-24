@@ -447,3 +447,36 @@ and
    display: none;
 }
 }
+.select {
+    padding: 15px 10px;
+}
+.select input[type=radio]{
+    display: none;
+}
+.select input[type=radio]+label{
+    display: inline-block;
+    cursor: pointer;
+    height: 40px;
+    width: 200px;
+    border: 1px solid #333;
+    line-height: 24px;
+    text-align: center;
+    font-weight:bold;
+    font-size:15px;
+}
+.select input[type=radio]+label{
+    background-color: #fff;
+    color: #333;
+    margin: 20px;
+    padding: 8px;
+}
+.select input[type=radio]:checked+label{
+    background-color: rgba(0, 128, 255, 0.8);
+    color: #fff;
+}
+#resTable {
+	margin: 50px;
+}
+.btn {
+	width: 400px;
+}

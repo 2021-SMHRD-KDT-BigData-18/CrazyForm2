@@ -67,12 +67,21 @@
 				</tr>
 			</thead>
 			<tr class="selectBox1">
-				<td class="cate">카테고리 선택</td>
-				<td><select name="JOB_T" class="select1">
+				<td rowspan="2">
+				<!-- <select name="JOB_T" class="select1">
 						<option value="가사도우미">가사도우미</option>
 						<option value="이사청소">이사청소</option>
 						<option value="사무실청소">사무실청소</option>
-				</select></td>
+					</select> -->	
+					
+					 <div class="select">
+     					<input value="가사도우미" type="radio" id="select1" name="JOB_T"><label for="select1">가사도우미</label>
+     					<input value="이사청소" type="radio" id="select2" name="JOB_T"><label for="select2">이사청소</label>
+     					<input value="사무실청소" type="radio" id="select3" name="JOB_T"><label for="select3">사무실청소</label>
+					</div>
+					
+					
+				</td>
 			</tr>
 
 			<!-- 주소 -->
@@ -94,19 +103,31 @@
 			</tr>
 
 			<tr class="selectBox2">
-				<td class="meet">반려동물이 있으신가요?</td>
-				<td><select name="PET_YN" class="select1">
+				<td rowspan="2">
+					<!--  <select name="PET_YN" class="select1">
 						<option value="Y">네, 있어요</option>
 						<option value="N">아니요</option>
-				</select></td>
+					</select>-->
+					
+					 <div class="select">
+     					<input value="Y" type="radio" id="Y" name="PET_YN"><label for="Y">반려동물 있음</label>
+     					<input value="N" type="radio" id="N" name="PET_YN"><label for="N">반려동물 없음</label>
+					</div>
+					
+				</td>
 			</tr>
 
 
 
 			<tr class="selectBox2">
-				<td><span>이전 직원 만나기</span></td>
-				<td>Y<input class="meetY" type="radio" name="meet"> N<input
-					class="meetN" type="radio" name="meet"></td>
+				<td rowspan="2">
+					<!--  Y<input class="meetY" type="radio" name="meet">
+				    N<input class="meetN" type="radio" name="meet">-->
+				    <div class="select">
+     					<input class="meetY" type="radio" id="meetY" name="meet"><label for="meetY">이전직원 만나기</label>
+     					<input class="meetN" type="radio" id="meetN" name="meet"><label for="meetN">만나지 않기</label>
+					</div>
+				</td>
 			</tr>
 
 			<!--  이전 예약내역 불러오는 현황 -->
@@ -248,6 +269,7 @@
            $(".datetimepicker").datetimepicker({
           disabledDates: Slist,
           formatDate:'d.m.Y',
+          minDate : '+1970/01/02'
        });
 
               },error : function() {
