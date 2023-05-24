@@ -15,8 +15,11 @@
 	<% T_MEMBER user = (T_MEMBER)session.getAttribute("user"); %>
 	<!-- 회원가입 성공화면 -->
 
-	<div id="joinS">
-		<div class="logo">ZIPSA</div>
+	<div id="title">
+		<h1>
+			<a href="Main.do"> ZIPSA </a>
+		</h1>
+	</div>
 		<div>
 			<h1>환영합니다!</h1>
 			<p>회원가입을 축하합니다.</p>

@@ -3,7 +3,7 @@
 	;
 
 body {
-	background-color: rgb(229, 229, 229);
+	background-color: rgb(229, 229, 229) !important;
 	font-size: 13pt;
 }
 
@@ -265,7 +265,7 @@ table {
 	width: 1200px;
 	margin-top: 70px;
 	background-color: white;
-	padding: 50px 0px 50px 0px;
+	padding: 50px 20px 50px 20px;
 }
 
 .reviewArea {
@@ -284,14 +284,15 @@ table {
 }
 
 #btn-event {
+	cursor: pointer;
 	margin-top: 10px;
 	text-align: center;
 	font-size: 15px;
 	font-weight: 700;
 	color: white;
-	height: 35px;
+	height: 40px;
 	background-color: rgba(0, 128, 255, 0.7);
-	border-radius: 3px;
+	border-radius: 10px;
 	text-decoration: none;
 	border: none;
 }

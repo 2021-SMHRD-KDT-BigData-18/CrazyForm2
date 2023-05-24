@@ -70,8 +70,10 @@
 		<form action="writeReivew.do" method="POST">
 				<c:forEach items="${list}" var="list">
 					<tr>
-						<td ><input type="radio"
-							name="REV_SEQ" value="${list.REV_SEQ}" class="selectBtn"></td>
+						<td >
+							<input type="radio"
+							name="REV_SEQ" value="${list.REV_SEQ}" class="selectBtn">
+						</td>
 						<td><fmt:formatDate pattern="yyyy-MM-dd hh:mm:ss"
 								value="${list.REV_DT}" /></td>
 						<td>${list.JOB_T}</td>
@@ -105,7 +107,7 @@
 						<label for="1-star" class="star">★</label>
 					</span>
 					<textarea class="form-control" id="bookReview"
-						name="REVIEW_CONTENT" cols="70" rows="8"
+						name="REVIEW_CONTENT" cols="100" rows="8"
 						placeholder="이용 리뷰를 남겨주세요❤️"></textarea>
 				</div>
 				<div class="review">

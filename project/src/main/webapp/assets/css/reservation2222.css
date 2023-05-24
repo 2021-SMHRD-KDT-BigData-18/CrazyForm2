@@ -127,7 +127,7 @@ table {
 }
 
 th, td {
-	padding: 10px;
+	padding: 20px;
 }
 
 td {
@@ -181,13 +181,13 @@ select {
 	margin-left: 50px;
 	margin-top: 15px;
 	text-align: center;
-	font-size: 15px;
+	font-size: 20px;
 	font-weight: 700;
-	color: honeydew;
+	color: white;
 	width: 150px;
 	height: 50px;
 	background-color: rgba(0, 128, 255, 0.8);
-	border-radius: 3px;
+	border-radius: 10px;
 	text-decoration: none;
 	display: flex;
 	align-items: center;
@@ -198,11 +198,12 @@ select {
 body {
 	font-family: 'Noto Sans KR', sans-serif;
 	font-size: 14px;
-	background-color: #f7f7f7 !important;
+	background-color: rgb(229, 229, 229) !important;
 	line-height: 1.5em;
 	color: #222;
 	margin: 50px;
 }
+
 a {
 	text-decoration: none;
 	color: #222;
@@ -374,46 +375,52 @@ a {
 }
 
 .dayBtn {
-	margin-top: 10px;
+	border: 0;
+	font-size: 27px;
+	margin: 30px;
+	background: rgba(0, 128, 255, 0.8);
+	color: white;
+	cursor: pointer;
+	border-radius: 10px;
 }
 
+
 @import
-   url("https://fonts.googleapis.com/css?family=Oleo+Script:400|Open+Sans:300,300italic,600,600italic,800")
-   ;
+	url("https://fonts.googleapis.com/css?family=Oleo+Script:400|Open+Sans:300,300italic,600,600italic,800")
+	;
 
 @media screen and (max-width: 1680px) {
-   .container {
-      width: 1200px;
-   }
+	.container {
+		width: 1200px;
+	}
 }
 
 @media screen and (max-width: 1280px) {
-   .container {
-      width: 960px;
-   }
+	.container {
+		width: 960px;
+	}
 }
-
-
 
 /* Logo */
 #logo h1 {
-   background: rgb(0, 128, 255);
-   color: rgb(255, 255, 255);
-   border-radius: 6px;
-   font-family: 'Oleo Script', serif;
-   font-weight: 400;
-   padding: 0.25em 0.2em 0.25em 0.2em;
-   font-size: 3.25em;
-   letter-spacing: 0.05em;
-   display: inline-block;
-   vertical-align: middle;
+	background: rgb(0, 128, 255);
+	color: rgb(255, 255, 255);
+	border-radius: 6px;
+	font-family: 'Oleo Script', serif;
+	font-weight: 400;
+	padding: 0.25em 0.2em 0.25em 0.2em;
+	font-size: 3.25em;
+	letter-spacing: 0.05em;
+	display: inline-block;
+	vertical-align: middle;
 }
+
 #logo:hover {
 	color: white !important;
 }
 /* Nav */
 #nav {
-   position: absolute;
+	position: absolute;
 }
 
 /* Large */
@@ -422,61 +429,61 @@ a {
 
 /* Medium */
 #navPanel, #navToggle {
-   display: none;
+	display: none;
 }
 
-@media
-screen
-and
-(max-width:
-980px)
-{
+@media screen and (max-width: 980px) {
+	/* Wrappers */
+	#header-wrapper {
+		padding: 3em 0 1em 0;
+		text-align: center;
+	}
+	#footer-wrapper {
+		padding: 6em 0 4em 0;
+	}
 
-/* Wrappers */
-#header-wrapper {
-   padding: 3em 0 1em 0;
-   text-align: center;
+	/* Nav */
+	#nav {
+		display: none;
+	}
 }
 
-#footer-wrapper {
-   padding: 6em 0 4em 0;
-}
-
-/* Nav */
-#nav {
-   display: none;
-}
-}
 .select {
-    padding: 15px 10px;
+	padding: 15px 10px;
 }
-.select input[type=radio]{
-    display: none;
+
+.select input[type=radio] {
+	display: none;
 }
-.select input[type=radio]+label{
-    display: inline-block;
-    cursor: pointer;
-    height: 40px;
-    width: 200px;
-    border: 1px solid #333;
-    line-height: 24px;
-    text-align: center;
-    font-weight:bold;
-    font-size:15px;
+
+.select input[type=radio]+label {
+	display: inline-block;
+	cursor: pointer;
+	height: 40px;
+	width: 200px;
+	border: 1px solid rgba(0, 128, 255, 0.8);
+	line-height: 24px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 15px;
 }
-.select input[type=radio]+label{
-    background-color: #fff;
-    color: #333;
-    margin: 20px;
-    padding: 8px;
+
+.select input[type=radio]+label {
+	background-color: #fff;
+	color: #333;
+	margin: 20px;
+	padding: 8px;
 }
-.select input[type=radio]:checked+label{
-    background-color: rgba(0, 128, 255, 0.8);
-    color: #fff;
+
+.select input[type=radio]:checked+label {
+	background-color: rgba(0, 128, 255, 0.8);
+	color: #fff;
 }
+
 #resTable {
 	margin: 50px;
 }
+
 .btn {
 	width: 400px;
 }
