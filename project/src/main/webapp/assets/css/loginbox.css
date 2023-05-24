@@ -2,6 +2,7 @@
 /* loginbox */
 .loginBox {
 	text-align: center;
+	margin-top: 30px;
 }
 
 .msg {
@@ -54,6 +55,7 @@
 
 .colBox {
 	text-align: center;
+	margin-top: 30px;
 }
 /* 수정 */
 .row {

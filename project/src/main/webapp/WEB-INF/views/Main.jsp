@@ -113,7 +113,7 @@
 		<div id="banner-wrapper">
 			<div id="banner" class="box container">
 				<div class="row">
-					<img height="500" width="1300" src="images/2.jpg">
+					<img height="500" width="1300" src="images/clean2.png">
 
 				</div>
 				<div class="colBox">
