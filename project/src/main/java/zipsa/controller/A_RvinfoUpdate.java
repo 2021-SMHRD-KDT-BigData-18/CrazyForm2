@@ -32,7 +32,6 @@ public class A_RvinfoUpdate implements Controller {
 		try {
 			rev.setREV_DT(sdf.parse(date));
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
