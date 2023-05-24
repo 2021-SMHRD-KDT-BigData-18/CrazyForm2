@@ -72,7 +72,7 @@
   </div>
 </div>
       <div class="review-content">후기: ${dto.REVIEW_CONTENT}</div>
-      <div class="review-date">작성일:<fmt:formatDate pattern="yyyy-MM-dd hh:mm:ss" value="${dto.REVIEW_DT}"/></div>
+      <div class="review-date">작성일:<fmt:formatDate pattern="yyyy-MM-dd kk:mm:ss" value="${dto.REVIEW_DT}"/></div>
       <div class="review-writer">작성자: ${dto.m_ID}</div>
     </div>
   </div>

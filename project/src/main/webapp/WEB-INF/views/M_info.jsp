@@ -133,7 +133,7 @@
 
 							<c:forEach items="${list}" var="list">
 								<tr>
-									<td><fmt:formatDate pattern="yyyy-MM-dd hh:mm:ss"
+									<td><fmt:formatDate pattern="yyyy-MM-dd kk:mm:ss"
 											value="${list.REV_DT}" /></td>
 									<td>${list.JOB_T}</td>
 									<td>${list.m_ADDR}</td>

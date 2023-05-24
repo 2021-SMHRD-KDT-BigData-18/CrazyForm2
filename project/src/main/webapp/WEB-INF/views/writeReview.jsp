@@ -74,7 +74,7 @@
 							<input type="radio"
 							name="REV_SEQ" value="${list.REV_SEQ}" class="selectBtn">
 						</td>
-						<td><fmt:formatDate pattern="yyyy-MM-dd hh:mm:ss"
+						<td><fmt:formatDate pattern="yyyy-MM-dd kk:mm:ss"
 								value="${list.REV_DT}" /></td>
 						<td>${list.JOB_T}</td>
 						<td>${list.m_ADDR}</td>
