@@ -102,20 +102,6 @@
 				</td>
 			</tr>
 
-			<tr class="selectBox2">
-				<td rowspan="2">
-					<!--  <select name="PET_YN" class="select1">
-						<option value="Y">네, 있어요</option>
-						<option value="N">아니요</option>
-					</select>-->
-					
-					 <div class="select">
-     					<input value="Y" type="radio" id="Y" name="PET_YN"><label for="Y">반려동물 있음</label>
-     					<input value="N" type="radio" id="N" name="PET_YN"><label for="N">반려동물 없음</label>
-					</div>
-					
-				</td>
-			</tr>
 
 
 
@@ -168,6 +154,21 @@
 					placeholder="여기를 클릭하세요" style='width: 250px;'>
 					<button class="dayBtn" type="button">선택</button> <input
 					name="REV_DT" type="hidden" class='dayvalue'></td>
+			</tr>
+			
+			<tr class="selectBox2">
+				<td rowspan="2">
+					<!--  <select name="PET_YN" class="select1">
+						<option value="Y">네, 있어요</option>
+						<option value="N">아니요</option>
+					</select>-->
+					
+					 <div class="select">
+     					<input value="Y" type="radio" id="Y" name="PET_YN"><label for="Y">반려동물 있음</label>
+     					<input value="N" type="radio" id="N" name="PET_YN"><label for="N">반려동물 없음</label>
+					</div>
+					
+				</td>
 			</tr>
 
 			<tr class="selectBox2">
