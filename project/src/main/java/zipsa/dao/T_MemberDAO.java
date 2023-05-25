@@ -114,9 +114,9 @@ public class T_MemberDAO {
 	}
 
 	// 관리자가 캘린더로 드래그해서 예약현황변경
-	public int updateReservation(T_RESERVATION reservation) {
+	public int updateReservation(T_RESERVATION dto) {
 		SqlSession session = factory.openSession(true);
-		int result = session.update("updateReservationDate", reservation);
+		int result = session.update("updateReservationDate", dto);
 		session.close();
 		return result;
 	}
@@ -168,6 +168,24 @@ public class T_MemberDAO {
 		T_RESERVATION Rdto = session.selectOne("confirmRv",dto);
 		session.close();
 		return Rdto;
+	}
+	
+	// 예약수정시 직원 중복되지 않도록 랜덤배정 후 스태프 번호 받아서 입력
+	public int RandomStaff(T_RESERVATION dto) {
+		SqlSession session = factory.openSession(true);
+		T_RESERVATION list = session.selectOne("rdStaff", dto);
+		session.close();
+		int staff = list.getSTAFF_SEQ();
+		return staff;
+	}
+
+	// 펫이 있을경우 알러지 없는 직원 랜덤배정
+	public int RandomStaffY(T_RESERVATION dto) {
+		SqlSession session = factory.openSession(true);
+		T_RESERVATION list = session.selectOne("rdStaffY", dto);
+		session.close();
+		int staff = list.getSTAFF_SEQ();
+		return staff;
 	}
 
 }
