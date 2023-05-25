@@ -3,15 +3,12 @@ package zipsa.controller;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import zipsa.dao.T_MemberDAO;
-import zipsa.entity.T_MEMBER;
 import zipsa.entity.T_RESERVATION;
 
 public class A_RvinfoUpdate implements Controller {
