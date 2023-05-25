@@ -95,7 +95,7 @@
 					<p>
 						<img id="popImg" src="images/clean3.jpg" width=350 height=300 usemap="#popup"
 							alt="event page">
-							<br>집사를 찾아주셔서 감사합니다. <br> 당일 예약은 불가능합니다. <br> 집사 서비스의 기본 제공 시간은 <br> 2시간입니다.
+							<br>집사를 찾아주셔서 감사합니다. <br> 당일 예약은 불가능합니다. <br> 집사 서비스의 기본 제공 시간은 <br> 3시간입니다.
 					</p>
 				</div>
 				<form id="popBtn" name="pop_form">
