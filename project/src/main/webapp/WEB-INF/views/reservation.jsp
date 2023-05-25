@@ -222,13 +222,16 @@
 						placeholder="요청사항을 작성해주세요" name="REV_NOTE"></textarea></td>
 			</tr>
 
-			<tr>
-				<td class="submitBtn" colspan="2" align="center">
-				<input type="submit" value="예약하기" id="submitBtn2">
-			</tr>
+			
 		</table>
+				<div class="submitBtn" colspan="2" align="center">
+				<input type="submit" value="예약하기" id="submitBtn2"></div>
+			
 	</form>
-				<button onclick="requestPay()">결제하기</button></td>
+	
+	<div id="payBtnBox">
+		<button id="payBtn" onclick="requestPay()">결제하기</button></td>
+	</div>
 
 	<div id="footer-wrapper">
 		<footer id="footer" class="container">
