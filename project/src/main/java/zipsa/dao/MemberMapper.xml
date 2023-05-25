@@ -24,7 +24,7 @@
 		where M_ID=#{M_ID}
 	</update>
 
-   <!-- 내 예약현황 확인 -->
+   <!-- 내 예약현황 모두 확인 -->
    <select id="selectRv" parameterType="zipsa.entity.T_MEMBER"
       resultType="zipsa.entity.T_RESERVATION">
       SELECT * from V_RV_STAFF
@@ -53,7 +53,7 @@
 	<select id="selectAllRDate"
 		resultType="zipsa.entity.T_RESERVATION" parameterType="String">
 		select * from
-		T_RESERVATION
+		V_RV_STAFF
 		where TO_CHAR(REV_DT, 'YYYY-MM') = #{YM}
 	</select>
 
@@ -124,5 +124,7 @@ where c.STAFF_SEQ not in (select A.STAFF_SEQ from T_HOLIDAY a where a.HOLI_DT = 
 		SELECT * FROM V_BEFORE_TODAY
 		WHERE M_ID=#{M_ID}
 	</select>
+
+<!-- 예약할때 -->
 
 </mapper>

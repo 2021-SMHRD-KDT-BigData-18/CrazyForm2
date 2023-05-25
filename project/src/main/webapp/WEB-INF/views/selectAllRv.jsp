@@ -96,7 +96,8 @@
    	            type : 'post',
    	            data : {
    	                "seq" : customProperty.seq,
-   	                "date" : getDateFormat(obj.event.start, true)
+   	                "date" : getDateFormat(obj.event.start, true),
+   	                "staffSeq" : customproperty.staffSeq   	                
    	            },
    	            // 521
    	            success : function (res) {
@@ -138,7 +139,8 @@
             var customProperty = event.extendedProps;
             // 클릭된 이벤트 정보를 활용하여 원하는 작업을 수행
             // 예: 이벤트 상세 정보 표시, 특정 동작 수행 등
-            alert(event.title + "/" + event.id + "/" + customProperty.rdt )
+            alert("ID :" + event.id + "\n청소카테고리 :  " + event.title  + "\n예약일자 : " + customProperty.rdt 
+            		+ "\n요청사항 : "+ customProperty.note +"\n담당매니저이름 : " + customProperty.staffName )
             // 기타 정보는
             /*
             customProperty.addr
@@ -187,9 +189,10 @@
                         note: rv.REV_NOTE,
                         addr: rv.M_ADDR,
                         id: rv.M_ID,
-                        petYn: rv.PET_YN,
                         seq: rv.REV_SEQ,
-                        staffSeq: rv.STAFF_SEQ 
+                        petYn: rv.PET_YN,
+                        staffSeq: rv.STAFF_SEQ,
+                        staffName: rv.STAFF_NAME
                     }
                     calendar.addEvent(newEvent);
                 }

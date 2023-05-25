@@ -31,6 +31,9 @@ public class StaffDayCon implements Controller {
 		int STAFF_SEQ = Integer.parseInt(request.getParameter("STAFF_SEQ"));
 		T_MemberDAO dao = new T_MemberDAO();
 
+		
+		// 직원번호가 예약일에 직원번호가 존재하는지 리스트 개수 확인 하여 둘 중 하나라도 row값 >1 일경우 직원 재매칭
+		
 		List<T_RESERVATION> Rlist = dao.staffRDay(STAFF_SEQ); // 직원 예약일 리스트 Rlist
 		List<T_HOLIDAY> Hlist = dao.staffHDay(STAFF_SEQ); // 직원 휴무일 리스트 Hlist
 

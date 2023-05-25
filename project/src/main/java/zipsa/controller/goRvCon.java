@@ -29,7 +29,7 @@ public class goRvCon implements Controller {
 		// 오늘이전의 예약현황 가져가도록
 		
 		T_MemberDAO dao = new T_MemberDAO();
-		List<T_RESERVATION> list = dao.selectRv(M_ID);
+		List<T_RESERVATION> list = dao.sameRevSeq(M_ID);
 		
 		request.setAttribute("list", list);
 		
