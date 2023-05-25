@@ -25,6 +25,27 @@ public class T_RESERVATION {
 	// 예약 번호
 	private int REV_SEQ;
 	
+	private Date HOLI_DT;
+	
+	
+	
+
+
+	public T_RESERVATION(String m_ID, String jOB_T, Date rEV_DT, String pET_YN, int sTAFF_SEQ, String rEV_NOTE,
+			String m_ADDR, String sTAFF_NAME, int rEV_SEQ, Date hOLI_DT) {
+		super();
+		M_ID = m_ID;
+		JOB_T = jOB_T;
+		REV_DT = rEV_DT;
+		PET_YN = pET_YN;
+		STAFF_SEQ = sTAFF_SEQ;
+		REV_NOTE = rEV_NOTE;
+		M_ADDR = m_ADDR;
+		STAFF_NAME = sTAFF_NAME;
+		REV_SEQ = rEV_SEQ;
+		HOLI_DT = hOLI_DT;
+	}
+
 	public T_RESERVATION(String m_ID, String jOB_T, Date rEV_DT, String pET_YN, int sTAFF_SEQ, String rEV_NOTE,
 			String m_ADDR, int rEV_SEQ) {
 		super();
@@ -125,6 +146,12 @@ public class T_RESERVATION {
 		REV_SEQ = rEV_SEQ;
 	}
 	
-	
+	public Date getHOLI_DT() {
+		return HOLI_DT;
+	}
+
+	public void setHOLI_DT(Date hOLI_DT) {
+		HOLI_DT = hOLI_DT;
+	}
 	
 }
