@@ -155,17 +155,17 @@ public class T_MemberDAO {
 
 	}
 	
-	// 예약시 선택한 직원번호 휴무일
-	public List<T_HOLIDAY> confirmholi(T_RESERVATION dto) {
+	// 예약수정 시 선택한 직원번호 휴무일
+	public T_HOLIDAY confirmholi(T_RESERVATION dto) {
 		SqlSession session = factory.openSession(true);
-		List<T_HOLIDAY> list = session.selectOne("confirmholi",dto);
+		T_HOLIDAY list = session.selectOne("confirmholi",dto);
 		session.close();
 		return list;
 	}
 	// 예약수정 시 예약일자와 직원 예약일이 겹치는 row 갯수확인
-	public List<T_RESERVATION> confirmRv(T_RESERVATION dto) {
+	public T_RESERVATION confirmRv(T_RESERVATION dto) {
 		SqlSession session = factory.openSession(true);
-		List<T_RESERVATION> list = session.selectList("confirmRv",dto);
+		T_RESERVATION list = session.selectOne("confirmRv",dto);
 		session.close();
 		return list;
 	}

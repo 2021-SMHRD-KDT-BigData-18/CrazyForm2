@@ -31,11 +31,9 @@ import zipsa.controller.goMInfoCon;
 import zipsa.controller.goMainCon;
 import zipsa.controller.goReviewMainCon;
 import zipsa.controller.goRvCon;
-import zipsa.controller.goUpdateCon;
 import zipsa.controller.goWriteReviewCon;
 import zipsa.controller.gojoinCon;
 import zipsa.controller.popupCon;
-import zipsa.controller.testCon;
 import zipsa.controller.M_Rvupload;
 
 @WebServlet("*.do")
