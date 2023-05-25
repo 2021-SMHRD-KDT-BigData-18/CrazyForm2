@@ -1,3 +1,4 @@
+<%@page import="zipsa.entity.T_MEMBER"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -31,8 +32,13 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<!-- iamport.payment.js -->
+<script src="https://cdn.iamport.kr/v1/iamport.js"></script>
 </head>
 <body>
+	<%
+	T_MEMBER user = (T_MEMBER) session.getAttribute("user");
+	%>
 	<div id="page-wrapper">
 		<!-- Header -->
 		<div id="header-wrapper">
@@ -178,10 +184,12 @@
 			</tr>
 
 			<tr>
-				<td class="submitBtn" colspan="2" align="center"><input
-					type="submit" value="예약하기" id="submitBtn2"></td>
+				<td class="submitBtn" colspan="2" align="center">
+				<input type="submit" value="결제하기" id="submitBtn2" onclick="requestPay()"></td>
+			<!--  <button onclick="requestPay()">결제하기</button>-->
 			</tr>
 		</table>
+		
 	</form>
 
 	<div id="footer-wrapper">
@@ -294,6 +302,34 @@
      };
 	
 
+	</script>
+	<script type="text/javascript">
+	var IMP = window.IMP;
+    IMP.init("imp80838354"); // 예: imp00000000
+
+    function requestPay() {
+        // IMP.request_pay(param, callback) 결제창 호출
+        IMP.request_pay({ // param
+            pg: "html5_inicis",
+            pay_method: "card",
+            merchant_uid: "test4",
+            name: "예약금",
+            amount: 10,
+            m_redirect_url: "Rv.do",
+        }, function (rsp) { // callback
+            if (rsp.success) {
+                var msg = '결제가 완료되었습니다.';
+                msg += '\n고유ID : ' + rsp.imp_uid;
+                msg += '\n상점 거래ID : ' + rsp.merchant_uid;
+                msg += '\n결제 금액 : ' + rsp.paid_amount;
+                msg += '\n카드 승인번호 : ' + rsp.apply_num;
+            } else {
+                var msg = '결제에 실패하였습니다.';
+                msg += '에러내용 : ' + rsp.error_msg;
+            }
+            alert(msg);
+        });
+    }
 	</script>
 
 </body>
