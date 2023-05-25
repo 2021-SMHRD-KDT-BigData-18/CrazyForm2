@@ -171,16 +171,14 @@ public class T_MemberDAO {
 	}
 	
 	// 예약수정시 직원 중복되지 않도록 랜덤배정 후 스태프 번호 받아서 입력
-	public int RandomStaff(T_RESERVATION dto) {
+	public int rdStaff(T_RESERVATION dto) {
 		SqlSession session = factory.openSession(true);
 		T_RESERVATION list = session.selectOne("rdStaff", dto);
 		session.close();
 		int staff = list.getSTAFF_SEQ();
 		return staff;
 	}
-
-	// 펫이 있을경우 알러지 없는 직원 랜덤배정
-	public int RandomStaffY(T_RESERVATION dto) {
+	public int rdStaffY(T_RESERVATION dto) {
 		SqlSession session = factory.openSession(true);
 		T_RESERVATION list = session.selectOne("rdStaffY", dto);
 		session.close();
