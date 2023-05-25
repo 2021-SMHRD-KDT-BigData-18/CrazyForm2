@@ -34,11 +34,26 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <!-- iamport.payment.js -->
 <script src="https://cdn.iamport.kr/v1/iamport.js"></script>
+<link rel="stylesheet" href="assets/css/popup.css" />
+<script type="text/javascript">
+	function setCookie(name, value, expiredays) {
+		var todayDate = new Date();
+		todayDate.setDate(todayDate.getDate() + expiredays);
+		document.cookie = name + "=" + escape(value) + "; path=/; expires="
+				+ todayDate.toGMTString() + ";"
+	}
+	function closePop() {
+		if (document.pop_form.chkbox.checked) {
+			setCookie("maindiv", "done", 1);
+		}
+		document.all['layer_popup'].style.visibility = "hidden";
+		//self.close();
+
+	}
+</script>
 </head>
 <body>
-	<%
-	T_MEMBER user = (T_MEMBER) session.getAttribute("user");
-	%>
+
 	<div id="page-wrapper">
 		<!-- Header -->
 		<div id="header-wrapper">
@@ -64,6 +79,30 @@
 		</div>
 	</div>
 	<hr>
+	
+			<!-- 팝업 부분 -->
+		<div class="layerPopup" id="layer_popup" style="visibility: visible;">
+			<div class="layerBox">
+				<h4 class="title">예약 주의사항</h4>
+				<div class="cont">
+					<p>
+						<img id="popImg" src="images/clean3.jpg" width=350 height=300 usemap="#popup"
+							alt="event page">
+							<br>결제하기 버튼 클릭! <br>예약금 결제 후 <br> 예약하기를 눌러주세요!
+					</p>
+				</div>
+				<form id="popBtn" name="pop_form">
+					<div id="check">
+						<p id="todayBtn" for="chkbox">&nbsp&nbsp오늘 하루동안 보지 않기</label>
+						<input type="checkbox" name="chkbox" value="checkbox" id='chkbox'>
+					</div>
+					<div id="close">
+						<a id="closeBtn" onclick="closePop();">닫기</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	
 	<div class="Box">예약하기</div>
 	<form action="Rv.do" method="POST">
 		<table>
@@ -329,6 +368,33 @@
             alert(msg);
         });
     };
+	</script>
+	<script>
+		window.kakaoAsyncInit = function() {
+			Kakao.Channel.createAddChannelButton({
+				container : '#kakao-talk-channel-add-button',
+			});
+		};
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id))
+				return;
+			js = d.createElement(s);
+			js.id = id;
+			js.src = 'https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.channel.min.js';
+			js.integrity = 'sha384-MEvxc+j9wOPB2TZ85/N6G3bt3K1/CgHSGNSM+88GoytFuzP4C9szmANjTCNfgKep';
+			js.crossOrigin = 'anonymous';
+			fjs.parentNode.insertBefore(js, fjs);
+		})(document, 'script', 'kakao-js-sdk');
+
+		cookiedata = document.cookie;
+		if (cookiedata.indexOf("maindiv=done") < 0) {
+			//document.all['layer_popup'].style.visibility = "visible";
+			document.getElementById('layer_popup').style.display = "block";
+		} else {
+			//document.all['layer_popup'].style.visibility = "hidden";
+			document.getElementById('layer_popup').style.display = "none";
+		}
 	</script>
 
 </body>
