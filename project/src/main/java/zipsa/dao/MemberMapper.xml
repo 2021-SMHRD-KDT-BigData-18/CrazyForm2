@@ -87,7 +87,7 @@
 		SELECT c.STAFF_SEQ
 		FROM T_STAFF c
 		where c.STAFF_SEQ not in (select A.STAFF_SEQ from T_HOLIDAY a where
-		a.HOLI_DT = #{REV_DT})
+		a.HOLI_DT = substr(#{REV_DT},1,10))
 		and c.STAFF_SEQ not in (select B.STAFF_SEQ from T_RESERVATION b where
 		b.REV_DT = #{REV_DT})
 		and rownum =1
@@ -99,10 +99,12 @@
 		resultType="zipsa.entity.T_RESERVATION">
 		SELECT c.STAFF_SEQ
 		FROM T_STAFF c
-		where c.STAFF_SEQ not in (select A.STAFF_SEQ from T_HOLIDAY a where
-		a.HOLI_DT = substr(#{REV_DT},1,10))
-		and c.STAFF_SEQ not in (select B.STAFF_SEQ from T_RESERVATION b where
-		b.REV_DT = #{REV_DT})
+		where c.STAFF_SEQ not in (
+		select A.STAFF_SEQ from T_HOLIDAY a 
+		where a.HOLI_DT = substr(#{REV_DT},1,10))
+		and c.STAFF_SEQ not in (
+		select B.STAFF_SEQ from T_RESERVATION b 
+		where b.REV_DT = #{REV_DT})
 		and c.allergy_yn='N'
 		and rownum =1
 	</select>
@@ -132,17 +134,17 @@
 	</select>
 
 <!-- 예약수정 시 휴무일또는 예약일과 동일하진 않은지 확인-->
-<select id="comfirmholi" resultType="zipsa.entity.T_HOLIDAY">
+<select id="confirmholi" parameterType="zipsa.entity.T_HOLIDAY" resultType="zipsa.entity.T_HOLIDAY">
 SELECT *
 FROM T_HOLIDAY
-where STAFF_SEQ = #{STAFF_SEQ} 
-  and HOLI_DT=substr(#{REV_DT},1,10)
+where STAFF_SEQ=#{STAFF_SEQ}
+  and HOLI_DT = #{HOLI_DT}
 </select>
-<select id="comfirmRv" resultType="zipsa.entity.T_RESERVATION">
+<select id="confirmRv" parameterType="zipsa.entity.T_RESERVATION" resultType="zipsa.entity.T_RESERVATION">
 SELECT *
 FROM T_RESERVATION
 where STAFF_SEQ = #{STAFF_SEQ} 
-  and REV_DT=#{REV_DT}
+  and REV_DT= #{REV_DT}
 </select>
 
 

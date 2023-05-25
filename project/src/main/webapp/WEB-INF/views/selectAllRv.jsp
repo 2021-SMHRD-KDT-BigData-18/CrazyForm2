@@ -97,7 +97,8 @@
    	            data : {
    	                "seq" : customProperty.seq,
    	                "date" : getDateFormat(obj.event.start, true),
-   	                "staffSeq" : customproperty.staffSeq   	                
+   	                "staffSeq" : customProperty.staffSeq,
+   	                "petYn" : customProperty.petYn
    	            },
    	            // 521
    	            success : function (res) {
