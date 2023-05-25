@@ -350,7 +350,7 @@
         IMP.request_pay({ // param
             pg: "html5_inicis",
             pay_method: "card",
-            merchant_uid: "test4",
+            merchant_uid: 'merchant_' + new Date().getTime(),
             name: "예약금",
             amount: 10,
         }, function (rsp) { // callback
