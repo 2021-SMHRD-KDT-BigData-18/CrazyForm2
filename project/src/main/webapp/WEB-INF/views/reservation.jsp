@@ -229,12 +229,12 @@
 				<div class="submitBtn" colspan="2" align="center">
 				<input type="submit" value="예약하기" id="submitBtn2"></div>
 			
+	
+	</form>
 	<div id="payBtnBox">
 		<button id="payBtn" onclick="requestPay()">결제하기</button></td>
 	</div>
 	</div>
-	
-	</form>
 	
 
 	<div id="footer-wrapper">
