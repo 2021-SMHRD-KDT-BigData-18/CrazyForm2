@@ -223,16 +223,15 @@
 			</tr>
 
 			
-		</table>
-		<div id="Box3">
 		
-				<div class="submitBtn" colspan="2" align="center">
-				<input type="submit" value="예약하기" id="submitBtn2"></div>
+		
+				<td class="submitBtn" colspan="2" align="center">
+				<input type="submit" value="예약하기" id="submitBtn2"></td>
 			
-	
+	</table>
 	</form>
 	<div id="payBtnBox">
-		<button id="payBtn" onclick="requestPay()">결제하기</button></td>
+		<button id="payBtn" onclick="requestPay()">결제하기</button>
 	</div>
 	</div>
 	
