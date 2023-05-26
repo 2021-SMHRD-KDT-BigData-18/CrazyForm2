@@ -142,7 +142,6 @@
    → 결제값에 new Date().getTime()를 걸어줘 하나의 값만 주도록 함<br>
    ![image](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130941202/5a45c069-34fc-407e-bcf2-3ed8ba853ab9)
    
- * 문제6<br>
     
    
 
