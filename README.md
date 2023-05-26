@@ -1,7 +1,8 @@
 # CrazyForm2
 ## 청소예약서비스 (팀명: 집사)
 <br>
-<img src""/>
+![clean2](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130964004/b65c6980-0fd2-44a9-a223-574e6a760b6b)
+
 <h4>개발환경<h4><br>
 Front-end
 <p>
