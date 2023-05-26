@@ -64,66 +64,49 @@
 <br>
 
 ## ⚙ 시스템 아키텍처(구조) 예시 
-![서비스 아키텍처](https://user-images.githubusercontent.com/25995055/169925538-15867bd9-aa0b-42fc-a39b-88981e926e51.png)
+![시스템 아키텍처](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130961687/76ebc741-1cba-4d29-bdd9-40886dc4e1f2)
 <br>
 
 ## 📌 SW유스케이스
-![image](https://user-images.githubusercontent.com/25995055/178401023-9a015e66-aa6e-4d74-8564-9b1f9d306649.png)
+![유스케이스](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130961687/7ccdc48c-f90a-45dc-892c-12973b1bbf84)
+
+![유수케이스2](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130961687/9c68823a-7365-4b59-a682-357342d3d186)
 <br>
 
 ## 📌 서비스 흐름도
-![image](https://user-images.githubusercontent.com/25995055/178401048-d6484bda-a2d7-40e1-998b-2bd195cd9f89.png)
+![서비스흐름도](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130961687/0ca9a8f3-bffe-4ce6-a10e-41608dd6dbd8)
+
 <br>
 
 ## 📌 ER다이어그램
-![image](https://user-images.githubusercontent.com/25995055/169925318-102784c2-893f-4fd7-bec9-a54c44b669d4.png)
+![ERD](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130961687/c913ed42-8d99-40cd-b00c-6b121c82bf3a)
 <br>
 
 ## 🖥 화면 구성
 
 ### 로그인/회원가입/회원괸리/회원수정/회원탈퇴
-![image](https://user-images.githubusercontent.com/25995055/178401098-95f15a0e-a2de-415e-83d5-883bb4cb0656.png)
+![Main페이지](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130961687/e1fe99f0-c894-40f1-b572-c32ef4632612)
 <br>
+### 예약하기
+![예약하기](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130961687/e0172634-7ed9-439c-a1cb-4403e645113a)
 
-### 옷 정보/코디 추천(날씨, 팁, 오늘의 코디, 참고할 수 있는 코디)
-![image](https://user-images.githubusercontent.com/25995055/178401127-287e6de2-4396-49fc-a107-59c4d5cd55c7.png)
+![예약하기 2](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130961687/7aac8a35-24a1-49f9-b6db-be38179cb872)
+
+![예약하기2](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130961687/a311bb30-7aeb-4c62-98e9-49d0ff00ceeb)
+
+![예약하기4](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130961687/052da72d-0381-423f-b9a3-d4e4d8752b22)
+
+![예약하기5](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130961687/d4020e55-aa4d-4158-8a27-b99ab9680e88)
 <br>
-
-### 일정/고객센터
-![image](https://user-images.githubusercontent.com/25995055/178401150-861f0e93-0f40-4fae-98c1-2099bf513c8d.png)
+### 관리자 예약하기
+![관리자예약](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130961687/116b7fa2-1e1c-4860-a31e-f2d32634f962)
+<br>
+### 내정보
+![내정보](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130961687/8f36ed3c-f395-4316-bc9e-56f6b354108c)
 <br>
 
 ## 👨‍👩‍👦‍👦 팀원 역할
-<table>
-  <tr>
-    <td align="center"><img src="https://item.kakaocdn.net/do/fd49574de6581aa2a91d82ff6adb6c0115b3f4e3c2033bfd702a321ec6eda72c" width="100" height="100"/></td>
-    <td align="center"><img src="https://mb.ntdtv.kr/assets/uploads/2019/01/Screen-Shot-2019-01-08-at-4.31.55-PM-e1546932545978.png" width="100" height="100"/></td>
-    <td align="center"><img src="https://mblogthumb-phinf.pstatic.net/20160127_177/krazymouse_1453865104404DjQIi_PNG/%C4%AB%C4%AB%BF%C0%C7%C1%B7%BB%C1%EE_%B6%F3%C0%CC%BE%F0.png?type=w2" width="100" height="100"/></td>
-    <td align="center"><img src="https://i.pinimg.com/236x/ed/bb/53/edbb53d4f6dd710431c1140551404af9.jpg" width="100" height="100"/></td>
-    <td align="center"><img src="https://pbs.twimg.com/media/B-n6uPYUUAAZSUx.png" width="100" height="100"/></td>
-  </tr>
-  <tr>
-    <td align="center"><strong>홍O동</strong></td>
-    <td align="center"><strong>홍O동</strong></td>
-    <td align="center"><strong>홍O동</strong></td>
-    <td align="center"><strong>홍O동</strong></td>
-    <td align="center"><strong>홍O동</strong></td>
-  </tr>
-  <tr> 
-    <td align="center"><b>Frontend</b></td>
-    <td align="center"><b>Frontend</b></td>
-    <td align="center"><b>Backend</b></td>
-    <td align="center"><b>Backend</b></td>
-    <td align="center"><b>Deep Learning</b></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-  </tr>
-</table>
+![팀](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130961687/dc33f3ea-f945-403e-aafd-bb7978ba12f4)
 
 ## 🤾‍♂️ 트러블슈팅
 개념: 문제 해결을 위해 문제의 원인을 논리적이고 체계적으로 찾는 일이며 제품이나 프로세스의 운영을 재개
