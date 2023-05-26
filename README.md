@@ -11,15 +11,14 @@
 <br>
 
 ## 📅 프로젝트 기간
-2022.05.10 ~ 2022.05.25 (15)
+2022.05.10 ~ 2022.05.25 (15일)
 <br>
 
 ## ⭐ 주요 기능
-* 기능1
-* 기능2
-* 기능3
-* 기능4
-* 기능5
+* DateTimePicker
+* Calender
+* rating
+* full Calender API
 <br>
 
 ## ⛏ 기술스택
@@ -85,26 +84,28 @@
 ## 🖥 화면 구성
 
 ### 로그인/회원가입/회원괸리/회원수정/회원탈퇴
-![Main페이지](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130961687/e1fe99f0-c894-40f1-b572-c32ef4632612)
+![1](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130961687/f1314313-cbe8-4c91-a14a-5b04e97f2888)
 <br>
 ### 예약하기
-![예약하기](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130961687/e0172634-7ed9-439c-a1cb-4403e645113a)
+![2](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130961687/212b6bdc-7ad3-41ca-bede-52d418518f01)
 
-![예약하기 2](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130961687/7aac8a35-24a1-49f9-b6db-be38179cb872)
+![3](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130961687/cbfd5b65-16ae-4151-9f7a-4e4283ec3759)
 
-![예약하기2](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130961687/a311bb30-7aeb-4c62-98e9-49d0ff00ceeb)
+![4](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130961687/32a2b121-710c-4abd-87f4-780f388352e1)
 
-![예약하기4](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130961687/052da72d-0381-423f-b9a3-d4e4d8752b22)
+![5](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130961687/fcc991a2-ec4d-4b06-9c4f-d30d5c118ba2)
 
-![예약하기5](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130961687/d4020e55-aa4d-4158-8a27-b99ab9680e88)
+![6](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130961687/f0066585-4be6-4169-8666-19003e8a7080)
+
+![7](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130961687/49d1cc11-ce59-4d0d-a06e-bff7bc38afa7)
 <br>
-### 관리자 예약하기
-![관리자예약](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130961687/116b7fa2-1e1c-4860-a31e-f2d32634f962)
-<br>
+
 ### 내정보
-![내정보](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130961687/8f36ed3c-f395-4316-bc9e-56f6b354108c)
-<br>
+![8](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130961687/956e078d-9b1b-40fe-a55b-6b2974835bfa)
 
+### 관리자 예약하기
+![9](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130961687/91e44ca8-7ac4-46e7-a45c-ad7e24bad1c4)
+<br>
 ## 👨‍👩‍👦‍👦 팀원 역할
 ![팀](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130961687/dc33f3ea-f945-403e-aafd-bb7978ba12f4)
 
