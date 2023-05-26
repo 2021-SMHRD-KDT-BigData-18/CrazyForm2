@@ -15,10 +15,11 @@
 <br>
 
 ## ⭐ 주요 기능
-* DateTimePicker
-* Calender
+* DateTimePicker Calender
 * rating
 * full Calender API
+* 아임포트 결제 API
+* swalfire 모달창
 <br>
 
 ## ⛏ 기술스택
@@ -113,8 +114,36 @@
 개념: 문제 해결을 위해 문제의 원인을 논리적이고 체계적으로 찾는 일이며 제품이나 프로세스의 운영을 재개
 프로젝트 진행하는 동안 발생했던 이슈 중 가장 기억에 남았던 문제와 해결 프로세스 나열(2~5가지 정도)
   
+* Back part 문제
 * 문제1<br>
- 문제점 설명 및 해결방안
+ 이전 직원 만나기를 Y선택 후 직원을 선택했을 때, 직원의 휴무일 및 예약일이 json으로 변환 후 ajax로 불러와야 하나, json은 하나의 데이터만 변환 후 전송 가능<br>
+→ Slist라는 배열에 직원의 휴무일 및 예약일정을 담아서 보내주었음<br>
+ ![image](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130941202/c5b35766-a3ca-47b0-81cd-4e76a598b2d4)
  
 * 문제2<br>
- 문제점 설명 및 해결방안
+ 예약하기에 필요한 data가 모두 작성된 후 DB로 연동위해 parameter로 보내주는데, DateTimePicker Calendar input태그에 등록된 value값이 넘어오지 않음<br>
+ → hidden type의 input태그를 만들어 선택 버튼을 클릭했을 시 DateTimePicker Calendar input태그의 value값을 가져오도록 연동하였음<br>
+![image](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130941202/707854d0-a2d8-4e89-b5a5-ac54d690f902)
+
+* 문제3<br>
+ 관리자 예약현황에서 일자 변경 시 직원의 휴무일과 예약일정이 고려되지 않은 채 일자만 변경됨<br>
+ → 예약번호와 변경일자를 ajax로 받아온 뒤 배정되었던 직원의 번호의 휴무일과 예약일자를 불러와 비교한 뒤<br>
+   중복될 시, 예약일자와 휴무일 및 예약내역의 펫유무와 직원의 털알러지 여부까지 고려하여 적합한 직원을 한명 선출하여 배치시킴<br>
+   ![image](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130941202/c485a9cf-6014-40c8-bbd8-1f1cb76f35a5)
+
+* Front part 문제 <br>
+* 문제4<br>
+  메인페이지 팝업창에서 하루동안 보지않기 체크와 닫기를 눌렀을 시 사진은 사라지나 창은 닫히지 않음<br>
+  → popUp창을 바꿔준 후 Visibility속성을 hidden으로 바꿔주었음<br>
+  ![image](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130941202/07305d2a-df13-4bb2-aba5-18de2ade68e3)
+ 
+ * 문제5<br>
+   결제하기에서 merchant-uid에 결제할때마다 다른값을 계속 입력해줘야함<br>
+   → 결제값에 new Date().getTime()를 걸어줘 하나의 값만 주도록 함<br>
+   ![image](https://github.com/2021-SMHRD-KDT-BigData-18/CrazyForm2/assets/130941202/5a45c069-34fc-407e-bcf2-3ed8ba853ab9)
+   
+ * 문제6<br>
+    
+   
+
+   
